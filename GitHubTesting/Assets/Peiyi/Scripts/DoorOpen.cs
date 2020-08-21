@@ -45,6 +45,11 @@ public class DoorOpen : MonoBehaviour
     //    anim.SetTrigger(direction); 
     //}
 
+    /// <summary>
+    /// If inside door trigger volume
+    /// show tool tip panel
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -54,6 +59,11 @@ public class DoorOpen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If outside door trigger volume
+    /// hide tool tip panel
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -71,6 +81,10 @@ public class DoorOpen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// if inside trigger volume
+    /// press key 'E' to open or close door
+    /// </summary>
     private void Update()
     {
         if (_isInsideTrigger == true)

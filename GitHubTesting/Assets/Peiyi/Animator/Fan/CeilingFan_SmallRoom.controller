@@ -54,7 +54,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 11820_Ceiling_fan_v1_l2
+  m_Name: CeilingFan_SmallRoom
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
