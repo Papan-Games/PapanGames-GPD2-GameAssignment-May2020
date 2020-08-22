@@ -27,17 +27,51 @@ public class Pickup : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 10f))
             {
-               
-                if (hit.collider.tag == "smallRoomKey");
+
+                if (hit.collider.tag == "smallRoomKey" && hit.collider.tag != "cockroach")
                 {
                     Debug.Log("Get Small Room key");
                     Destroy(GameObject.Find("SmallRoomKey"));
                     key_S_get = true;
                 }
 
+                else
+                {
+                    Debug.Log("Failed to get key");
+                }
+
+
                 //Debug.Log("halo");
             }
         }
+
+
+        //RaycastHit hit;
+        //if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 10f))
+        //{
+
+        //    if (hit.collider.tag == "smallRoomKey")
+        //    {
+        //        Debug.Log("Press R to get key");
+        //        if (Input.GetKeyDown(KeyCode.R))
+        //        {
+        //            Debug.Log("Get Small Room key");
+        //            Destroy(GameObject.Find("SmallRoomKey"));
+        //            key_S_get = true;
+        //        }
+        //    }
+
+        //    else if (hit.collider.tag == "cockroach")
+        //    {
+
+        //        Debug.Log("I should kill the cockroach first");
+        //        Debug.Log("Failed to get key");
+        //    }
+
+
+        //    //Debug.Log("halo");
+        //}
+
     }
 
 

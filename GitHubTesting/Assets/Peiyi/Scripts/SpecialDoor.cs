@@ -132,6 +132,5 @@ public class SpecialDoor : MonoBehaviour
         }
 
 
-        //Debug.Log(gotMKey);
     }
 }

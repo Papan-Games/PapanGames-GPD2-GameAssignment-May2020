@@ -6,6 +6,7 @@ TagManager:
   tags:
   - smallRoomKey
   - masterRoomKey
+  - cockroach
   layers:
   - Default
   - TransparentFX
