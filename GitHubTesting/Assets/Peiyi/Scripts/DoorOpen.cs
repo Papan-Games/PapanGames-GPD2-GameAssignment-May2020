@@ -12,39 +12,6 @@ public class DoorOpen : MonoBehaviour
     public string CloseText = "Press 'E' to close it";
     private bool _isOpen = false;
 
-
-    //private Animator anim;
-    //private bool doorOpen;
-
-    //private void Start()
-    //{
-    //    doorOpen = false;
-    //    anim = GetComponent<Animator>();
-    //}
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Player"))
-    //    {
-    //        doorOpen = true;
-    //        Doors("open");
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if(doorOpen)
-    //    {
-    //        doorOpen = false;
-    //        Doors("close");
-    //    }
-    //}
-
-    //void Doors (string direction)
-    //{
-    //    anim.SetTrigger(direction); 
-    //}
-
     /// <summary>
     /// If inside door trigger volume
     /// show tool tip panel
