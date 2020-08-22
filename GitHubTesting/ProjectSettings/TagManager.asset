@@ -8,6 +8,9 @@ TagManager:
   - masterRoomKey
   - cockroach
   - pushableChair
+  - Interactable
+  - Doors
+  - cockroachKiller
   layers:
   - Default
   - TransparentFX

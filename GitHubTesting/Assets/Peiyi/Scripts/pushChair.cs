@@ -52,6 +52,8 @@ public class pushChair : MonoBehaviour
     /// <summary>
     /// if inside trigger volume
     /// press key 'Left Mouse Button'/'Right Mouse Button' to push or push back the chairs
+    /// 
+    /// Players can only push 1 chair
     /// </summary>
     private void Update()
     {
