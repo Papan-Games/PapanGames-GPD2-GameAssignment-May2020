@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - smallRoomKey
+  - masterRoomKey
+  - cockroach
+  - pushableChair
   layers:
   - Default
   - TransparentFX
