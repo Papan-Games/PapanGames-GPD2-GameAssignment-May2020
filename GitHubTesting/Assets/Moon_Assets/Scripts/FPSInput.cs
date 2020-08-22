@@ -8,45 +8,85 @@ using UnityEngine;
 public class FPSInput : MonoBehaviour
 {
     public float speed = 6.0f;
-    public float gravity = -9.8f;
-    private bool playerGrounded;
-    private float jumpHeight = 1.0f;
-    private Vector3 playerVelocity;
+    public float jumpSpeed = 5.0f;
+    public float gravity = 9.8f;
+    private bool canMove;
 
     private CharacterController charController;
+    Vector3 moveDirection = Vector3.zero;
 
-    // Start is called before the first frame update
-    void Start()
+    private bool nearTreeman;
+
+    private void Awake()
     {
-        Cursor.visible = false;
-        charController = GetComponent<CharacterController>();
+        Messenger.AddListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
+        Messenger.AddListener(GameEvent.TREEMAN_NOT_IN_RANGE, TreemanNotInRange);
+        Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
     }
 
-    // Update is called once per frame
+    private void OnDestroy()
+    {
+        Messenger.RemoveListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
+        Messenger.RemoveListener(GameEvent.TREEMAN_NOT_IN_RANGE, TreemanNotInRange);
+        Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
+    }
+
+    void Start()
+    {
+        charController = GetComponent<CharacterController>();
+        canMove = true;
+        nearTreeman = false;
+    }
+
     void Update()
     {
-        playerGrounded = charController.isGrounded;
-        if (playerGrounded && playerVelocity.y < 0)
+        // Movements
+        if (canMove)
         {
-            playerVelocity.y = 0f;
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
+
+            float deltaX = Input.GetAxis("Vertical") * speed;
+            float deltaY = Input.GetAxis("Horizontal") * speed;
+            float movementY = moveDirection.y;
+            moveDirection = (forward * deltaX) + (right * deltaY);
+
+            if (charController.isGrounded && Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpSpeed;
+            }
+            else
+            {
+                moveDirection.y = movementY;
+            }
+            if (!charController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+
+            charController.Move(moveDirection * Time.deltaTime);
         }
 
-        float deltaX = Input.GetAxis("Horizontal") * speed;
-        float deltaZ = Input.GetAxis("Vertical") * speed;
-        Vector3 movement = new Vector3(deltaX, 0, deltaZ);
-        movement = Vector3.ClampMagnitude(movement, speed);
-
-        movement *= Time.deltaTime;
-        movement = transform.TransformDirection(movement);
-        charController.Move(movement);
-
-        if (Input.GetButtonDown("Jump") && playerGrounded)
+        // Interactions
+        if (nearTreeman && Input.GetKeyDown(KeyCode.E))
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+            canMove = false;
+            Messenger.Broadcast(GameEvent.DIALOGUE_START);
         }
+    }
 
-        //movement.y = gravity;
-        playerVelocity.y += gravity * Time.deltaTime;
-        charController.Move(playerVelocity * Time.deltaTime);
+    private void TreemanInRange()
+    {
+        nearTreeman = true;
+    }
+
+    private void TreemanNotInRange()
+    {
+        nearTreeman = false;
+    }
+
+    private void DialogueEnded()
+    {
+        canMove = true;
     }
 }

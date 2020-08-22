@@ -25,6 +25,18 @@ public class MouseLook : MonoBehaviour
 
     public RotationAxes axes = RotationAxes.MouseXandY;     // Defaulted to Both Axes
 
+    private void Awake()
+    {
+        Messenger.AddListener(GameEvent.DIALOGUE_START, DialogueStarted);
+        Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
+    }
+
+    private void OnDestroy()
+    {
+        Messenger.RemoveListener(GameEvent.DIALOGUE_START, DialogueStarted);
+        Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +101,16 @@ public class MouseLook : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, Yaxis, 0);
             charCam.transform.localEulerAngles = new Vector3(Xaxis, 0, 0);
         }
+    }
+
+    private void DialogueStarted()
+    {
+        canAim = false;
+    }
+
+    private void DialogueEnded()
+    {
+        canAim = true;
     }
 }
 
