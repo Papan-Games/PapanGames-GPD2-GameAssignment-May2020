@@ -6,11 +6,17 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance {get; private set;}
 
-    public bool gun;
-    public bool keycard;
+    // Items in ItemList need to be in sequence as the arrangement they are used in is also the ItemID
+    public bool gun; // ID 0
+    public bool keycard; // ID 1
     public bool item3;
     public bool item4;
     public int soulsAmt;
+
+    // array size subject to change
+
+    [SerializeField] public List<GameObject> itemList = new List<GameObject>();
+    [SerializeField] public List<GameObject> PlayerInventoryList = new List<GameObject>();
 
     public GameObject PlayersGun;
 
@@ -103,4 +109,7 @@ public class InventoryManager : MonoBehaviour
     {
         return soulsAmt;
     }
+
+
+
 }
