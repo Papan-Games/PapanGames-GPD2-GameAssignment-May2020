@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SciFiGun_Diffuse
+  m_Name: SciFiGun Outline
   m_Shader: {fileID: 4800000, guid: ae59aeafa51c1ec4cad57e185b2a7b49, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
