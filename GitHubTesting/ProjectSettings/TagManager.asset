@@ -12,6 +12,7 @@ TagManager:
   - Doors
   - cockroachKiller
   - newspaper
+  - bed
   layers:
   - Default
   - TransparentFX
