@@ -24,17 +24,18 @@ public class smallRoomDoor : MonoBehaviour
 
     Pickup reference;
 
+    /// <summary>
+    /// Assigned Key_SmallR object through find the object name in hierachy
+    /// 
+    /// </summary>
     private void Start()
     {
         Key_SmallR = GameObject.Find("SmallRoomKey");
         //Key_MasterR = GameObject.Find("MasterRoomKey");
 
-        reference = GetComponent<Pickup>();
+        //reference = GetComponent<Pickup>();
 
-        if (this.gameObject == GameObject.Find("F2_SmallRoomDoor"))
-        {
-            smallRoom = true;
-        }
+        
 
         //else if(this.gameObject == GameObject.Find("F2_MasterRoom"))
         //{
@@ -90,15 +91,17 @@ public class smallRoomDoor : MonoBehaviour
     }
 
     /// <summary>
-    /// When inside trigger volume,
-    /// if the door is locked,
-    /// players have to get the key to unlock it
-    /// 
-    /// if the door is unlocked,
-    /// press key 'E' to open or close door
+    /// Check whether players got the small room key or not
+    /// If yes, gotSKey = true
     /// </summary>
     private void Update()
     {
+        if (Key_SmallR == null && gotSKey != true)
+        {
+            gotSKey = true;
+        }
+
+
         //if (Key_SmallR == null && gotSKey != true)
         //{
         //    gotSKey = true;
@@ -133,13 +136,12 @@ public class smallRoomDoor : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This is a function to play the Small Room door animation
+    /// It will be called if player is facing the door the press E
+    /// </summary>
     public void Operate()
     {
-        if (Key_SmallR == null && gotSKey != true)
-        {
-            gotSKey = true;
-        }
-
         
             if (_isLocked == false)
             {
@@ -150,7 +152,7 @@ public class smallRoomDoor : MonoBehaviour
 
             else if (_isLocked == true)
             {
-                if (smallRoom == true && gotSKey == true)
+                if (gotSKey == true)
                 {
                     _isOpen = !_isOpen;
                     _anim.SetBool("open", _isOpen);

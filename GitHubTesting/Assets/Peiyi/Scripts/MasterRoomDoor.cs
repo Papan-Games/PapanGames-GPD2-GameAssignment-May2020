@@ -29,12 +29,12 @@ public class MasterRoomDoor : MonoBehaviour
         Key_MasterR = GameObject.Find("MasterRoomKey");
         //Key_MasterR = GameObject.Find("MasterRoomKey");
 
-        reference = GetComponent<Pickup>();
+        //reference = GetComponent<Pickup>();
 
-        if (this.gameObject == GameObject.Find("F2_MasterRoom"))
-        {
-            masterRoom = true;
-        }
+        //if (this.gameObject == GameObject.Find("F2_MasterRoom"))
+        //{
+        //    masterRoom = true;
+        //}
 
         //else if(this.gameObject == GameObject.Find("F2_MasterRoom"))
         //{
@@ -137,15 +137,12 @@ public class MasterRoomDoor : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This is a function to play the MasterRoom door animation
+    /// It will be called if player is facing the door the press E
+    /// </summary>
     public void Operate()
     {
-
-
-        //if (_isInsideTrigger == true)
-        //{
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-
         if (_isLocked == false)
         {
             _isOpen = !_isOpen;
@@ -155,21 +152,14 @@ public class MasterRoomDoor : MonoBehaviour
 
         else if (_isLocked == true)
         {
-            if (masterRoom == true && gotMKey == true)
+            if (gotMKey == true)
             {
                 _isOpen = !_isOpen;
                 _anim.SetBool("open", _isOpen);
                 Debug.Log("Open with key");
                 _isLocked = false;
             }
-            
-
-
-
         }
 
-        Debug.Log("Hei");
-        //}
-        //}
     }    
 }
