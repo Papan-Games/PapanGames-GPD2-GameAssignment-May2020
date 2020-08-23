@@ -49,16 +49,9 @@ public class lineOfSight : MonoBehaviour
                     Debug.Log("cockroach moving");
                 }
 
-                //else if (hit.collider.tag == "masterRoomKey")
-                //{
-                //    Destroy(GameObject.FindGameObjectWithTag("masterRoomKey"));
-                //    Debug.Log("hi");
-                //}
+                
 
-                //else if (hit.collider.tag == "smallRoomKey")
-                //{
-                //    Destroy(GameObject.FindGameObjectWithTag("smallRoomKey"));
-                //}
+                
             }
         }
         Debug.DrawLine(transform.position, transform.forward * range);

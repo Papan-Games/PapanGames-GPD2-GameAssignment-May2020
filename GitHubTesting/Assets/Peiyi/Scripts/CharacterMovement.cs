@@ -36,8 +36,7 @@ public class CharacterMovement : MonoBehaviour
 
     //}
 
-    //public GameObject camera;
-    //private float cameraOriPos;
+
     public float speed = 6.0f;
     public float jumpSpeed = 5.0f;
     public float gravity = 9.8f;
@@ -46,15 +45,25 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController charController;
     Vector3 moveDirection = Vector3.zero;
 
+    public GameObject newspaperPanel;
+
     void Start()
     {
         charController = GetComponent<CharacterController>();
         canMove = true;
-        //cameraOriPos = 0.46f;
+
+        //newspaperPanel.SetActive(false);
     }
 
     void Update()
     {
+        //Check if reading newspaper
+        if(newspaperPanel.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+        
+
         // Movements
         if (canMove)
         {
@@ -83,6 +92,10 @@ public class CharacterMovement : MonoBehaviour
             charController.Move(moveDirection * Time.deltaTime);
         }
 
+        //else
+        //{
+
+        //}
         
     }
 }

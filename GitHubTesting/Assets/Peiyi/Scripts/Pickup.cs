@@ -57,6 +57,22 @@ public class Pickup : MonoBehaviour
                 }
             }
 
+            if (hit.collider.tag == "newspaper")
+            {
+                Debug.Log("Press E to collect");
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    if (GameObject.FindGameObjectWithTag("newspaper").activeSelf == true)
+                    {
+                        hit.collider.SendMessage("readNewspaper",
+                        SendMessageOptions.DontRequireReceiver);
+                        Debug.Log("is reading news");
+                    }
+
+                    
+                }
+            }
+
             //if (hit.collider.tag == "cockroachKiller")
             //{
             //    Debug.Log("Press E to collect");
