@@ -20829,6 +20829,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 473406255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1167311683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167311686}
+  - component: {fileID: 1167311685}
+  - component: {fileID: 1167311684}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1167311684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167311683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0205208e002ee42439905ee8216a0da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1167311685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167311683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.375666, y: 2.375666, z: 2.375666}
+  m_Center: {x: 0, y: -0.0036844015, z: 0}
+--- !u!4 &1167311686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167311683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.145, y: 0.13, z: 30.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168726049
 GameObject:
   m_ObjectHideFlags: 0
@@ -30140,6 +30197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097971644}
   - component: {fileID: 2097971646}
+  - component: {fileID: 2097971647}
   - component: {fileID: 2097971645}
   m_Layer: 0
   m_Name: Hatch2
@@ -30192,7 +30250,23 @@ MonoBehaviour:
   targetAngle: 0
   isOpened: 0
   openSpeed: 0.5
-  scriptRef: {fileID: 0}
+  scriptRef: {fileID: 2097971647}
+--- !u!114 &2097971647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097971643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c8fa5a3674b9c4985f8ef220c2694b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcePanel: {fileID: 2013938562}
+  requireFlashlight: 0
+  requireGun: 0
+  requireKeycard: 1
 --- !u!1 &2101645816
 GameObject:
   m_ObjectHideFlags: 0

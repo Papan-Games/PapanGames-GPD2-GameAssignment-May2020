@@ -45,6 +45,7 @@ public class ForcePlayerBehave : MonoBehaviour
             }
             yield return result;
         }
+
         else if (requireGun)
         {
             if(!InventoryManager.instance.gun)
@@ -60,6 +61,23 @@ public class ForcePlayerBehave : MonoBehaviour
             }
             yield return result;
         }
+
+        else if (requireKeycard)
+        {
+            if(!InventoryManager.instance.keycard)
+            {
+                result = false;
+                ForcePanel.SetActive(true);
+                yield return new WaitForSeconds(5);
+                ForcePanel.SetActive(false);
+            }
+            else
+            {
+                result = true;
+            }
+            yield return result;
+        }
+
         else
         {
             result = true;
