@@ -26,7 +26,7 @@ public class InfoOrQuitScript : MonoBehaviour
     {
         //Draw a box to tell players press esc to exit
         GUILayout.BeginArea(new Rect(50, 50, 250, 250));
-        GUILayout.Box("\nPress 'WSAD' keys/'Arrow' keys to move\nMove mouse to look around\nPress 'E' to interact");
+        GUILayout.Box("\nPress 'WSAD' keys/'Arrow' keys to move\nPress 'Spacebar' to jump\nMove mouse to look around\nPress 'E' to interact doors, drawers, switch and so on");
         GUILayout.EndArea();
     }
 }
