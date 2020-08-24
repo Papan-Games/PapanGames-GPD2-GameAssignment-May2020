@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueEndTreeman : MonoBehaviour
 {
@@ -77,6 +78,13 @@ public class DialogueEndTreeman : MonoBehaviour
             textDisplay.text = "";
             continueText.SetActive(false);
             Messenger.Broadcast(GameEvent.FINAL_DIALOGUE_END);
+            StartCoroutine(LoadNextLevel());
         }
+    }
+
+    IEnumerator LoadNextLevel()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("TemporaryEnd");
     }
 }
