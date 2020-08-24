@@ -11,6 +11,8 @@ public class Hatchopen : MonoBehaviour
     [SerializeField] private bool isOpened;
     [SerializeField] private float openSpeed = 1.0f;
 
+    public ForcePlayerBehave scriptRef;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +76,10 @@ public class Hatchopen : MonoBehaviour
             {
                 if(Input.GetKey(KeyCode.E))
                 {
-                    isOpening = true;
+                    if(scriptRef.runCoroutine())
+                    {
+                        isOpening = true;
+                    }
                 }
             }
         }

@@ -11,7 +11,7 @@ public class ItemCollection : MonoBehaviour
     // public bool item3;
     // public bool item4;
 
-    public enum Items {Gun, Keycard, Item3, Item4}
+    public enum Items {Flashlight, Gun, Keycard, Item3, Item4}
     public Items item;
     private void Start() 
     {
@@ -27,6 +27,13 @@ public class ItemCollection : MonoBehaviour
             {
                 switch(item)
                 {
+                    case Items.Flashlight:
+                    {
+                        InventoryManager.instance.GetFlashlight();
+                        this.gameObject.SetActive(false);
+                        Debug.Log("Store Flashlight");
+                        break;
+                    }
                     case Items.Gun:
                     {
                         InventoryManager.instance.GetGun();

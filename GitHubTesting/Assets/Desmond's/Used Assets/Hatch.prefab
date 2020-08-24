@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6885590288081766173}
   - component: {fileID: 6885590288081766172}
   - component: {fileID: 6885590288081766175}
+  - component: {fileID: 1188571486625973426}
   - component: {fileID: 1699156242}
   m_Layer: 0
   m_Name: Hatch
@@ -63,6 +64,23 @@ MonoBehaviour:
   targetAngle: 0
   isOpened: 0
   openSpeed: 0.5
+  scriptRef: {fileID: 1188571486625973426}
+--- !u!114 &1188571486625973426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6885590288081766146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c8fa5a3674b9c4985f8ef220c2694b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcePanel: {fileID: 0}
+  requireFlashlight: 0
+  requireGun: 0
+  requireKeycard: 0
 --- !u!65 &1699156242
 BoxCollider:
   m_ObjectHideFlags: 0

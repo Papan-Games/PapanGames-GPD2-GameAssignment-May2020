@@ -56,7 +56,7 @@ public class ItemBar : MonoBehaviour
         {
             if(InventoryManager.instance.PlayerInventoryList.Count > 1)
             {
-                UpdateIndexes(+1);
+                UpdateIndexes(-1);
                 Selected.GetComponentInChildren<Image>().sprite = InventoryManager.instance.imageList[currentIndex].sprite;
                 Next.GetComponentInChildren<Image>().sprite = InventoryManager.instance.imageList[nextIndex].sprite;
                 Previous.GetComponentInChildren<Image>().sprite = InventoryManager.instance.imageList[previousIndex].sprite;

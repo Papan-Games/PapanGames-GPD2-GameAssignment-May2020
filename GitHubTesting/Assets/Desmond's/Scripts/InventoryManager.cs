@@ -8,8 +8,9 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance {get; private set;}
 
     // Items in ItemList need to be in sequence as the arrangement they are used in is also the ItemID
-    public bool gun; // ID 0
-    public bool keycard; // ID 1
+    public bool flashlight; // ID 0
+    public bool gun; // ID 1
+    public bool keycard; // ID 2
     public bool item3;
     public bool item4;
     public int soulsAmt;
@@ -23,6 +24,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public List<Image> imageList = new List<Image>();
     [SerializeField] public List<GameObject> PlayerInventoryList = new List<GameObject>();
 
+    public GameObject PlayersFlashlight;
     public GameObject PlayersGun;
 
     // Itembar UI elements
@@ -47,6 +49,17 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.HasKey("Flashlight"))
+        {
+            flashlight = true;
+            PlayersFlashlight.SetActive(true);
+        }
+        else 
+        {
+            flashlight = false;
+            PlayersFlashlight.SetActive(false);
+        }
+
         if(PlayerPrefs.HasKey("Gun"))
         {
             gun = true;
@@ -89,6 +102,18 @@ public class InventoryManager : MonoBehaviour
 
     }
 
+    public void GetFlashlight()
+    {
+        if (!flashlight)
+        {
+            flashlight = true;
+            PlayerPrefs.SetString("Flashlight", "True");
+            PlayersFlashlight.SetActive(true);
+            PlayerInventoryList.Add(itemList[0]);   // Add Flashlight Gameobject to Inventory List following index
+            barScriptRef.AddItemToBar(imageList[0]);
+        }
+    }
+
     public void GetGun()
     {
         if (!gun)
@@ -96,8 +121,8 @@ public class InventoryManager : MonoBehaviour
             gun = true;
             PlayerPrefs.SetString("Gun", "True");
             PlayersGun.SetActive(true);
-            PlayerInventoryList.Add(itemList[0]);   // Add Gun Gameobject to Inventory List
-            barScriptRef.AddItemToBar(imageList[0]);
+            PlayerInventoryList.Add(itemList[1]);   // Add Gun Gameobject to Inventory List
+            barScriptRef.AddItemToBar(imageList[1]);
         }
     }
 
@@ -107,8 +132,8 @@ public class InventoryManager : MonoBehaviour
         {
             keycard = true;
             PlayerPrefs.SetString("Keycard", "True");
-            PlayerInventoryList.Add(itemList[1]);   // Add Gun Gameobject to Inventory List
-            barScriptRef.AddItemToBar(imageList[1]);
+            PlayerInventoryList.Add(itemList[2]);   // Add Gun Gameobject to Inventory List
+            barScriptRef.AddItemToBar(imageList[2]);
         }
     }
 
