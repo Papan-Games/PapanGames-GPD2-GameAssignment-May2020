@@ -35,4 +35,6 @@ public class StartingDialogue : MonoBehaviour
 
         
     }
+
+    
 }
