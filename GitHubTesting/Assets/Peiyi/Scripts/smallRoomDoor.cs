@@ -14,9 +14,8 @@ public class smallRoomDoor : MonoBehaviour
     private bool _isLocked = true;
 
     [SerializeField] GameObject Key_SmallR;
-    [SerializeField] private bool smallRoom = false;
 
-    [SerializeField] bool gotSKey = false; //Got Small Room Key
+    [SerializeField] bool gotSKey; //Got Small Room Key
 
     Pickup reference;
 
@@ -27,6 +26,7 @@ public class smallRoomDoor : MonoBehaviour
     private void Start()
     {
         Key_SmallR = GameObject.Find("SmallRoomKey");
+        gotSKey = false;
     }
 
     //private bool IsOpenDoorActive

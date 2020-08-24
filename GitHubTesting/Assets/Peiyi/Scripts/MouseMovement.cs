@@ -47,6 +47,11 @@ public class MouseMovement : MonoBehaviour
             canMove = false;
         }
 
+        else if (newspaperPanel.activeSelf == false)
+        {
+            canMove = true;
+        }
+
         //Look around
         if (canMove)
         {

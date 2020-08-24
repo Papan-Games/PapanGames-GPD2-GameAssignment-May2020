@@ -27,12 +27,13 @@ public class Pickup : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 3f))
+        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 5f))
         {
 
-            if (hit.collider.tag == "smallRoomKey" && hit.collider.tag != "cockroach")
+            if (hit.collider.tag == "smallRoomKey")
             {
                 //Show tooltip
+                
                 Debug.Log("Press E to collect");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -43,19 +44,6 @@ public class Pickup : MonoBehaviour
                     //show in inventory
                 }
             }
-
-            //if (hit.collider.tag == "masterRoomKey")
-            //{
-            //    Debug.Log("Press E to collect");
-            //    if (Input.GetKeyDown(KeyCode.E))
-            //    {
-            //        Debug.Log("Get Master Room key");
-            //        Destroy(GameObject.Find("MasterRoomKey"));
-            //        key_M_get = true;
-
-            //        //show in inventory
-            //    }
-            //}
 
             if (hit.collider.tag == "newspaper")
             {
@@ -72,20 +60,6 @@ public class Pickup : MonoBehaviour
             }
         }
 
-        //if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 8f))
-        //{
-        //    if (hit.collider.tag == "cockroachKiller")
-        //    {
-        //        Debug.Log("Press E to collect");
-        //        if (Input.GetKeyDown(KeyCode.E))
-        //        {
-        //            Debug.Log("Get cockroach killer");
-        //            Destroy(GameObject.Find("CockroachKiller"));
-        //        }
-        //    }
-        //}
-        
-        Debug.DrawLine(_camera.transform.position, _camera.transform.forward * 3f);
     }
 
 

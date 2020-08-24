@@ -29,6 +29,11 @@ public class CharacterMovement : MonoBehaviour
         {
             canMove = false;
         }
+
+        else if(newspaperPanel.gameObject.activeSelf == false)
+        {
+            canMove = true;
+        }
         
         // Movements
         if (canMove)

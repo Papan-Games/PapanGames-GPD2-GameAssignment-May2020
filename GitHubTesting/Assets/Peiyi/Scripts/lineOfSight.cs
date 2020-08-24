@@ -55,12 +55,11 @@ public class lineOfSight : MonoBehaviour
             else if (hit.collider.tag == "cockroach")
             {
                 //Show tool tip here
-
+                Debug.Log("cockroach");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
-                    Debug.Log("cockroach moving");
                 }
             }
 

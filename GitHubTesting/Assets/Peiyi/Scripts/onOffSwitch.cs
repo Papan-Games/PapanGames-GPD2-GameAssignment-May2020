@@ -12,10 +12,10 @@ public class onOffSwitch : MonoBehaviour
     {
         
         //_isOnLight = false;
-        for(int i = 0; i < lights.Length; i++)
-        {
-            lights[i].SetActive(false);
-        }
+        //for(int i = 0; i < lights.Length; i++)
+        //{
+        //    lights[i].SetActive(false);
+        //}
 
     }
 
