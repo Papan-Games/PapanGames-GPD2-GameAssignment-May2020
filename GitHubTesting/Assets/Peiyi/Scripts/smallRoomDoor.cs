@@ -60,7 +60,6 @@ public class smallRoomDoor : MonoBehaviour
         {
             _isOpen = !_isOpen;
             _anim.SetBool("open", _isOpen);
-            Debug.Log("Open");
         }
 
         else if (_isLocked == true)
@@ -69,7 +68,6 @@ public class smallRoomDoor : MonoBehaviour
             {
                 _isOpen = !_isOpen;
                 _anim.SetBool("open", _isOpen);
-                Debug.Log("Open with key");
                 _isLocked = false;
                 Destroy(keyPreview);
                 tooltip.gameObject.SetActive(true);

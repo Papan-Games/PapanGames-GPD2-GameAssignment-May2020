@@ -26,6 +26,8 @@ public class MouseMovement : MonoBehaviour
 
     public GameObject bedQuestion;
 
+    public GameObject staringDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,16 @@ public class MouseMovement : MonoBehaviour
         }
 
         else if (bedQuestion.gameObject.activeSelf == false)
+        {
+            canMove = true;
+        }
+
+        if (staringDialogue.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
+        else if (staringDialogue.gameObject.activeSelf == false)
         {
             canMove = true;
         }

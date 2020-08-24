@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEditor;
 
 public class DrawerOpen : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class DrawerOpen : MonoBehaviour
     private bool _isOpen = false;
     bool firstTime = false;
     GameObject drawer_3;
+    public TextMeshProUGUI tooltip;
 
     void Start()
     {
@@ -27,11 +30,13 @@ public class DrawerOpen : MonoBehaviour
         {
             if (firstTime)
             {
-                Debug.Log("Key Found!");
+                tooltip.gameObject.SetActive(true);
+                tooltip.text = "Key Found! But there is a cockroach on it.\nI should use somrthing to kill it.";
                 firstTime = false;
             }
 
         }
+        tooltip.gameObject.SetActive(true);
         _isOpen = !_isOpen;
         _anim.SetBool("DrawerOpen", _isOpen);
 

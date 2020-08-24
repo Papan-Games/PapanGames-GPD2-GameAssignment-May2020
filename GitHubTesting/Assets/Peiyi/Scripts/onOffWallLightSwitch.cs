@@ -37,7 +37,6 @@ public class onOffWallLightSwitch : MonoBehaviour
             temp.z = 180.0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = true;
-            Debug.Log("Onwor");
             //On light here
             wallLight.gameObject.SetActive(true);
 
@@ -50,7 +49,6 @@ public class onOffWallLightSwitch : MonoBehaviour
             temp.z = 0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = false;
-            Debug.Log("Offwor");
             //Off Light here
 
             wallLight.gameObject.SetActive(false);

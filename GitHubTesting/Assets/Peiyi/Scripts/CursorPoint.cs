@@ -18,22 +18,7 @@ public class CursorPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position, transform.forward);
-
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 5f))
-        {
-            if (hit.collider.tag == "tooltipTrigger")
-            {
-                myStyle.normal.textColor = Color.Lerp(Color.green, Color.green, Mathf.PingPong(Time.time, 1));
-            }
-
-            else
-            {
-                myStyle.normal.textColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time, 1));
-            }
-            
-        }
+        
     }
 
     private void OnGUI()

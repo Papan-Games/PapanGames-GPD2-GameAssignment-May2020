@@ -11,7 +11,6 @@ public class showTooltip : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
-        //tooltip = GameObject.Find("Tooltip");
     }
 
     // Update is called once per frame
