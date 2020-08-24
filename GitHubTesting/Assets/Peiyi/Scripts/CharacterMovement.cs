@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
 
     public GameObject bedQuestion;
 
+    public GameObject staringDialogue;
+
     void Start()
     {
         charController = GetComponent<CharacterController>();
@@ -32,21 +34,21 @@ public class CharacterMovement : MonoBehaviour
             canMove = false;
         }
 
-        else if(newspaperPanel.gameObject.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (bedQuestion.gameObject.activeSelf == true)
+        else if (bedQuestion.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (bedQuestion.gameObject.activeSelf == false)
+        else if (staringDialogue.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
+        else
         {
             canMove = true;
         }
-        
+
         // Movements
         if (canMove)
         {

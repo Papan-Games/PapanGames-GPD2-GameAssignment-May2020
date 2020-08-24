@@ -10,12 +10,7 @@ public class onOffSwitch : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        
-        //_isOnLight = false;
-        //for(int i = 0; i < lights.Length; i++)
-        //{
-        //    lights[i].SetActive(false);
-        //}
+       
 
     }
 
@@ -44,8 +39,6 @@ public class onOffSwitch : MonoBehaviour
             temp.z = 180.0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = true;
-            Debug.Log("Onwor");
-            //On light here
 
             for(int i = 0; i < lights.Length; i++)
             {
@@ -59,8 +52,6 @@ public class onOffSwitch : MonoBehaviour
             temp.z = 0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = false;
-            Debug.Log("Offwor");
-            //Off Light here
             for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].gameObject.SetActive(false);

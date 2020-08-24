@@ -32,12 +32,9 @@ public class Pickup : MonoBehaviour
 
             if (hit.collider.tag == "smallRoomKey")
             {
-                //Show tooltip
                 
-                Debug.Log("Press E to collect");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("Get Small Room key");
                     Destroy(GameObject.Find("SmallRoomKey"));
                     key_S_get = true;
 
@@ -46,14 +43,12 @@ public class Pickup : MonoBehaviour
 
             if (hit.collider.tag == "newspaper")
             {
-                Debug.Log("Press E to collect");
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     if (GameObject.FindGameObjectWithTag("newspaper").activeSelf == true)
                     {
                         hit.collider.SendMessage("readNewspaper",
                         SendMessageOptions.DontRequireReceiver);
-                        Debug.Log("is reading news");
                     }
                 }
             }

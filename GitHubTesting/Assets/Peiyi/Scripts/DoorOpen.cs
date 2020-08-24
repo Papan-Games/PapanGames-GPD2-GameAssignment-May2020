@@ -21,6 +21,5 @@ public class DoorOpen : MonoBehaviour
         _isOpen = !_isOpen;
         _anim.SetBool("open", _isOpen);
 
-        Debug.Log("door open");
     }
 }

@@ -29,10 +29,8 @@ public class lineOfSight : MonoBehaviour
                 if (hit.collider.tag == "Interactable")
                 {
 
-                    //Debug.Log("Hit!");
                     hit.collider.SendMessage("interact",
                     SendMessageOptions.DontRequireReceiver);
-                    Debug.Log("interact");
 
                     hit.collider.SendMessage("showInteractWord",
                     SendMessageOptions.DontRequireReceiver);
@@ -42,10 +40,8 @@ public class lineOfSight : MonoBehaviour
                 else if (hit.collider.tag == "Doors")
                 {
 
-                    //Debug.Log("Hit!");
                     hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
-                    Debug.Log("operate");
 
                 }
 
@@ -62,16 +58,12 @@ public class lineOfSight : MonoBehaviour
 
                     hit.collider.SendMessage("interactBed",
                     SendMessageOptions.DontRequireReceiver);
-                    //Debug things
                 }
 
                 else if (hit.collider.tag == "powerSwitch")
                 {
-
-
                     hit.collider.SendMessage("onOffLight",
                     SendMessageOptions.DontRequireReceiver);
-                    Debug.Log("on");
 
                 }
 
@@ -80,7 +72,6 @@ public class lineOfSight : MonoBehaviour
                    
                     hit.collider.SendMessage("onOffFan",
                     SendMessageOptions.DontRequireReceiver);
-                    Debug.Log("fan");
 
                 }
 
@@ -88,6 +79,5 @@ public class lineOfSight : MonoBehaviour
             }
 
         }
-        Debug.DrawLine(transform.position, transform.forward * range);
     }
 }

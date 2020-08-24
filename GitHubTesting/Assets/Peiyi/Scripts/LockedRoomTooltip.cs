@@ -18,11 +18,8 @@ public class LockedRoomTooltip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        //key = GameObject.Find("SmallRoomKey");
         _gotKey = false;
 
-        //keyPreview = GameObject.Find("KeyPreview");
         _usedKeyOpen = false;
 
         tooltip.gameObject.SetActive(false);

@@ -22,9 +22,12 @@ public class MouseMovement : MonoBehaviour
     private float rotationX = 0;
 
     bool canMove;
+
     public GameObject newspaperPanel;
 
     public GameObject bedQuestion;
+
+    public GameObject staringDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -49,17 +52,19 @@ public class MouseMovement : MonoBehaviour
             canMove = false;
         }
 
-        else if (newspaperPanel.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (bedQuestion.gameObject.activeSelf == true)
+        //Checking if bedQuestion pop up
+        else if (bedQuestion.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (bedQuestion.gameObject.activeSelf == false)
+        //Checking if startingPanel pop up
+        else if (staringDialogue.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
+        else
         {
             canMove = true;
         }
