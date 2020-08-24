@@ -12,12 +12,16 @@ public class RayShooter : MonoBehaviour
     {
         Messenger.AddListener(GameEvent.DIALOGUE_START, DialogueStarted);
         Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.AddListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
+        Messenger.AddListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
     }
 
     private void OnDestroy()
     {
         Messenger.RemoveListener(GameEvent.DIALOGUE_START, DialogueStarted);
         Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
+        Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
     }
 
     void Start()
@@ -38,7 +42,16 @@ public class RayShooter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                StartCoroutine(GunBullet(hit.point));
+                GameObject hitObject = hit.transform.gameObject;
+                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                if (target != null)
+                {
+                    target.ReactToHit();
+                }
+                else
+                {
+                    StartCoroutine(GunBullet(hit.point));
+                }
             }
         }
     }

@@ -16,12 +16,15 @@ public class FPSInput : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
 
     private bool nearTreeman;
+    private bool finalDialogue;
 
     private void Awake()
     {
         Messenger.AddListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
         Messenger.AddListener(GameEvent.TREEMAN_NOT_IN_RANGE, TreemanNotInRange);
         Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.AddListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
+        Messenger.AddListener(GameEvent.SOUL_COLLECTED_ALL, TriggerFinalDialogue);
     }
 
     private void OnDestroy()
@@ -29,6 +32,8 @@ public class FPSInput : MonoBehaviour
         Messenger.RemoveListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
         Messenger.RemoveListener(GameEvent.TREEMAN_NOT_IN_RANGE, TreemanNotInRange);
         Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
+        Messenger.RemoveListener(GameEvent.SOUL_COLLECTED_ALL, TriggerFinalDialogue);
     }
 
     void Start()
@@ -36,6 +41,7 @@ public class FPSInput : MonoBehaviour
         charController = GetComponent<CharacterController>();
         canMove = true;
         nearTreeman = false;
+        finalDialogue = false;
     }
 
     void Update()
@@ -71,7 +77,14 @@ public class FPSInput : MonoBehaviour
         if (nearTreeman && Input.GetKeyDown(KeyCode.E))
         {
             canMove = false;
-            Messenger.Broadcast(GameEvent.DIALOGUE_START);
+            if (!finalDialogue)
+            {
+                Messenger.Broadcast(GameEvent.DIALOGUE_START);
+            }
+            else
+            {
+                Messenger.Broadcast(GameEvent.FINAL_DIALOGUE_START);
+            }
         }
     }
 
@@ -88,5 +101,10 @@ public class FPSInput : MonoBehaviour
     private void DialogueEnded()
     {
         canMove = true;
+    }
+
+    private void TriggerFinalDialogue()
+    {
+        finalDialogue = true;
     }
 }

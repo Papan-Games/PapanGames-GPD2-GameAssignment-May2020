@@ -29,12 +29,16 @@ public class MouseLook : MonoBehaviour
     {
         Messenger.AddListener(GameEvent.DIALOGUE_START, DialogueStarted);
         Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.AddListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
+        Messenger.AddListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
     }
 
     private void OnDestroy()
     {
         Messenger.RemoveListener(GameEvent.DIALOGUE_START, DialogueStarted);
         Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
+        Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
+        Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
     }
 
     // Start is called before the first frame update
