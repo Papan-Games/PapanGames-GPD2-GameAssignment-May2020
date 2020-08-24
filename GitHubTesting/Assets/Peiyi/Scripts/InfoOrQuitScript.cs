@@ -14,19 +14,19 @@ public class InfoOrQuitScript : MonoBehaviour
     void Update()
     {
         //Press Esc button, exit game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
 
-            Application.Quit();
+        //    Application.Quit();
 
-        }
+        //}
     }
 
     private void OnGUI()
     {
         //Draw a box to tell players press esc to exit
-        GUILayout.BeginArea(new Rect(25, 25, 250, 250));
-        GUILayout.Box("Press 'Esc' key to exit\nPress 'WSAD' keys/'Arrow' keys to move\nMove mouse to look around");
+        GUILayout.BeginArea(new Rect(25, 25, 400, 400));
+        GUILayout.Box("\nPress 'WSAD' keys/'Arrow' keys to move\nPress 'Spacebar' to jump\nMove mouse to look around\nPress 'E' to interact doors, drawers, switch and so on");
         GUILayout.EndArea();
     }
 }

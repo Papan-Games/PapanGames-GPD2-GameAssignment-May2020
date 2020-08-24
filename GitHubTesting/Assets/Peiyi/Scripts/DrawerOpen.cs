@@ -1,84 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEditor;
 
 public class DrawerOpen : MonoBehaviour
 {
-    public GameObject panel = null;
-    private bool _isInsideTrigger = false;
     public Animator _anim;
-    public string OpenText = "Press '1' to open/close Drawer 1\n'2' to open/close Drawer 2\n'3' to open/close Drawer 3";
-    public string CloseText = "Press '1' to open/close Drawer 1\n'2' to open/close Drawer 2\n'3' to open/close Drawer 3";
-    private bool _isOpen_1st = false;
-    private bool _isOpen_2nd = false;
-    private bool _isOpen_3rd = false;
+    //public string OpenText = "Press '1' to open/close Drawer 1\n'2' to open/close Drawer 2\n'3' to open/close Drawer 3";
+    //public string CloseText = "Press '1' to open/close Drawer 1\n'2' to open/close Drawer 2\n'3' to open/close Drawer 3";
+    private bool _isOpen = false;
+    bool firstTime = false;
+    GameObject drawer_3;
+    public TextMeshProUGUI tooltip;
 
-    /// <summary>
-    /// If inside drawer trigger volume
-    /// show tool tip panel
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.tag == "Player")
-        {
-            _isInsideTrigger = true;
-            panel.SetActive(true);
-        }
+        _isOpen = false;
+        firstTime = true;
+        drawer_3 = GameObject.Find("ThirdDrawer");
     }
 
     /// <summary>
-    /// If outside drawer trigger volume
-    /// hide tool tip panel
+    /// This is a function to play the Drawer open/close Animations
     /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerExit(Collider other)
+    public void interact()
     {
-        if (other.tag == "Player")
+        if (this.gameObject.name == "ThirdDrawer")
         {
-            _isInsideTrigger = false;
-            panel.SetActive(false);
-        }
-    }
-
-    private bool IsOpenDoorActive
-    {
-        get
-        {
-            return panel.activeInHierarchy;
-        }
-    }
-
-    /// <summary>
-    /// if inside trigger volume
-    /// press key '1'/ '2' / '3' 
-    /// to open or close the drawer 1/2/3
-    /// 
-    /// The others drawer able to open only if the current drawer is closed
-    /// </summary>
-    private void Update()
-    {
-        if (_isInsideTrigger == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (firstTime)
             {
-                _isOpen_1st = !_isOpen_1st;
-                _anim.SetBool("firstDrawerOpen", _isOpen_1st);
+                tooltip.gameObject.SetActive(true);
+                tooltip.text = "Key Found! But there is a cockroach on it.\nI should use somrthing to kill it.";
+                firstTime = false;
             }
 
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                _isOpen_2nd = !_isOpen_2nd;
-                _anim.SetBool("secondDrawerOpen", _isOpen_2nd);
-            }
-
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                _isOpen_3rd = !_isOpen_3rd;
-                _anim.SetBool("thirdDrawerOpen", _isOpen_3rd);
-            }
-
-            
         }
+        tooltip.gameObject.SetActive(true);
+        _isOpen = !_isOpen;
+        _anim.SetBool("DrawerOpen", _isOpen);
+
     }
 }

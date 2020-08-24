@@ -7,7 +7,17 @@ TagManager:
   - smallRoomKey
   - masterRoomKey
   - cockroach
-  - Enemy
+  - pushableChair
+  - Interactable
+  - Doors
+  - cockroachKiller
+  - newspaper
+  - bed
+  - powerSwitch
+  - cailingFanSwitch
+  - closeToolTipUse
+  - tooltipTrigger
+  - smallRoomDoor
   layers:
   - Default
   - TransparentFX

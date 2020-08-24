@@ -21,6 +21,14 @@ public class MouseMovement : MonoBehaviour
 
     private float rotationX = 0;
 
+    bool canMove;
+
+    public GameObject newspaperPanel;
+
+    public GameObject bedQuestion;
+
+    public GameObject staringDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,28 +38,58 @@ public class MouseMovement : MonoBehaviour
             body.freezeRotation = true;
         }
 
+        canMove = true;
+
+        //newspaperPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (axes == RotationAxes.MouseX)
+        //Checking if player is reading newspaper
+        if(newspaperPanel.activeSelf == true)
         {
-            //horizontal rotation here
-            //this assign to character
-            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
+            canMove = false;
         }
 
-        else if (axes == RotationAxes.MouseY)
+        //Checking if bedQuestion pop up
+        else if (bedQuestion.gameObject.activeSelf == true)
         {
-            //vertical rotation here
-            //this assign to camera
-            rotationX -= Input.GetAxis("Mouse Y") * sensitivityVer;
-            rotationX = Mathf.Clamp(rotationX, minVer, maxVer);
+            canMove = false;
+        }
 
-            float rotationY = transform.localEulerAngles.y;
+        //Checking if startingPanel pop up
+        else if (staringDialogue.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
 
-            transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
+        else
+        {
+            canMove = true;
+        }
+
+        //Look around
+        if (canMove)
+        {
+            if (axes == RotationAxes.MouseX)
+            {
+                //horizontal rotation here
+                //this assign to character
+                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
+            }
+
+            else if (axes == RotationAxes.MouseY)
+            {
+                //vertical rotation here
+                //this assign to camera
+                rotationX -= Input.GetAxis("Mouse Y") * sensitivityVer;
+                rotationX = Mathf.Clamp(rotationX, minVer, maxVer);
+
+                float rotationY = transform.localEulerAngles.y;
+
+                transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
+            }
         }
     }
 
