@@ -34,27 +34,17 @@ public class CharacterMovement : MonoBehaviour
             canMove = false;
         }
 
-        else if(newspaperPanel.gameObject.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (bedQuestion.gameObject.activeSelf == true)
+        else if (bedQuestion.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (bedQuestion.gameObject.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (staringDialogue.gameObject.activeSelf == true)
+        else if (staringDialogue.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (staringDialogue.gameObject.activeSelf == false)
+        else
         {
             canMove = true;
         }

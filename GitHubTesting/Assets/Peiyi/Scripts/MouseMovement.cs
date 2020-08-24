@@ -22,6 +22,7 @@ public class MouseMovement : MonoBehaviour
     private float rotationX = 0;
 
     bool canMove;
+
     public GameObject newspaperPanel;
 
     public GameObject bedQuestion;
@@ -51,27 +52,19 @@ public class MouseMovement : MonoBehaviour
             canMove = false;
         }
 
-        else if (newspaperPanel.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (bedQuestion.gameObject.activeSelf == true)
+        //Checking if bedQuestion pop up
+        else if (bedQuestion.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (bedQuestion.gameObject.activeSelf == false)
-        {
-            canMove = true;
-        }
-
-        if (staringDialogue.gameObject.activeSelf == true)
+        //Checking if startingPanel pop up
+        else if (staringDialogue.gameObject.activeSelf == true)
         {
             canMove = false;
         }
 
-        else if (staringDialogue.gameObject.activeSelf == false)
+        else
         {
             canMove = true;
         }

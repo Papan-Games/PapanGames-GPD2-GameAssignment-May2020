@@ -62,7 +62,7 @@ public class cockroachScript : MonoBehaviour
             else if(_gotNewspaper == true)
             {
                 Destroy(this.gameObject);
-                Destroy(newspaperPreview);
+                newspaperPreview.SetActive(false);
                 _isAlive = false;
                 tooltip.text = "Cockroach is killed!\n You can get your key now.";
                 tooltip.gameObject.SetActive(true);

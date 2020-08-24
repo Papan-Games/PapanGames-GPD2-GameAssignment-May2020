@@ -30,9 +30,12 @@ public class Inventory : MonoBehaviour
             keyPreview.gameObject.SetActive(true);
         }
 
+
         if (Newspaper == null)
         {
             newspaperPreview.gameObject.SetActive(true);
         }
+
+        
     }
 }

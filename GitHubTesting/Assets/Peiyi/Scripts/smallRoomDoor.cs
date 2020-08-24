@@ -69,7 +69,7 @@ public class smallRoomDoor : MonoBehaviour
                 _isOpen = !_isOpen;
                 _anim.SetBool("open", _isOpen);
                 _isLocked = false;
-                Destroy(keyPreview);
+                keyPreview.SetActive(false);
                 tooltip.gameObject.SetActive(true);
                 tooltip.text = "Door is unlocked successfully!";
             }
