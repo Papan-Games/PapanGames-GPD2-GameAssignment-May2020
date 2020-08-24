@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a881d307ac3e1354eb24c6774592a538
+  - enabled: 1
+    path: Assets/Scenes/FirstLevel_Peiyi.unity
+    guid: b7eb203b90ab9ec42b8f5de139cccaf4
+  - enabled: 1
+    path: Assets/Scenes/SpaceStation.unity
+    guid: 51f4e61d8b2e231468952bec21d1dedd
+  - enabled: 1
+    path: Assets/Scenes/FantasyForest.unity
+    guid: 5d3ac0950c1edbb4890df7d2fbd3734b
   m_configObjects: {}
