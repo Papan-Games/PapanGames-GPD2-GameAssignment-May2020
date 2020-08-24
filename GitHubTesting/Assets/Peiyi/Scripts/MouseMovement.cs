@@ -24,6 +24,8 @@ public class MouseMovement : MonoBehaviour
     bool canMove;
     public GameObject newspaperPanel;
 
+    public GameObject bedQuestion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,16 @@ public class MouseMovement : MonoBehaviour
         }
 
         else if (newspaperPanel.activeSelf == false)
+        {
+            canMove = true;
+        }
+
+        if (bedQuestion.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
+        else if (bedQuestion.gameObject.activeSelf == false)
         {
             canMove = true;
         }

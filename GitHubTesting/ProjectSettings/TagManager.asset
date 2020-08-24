@@ -15,6 +15,9 @@ TagManager:
   - bed
   - powerSwitch
   - cailingFanSwitch
+  - closeToolTipUse
+  - tooltipTrigger
+  - smallRoomDoor
   layers:
   - Default
   - TransparentFX

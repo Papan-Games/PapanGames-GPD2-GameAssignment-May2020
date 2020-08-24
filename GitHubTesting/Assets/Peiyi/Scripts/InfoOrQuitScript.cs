@@ -14,12 +14,12 @@ public class InfoOrQuitScript : MonoBehaviour
     void Update()
     {
         //Press Esc button, exit game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
 
-            Application.Quit();
+        //    Application.Quit();
 
-        }
+        //}
     }
 
     private void OnGUI()

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEditor;
 
 public class smallRoomDoor : MonoBehaviour
 {
@@ -15,9 +17,14 @@ public class smallRoomDoor : MonoBehaviour
 
     [SerializeField] GameObject Key_SmallR;
 
-    [SerializeField] bool gotSKey; //Got Small Room Key
+    public bool gotSKey; //Got Small Room Key
 
     Pickup reference;
+
+    public GameObject keyPreview;
+
+    public TextMeshProUGUI tooltip;
+
 
     /// <summary>
     /// Assigned Key_SmallR object through find the object name in hierachy
@@ -29,13 +36,6 @@ public class smallRoomDoor : MonoBehaviour
         gotSKey = false;
     }
 
-    //private bool IsOpenDoorActive
-    //{
-    //    get
-    //    {
-    //        return panel.activeInHierarchy;
-    //    }
-    //}
 
     /// <summary>
     /// Check whether players got the small room key or not
@@ -55,26 +55,36 @@ public class smallRoomDoor : MonoBehaviour
     /// </summary>
     public void Operate()
     {
-        
-            if (_isLocked == false)
+
+        if (_isLocked == false)
+        {
+            _isOpen = !_isOpen;
+            _anim.SetBool("open", _isOpen);
+            Debug.Log("Open");
+        }
+
+        else if (_isLocked == true)
+        {
+            if (gotSKey == true)
             {
                 _isOpen = !_isOpen;
                 _anim.SetBool("open", _isOpen);
-                Debug.Log("Open");
+                Debug.Log("Open with key");
+                _isLocked = false;
+                Destroy(keyPreview);
+                tooltip.gameObject.SetActive(true);
+                tooltip.text = "Door is unlocked successfully!";
             }
 
-            else if (_isLocked == true)
+            else
             {
-                if (gotSKey == true)
-                {
-                    _isOpen = !_isOpen;
-                    _anim.SetBool("open", _isOpen);
-                    Debug.Log("Open with key");
-                    _isLocked = false;
-                }
-
+                tooltip.text = "Cannot open the door.\nPlease try it again when key found";
+                tooltip.gameObject.SetActive(true);
             }
-            
-        
+            tooltip.gameObject.SetActive(false);
+
+        }
+
+
     }
 }

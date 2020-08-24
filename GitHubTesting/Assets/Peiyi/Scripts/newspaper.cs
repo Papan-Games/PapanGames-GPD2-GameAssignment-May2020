@@ -9,11 +9,15 @@ public class newspaper : MonoBehaviour
     public GameObject newspaperAsset;
     bool isReading;
 
+    public bool livingRoomWithLight;
+    public GameObject livingRoomSwitchObject;
+
     // Start is called before the first frame update
     void Start()
     {
         newspaperPanel.gameObject.SetActive(false);
         isReading = false;
+        livingRoomWithLight = false;
     }
 
     // Update is called once per frame
@@ -25,16 +29,27 @@ public class newspaper : MonoBehaviour
             {
                 Destroy(newspaperAsset.gameObject);
                 newspaperPanel.gameObject.SetActive(false);
-                Debug.Log("123135456");
             }
+        }
+        Vector3 temp = livingRoomSwitchObject.transform.rotation.eulerAngles;
+        if(temp.z == 180f)
+        {
+            livingRoomWithLight = true;
+        }
+        else if (temp.z == 0f)
+        {
+
+            livingRoomWithLight = false;
         }
     }
 
     void readNewspaper()
     {
-
-        newspaperPanel.gameObject.SetActive(true);
-        Debug.Log("reading");
-        isReading = true;
+        if (livingRoomWithLight == true)
+        {
+            newspaperPanel.gameObject.SetActive(true);
+            Debug.Log("reading");
+            isReading = true;
+        }
     }
 }

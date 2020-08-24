@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class cockroachScript : MonoBehaviour
 {
@@ -8,7 +9,13 @@ public class cockroachScript : MonoBehaviour
     [SerializeField] bool _isAlive;
 
     [SerializeField]GameObject Newspaper;
-    [SerializeField] bool _gotNewspaper;
+    public bool _gotNewspaper;
+
+    public GameObject newspaperPreview;
+    public bool _usedNewspaper;
+
+    public TextMeshProUGUI tooltip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +23,7 @@ public class cockroachScript : MonoBehaviour
         Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
         _gotNewspaper = false;
+        _usedNewspaper = false;
     }
 
     // Update is called once per frame
@@ -48,13 +56,16 @@ public class cockroachScript : MonoBehaviour
             {
                 _anim.SetTrigger("move");
                 Debug.Log("Moving");
+                tooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
             }
 
             else if(_gotNewspaper == true)
             {
                 Destroy(this.gameObject);
+                Destroy(newspaperPreview);
                 Debug.Log("die");
                 _isAlive = false;
+                tooltip.text = "Cockroach is killed!\n You can get your key now.";
             }
             Debug.Log("haha");
         }

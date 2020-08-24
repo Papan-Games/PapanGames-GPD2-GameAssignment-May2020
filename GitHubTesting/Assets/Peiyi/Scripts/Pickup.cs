@@ -41,7 +41,6 @@ public class Pickup : MonoBehaviour
                     Destroy(GameObject.Find("SmallRoomKey"));
                     key_S_get = true;
 
-                    //show in inventory
                 }
             }
 
