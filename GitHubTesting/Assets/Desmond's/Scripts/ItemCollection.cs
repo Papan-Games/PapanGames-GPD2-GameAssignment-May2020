@@ -37,6 +37,7 @@ public class ItemCollection : MonoBehaviour
                     case Items.Keycard:
                     {
                         InventoryManager.instance.GetKeycard();
+                        this.gameObject.SetActive(false);
                         Debug.Log("Store Card");
                         break;
                     }

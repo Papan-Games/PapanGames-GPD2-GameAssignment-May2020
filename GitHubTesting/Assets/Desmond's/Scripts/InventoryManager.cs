@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,12 +14,19 @@ public class InventoryManager : MonoBehaviour
     public bool item4;
     public int soulsAmt;
 
+    // Use simple boolean checks for simple items without the need to equip
+    public bool simpleItem;
+    public bool HouseItem;
     // array size subject to change
 
     [SerializeField] public List<GameObject> itemList = new List<GameObject>();
+    [SerializeField] public List<Image> imageList = new List<Image>();
     [SerializeField] public List<GameObject> PlayerInventoryList = new List<GameObject>();
 
     public GameObject PlayersGun;
+
+    // Itembar UI elements
+    public ItemBar barScriptRef;
 
     private void Awake() 
     {
@@ -88,6 +96,8 @@ public class InventoryManager : MonoBehaviour
             gun = true;
             PlayerPrefs.SetString("Gun", "True");
             PlayersGun.SetActive(true);
+            PlayerInventoryList.Add(itemList[0]);   // Add Gun Gameobject to Inventory List
+            barScriptRef.AddItemToBar(imageList[0]);
         }
     }
 
@@ -97,6 +107,8 @@ public class InventoryManager : MonoBehaviour
         {
             keycard = true;
             PlayerPrefs.SetString("Keycard", "True");
+            PlayerInventoryList.Add(itemList[1]);   // Add Gun Gameobject to Inventory List
+            barScriptRef.AddItemToBar(imageList[1]);
         }
     }
 
@@ -109,7 +121,5 @@ public class InventoryManager : MonoBehaviour
     {
         return soulsAmt;
     }
-
-
 
 }
