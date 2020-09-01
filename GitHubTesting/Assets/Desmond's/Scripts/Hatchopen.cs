@@ -10,12 +10,14 @@ public class Hatchopen : MonoBehaviour
     [SerializeField] private float targetAngle;
     [SerializeField] private bool isOpened;
     [SerializeField] private float openSpeed = 1.0f;
+    [SerializeField] private AudioSource DoorSFX;
 
     public ForcePlayerBehave scriptRef;
 
     // Start is called before the first frame update
     void Start()
     {
+        DoorSFX = GetComponent<AudioSource>();
         isOpened = false;
         isOpening = false;
         if(!invertDoorOpenDirection)
@@ -79,6 +81,7 @@ public class Hatchopen : MonoBehaviour
                     if(scriptRef.runCoroutine())
                     {
                         isOpening = true;
+                        DoorSFX.Play();
                     }
                 }
             }
