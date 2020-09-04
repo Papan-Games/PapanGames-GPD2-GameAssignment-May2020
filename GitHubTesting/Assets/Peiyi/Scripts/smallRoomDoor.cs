@@ -70,19 +70,28 @@ public class smallRoomDoor : MonoBehaviour
                 _anim.SetBool("open", _isOpen);
                 _isLocked = false;
                 keyPreview.SetActive(false);
-                tooltip.gameObject.SetActive(true);
                 tooltip.text = "Door is unlocked successfully!";
+                tooltip.gameObject.SetActive(true);
+                Debug.Log("unlock");
             }
 
             else
             {
                 tooltip.text = "Cannot open the door.\nPlease try it again when key found";
                 tooltip.gameObject.SetActive(true);
+                Debug.Log("lock");
             }
-            tooltip.gameObject.SetActive(false);
+            //tooltip.gameObject.SetActive(false);
+            StartCoroutine(Wait());
 
         }
 
 
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        tooltip.gameObject.SetActive(false);
     }
 }

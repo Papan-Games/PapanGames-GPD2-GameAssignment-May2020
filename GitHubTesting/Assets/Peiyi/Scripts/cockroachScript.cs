@@ -55,8 +55,8 @@ public class cockroachScript : MonoBehaviour
             if (_gotNewspaper == false)
             {
                 _anim.SetTrigger("move");
-                tooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
                 tooltip.gameObject.SetActive(true);
+                tooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
             }
 
             else if(_gotNewspaper == true)

@@ -1,10 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class lineOfSight : MonoBehaviour
 {
     float range = 5f;
+
+    public GameObject currentHitObject;
+
+    public float sphereRadius;
+    public float maxDistance;
+    public LayerMask layerMask;
+
+    private Vector3 origin;
+    private Vector3 direction;
+
+    private float currentHitDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +33,16 @@ public class lineOfSight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit;
-            Ray ray = new Ray(transform.position, transform.forward);
+            origin = transform.position;
+            direction = transform.forward;
 
-            if (Physics.Raycast(ray, out hit, range))
+            RaycastHit hit;
+            //Ray ray = new Ray(transform.position, transform.forward);
+
+            if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
             {
+                currentHitObject = hit.transform.gameObject;
+                currentHitDistance = hit.distance;
                 if (hit.collider.tag == "Interactable")
                 {
 
@@ -78,6 +95,20 @@ public class lineOfSight : MonoBehaviour
 
             }
 
+
         }
+
+        else
+        {
+            currentHitDistance = maxDistance;
+            currentHitObject = null;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Debug.DrawLine(origin, origin + direction * currentHitDistance);
+        Gizmos.DrawWireSphere(origin + direction * currentHitDistance, sphereRadius);
     }
 }
