@@ -13,9 +13,12 @@ public class ItemCollection : MonoBehaviour
 
     public enum Items {Flashlight, Gun, Keycard, Item3, Item4}
     public Items item;
+
+    public KeyPrompt promptScript;
+    private bool turnOffprompt;
     private void Start() 
     {
-
+        turnOffprompt = false;
     }
 
     // Update is called once per frame
@@ -23,8 +26,11 @@ public class ItemCollection : MonoBehaviour
     {
         if(outlineRef.showingOutline)
         {
+            promptScript.ShowPrompt = true;
+            turnOffprompt = true;
             if(Input.GetKey(KeyCode.E))
             {
+                promptScript.ShowPrompt = false;
                 switch(item)
                 {
                     case Items.Flashlight:
@@ -62,6 +68,11 @@ public class ItemCollection : MonoBehaviour
                         break;
                 }
             }
+        }
+        else if (turnOffprompt)
+        {
+            promptScript.ShowPrompt = false;
+            turnOffprompt = false;
         }
     }
 }
