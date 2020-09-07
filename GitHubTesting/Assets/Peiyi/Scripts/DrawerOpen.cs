@@ -37,8 +37,22 @@ public class DrawerOpen : MonoBehaviour
                 tooltip.text = "Key Found! But there is a cockroach on it.\nI should use somrthing to kill it.";
                 tooltip.gameObject.SetActive(true);
                 firstTime = false;
+                StartCoroutine(Wait());
+            }
+
+            else
+            {
+                tooltip.gameObject.SetActive(false);
+
             }
 
         }
+
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        tooltip.gameObject.SetActive(false);
     }
 }

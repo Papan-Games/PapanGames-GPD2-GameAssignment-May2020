@@ -19,7 +19,7 @@ public class cockroachScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _anim = GetComponent<Animator>();
+        //_anim = GetComponent<Animator>();
         Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
         _gotNewspaper = false;
@@ -57,6 +57,7 @@ public class cockroachScript : MonoBehaviour
                 _anim.SetTrigger("move");
                 tooltip.gameObject.SetActive(true);
                 tooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
+                StartCoroutine(Wait());
             }
 
             else if(_gotNewspaper == true)
@@ -66,7 +67,16 @@ public class cockroachScript : MonoBehaviour
                 _isAlive = false;
                 tooltip.text = "Cockroach is killed!\n You can get your key now.";
                 tooltip.gameObject.SetActive(true);
+                StartCoroutine(Wait());
             }
+
         }
+
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        tooltip.gameObject.SetActive(false);
     }
 }
