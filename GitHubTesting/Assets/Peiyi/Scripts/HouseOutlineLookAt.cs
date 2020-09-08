@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HouseOutlineLookAt : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class HouseOutlineLookAt : MonoBehaviour
 
     private HouseOutlineController prevController;
     private HouseOutlineController currentController;
+
+
+    //public string tooltipText;
+    public TextMeshProUGUI tooltip;
+    public TextMeshProUGUI interactTooltip;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +36,10 @@ public class HouseOutlineLookAt : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, distance))
         {
-            if(hit.collider.CompareTag("Doors") || hit.collider.CompareTag("cockroach"))
+            if(hit.collider.CompareTag("Doors") || hit.collider.CompareTag("cockroach") ||
+               /*hit.collider.CompareTag("smallRoomKey") ||*/ hit.collider.CompareTag("Interactable") ||
+               hit.collider.CompareTag("bed") || hit.collider.CompareTag("powerSwitch") ||
+               hit.collider.CompareTag("cailingFanSwitch") /*|| hit.collider.tag == "newspaper"*/)
             {
                 currentController = hit.collider.GetComponent<HouseOutlineController>();
 
@@ -40,17 +50,28 @@ public class HouseOutlineLookAt : MonoBehaviour
                 }
 
                 prevController = currentController;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.SendMessage("Operate",
+                    SendMessageOptions.DontRequireReceiver);
+                }
+
+                hit.collider.SendMessage("ShowTooltip",
+                SendMessageOptions.DontRequireReceiver);
             }
 
             else
             {
                 HideOutline();
+                HideTooltip();
             }
         }
 
         else
         {
             HideOutline();
+            HideTooltip();
         }
     }
 
@@ -69,5 +90,16 @@ public class HouseOutlineLookAt : MonoBehaviour
             prevController.HideOutline();
             prevController = null;
         }
+    }
+
+    //public void ShowTooltip()
+    //{
+    //    tooltip.text = "Press 'E' to interact";
+    //    tooltip.gameObject.SetActive(true);
+    //}
+
+    public void HideTooltip()
+    {
+        interactTooltip.gameObject.SetActive(false);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class newspaper : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class newspaper : MonoBehaviour
 
     public bool livingRoomWithLight;
     public GameObject livingRoomSwitchObject;
+
+    public TextMeshProUGUI interactTooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +54,16 @@ public class newspaper : MonoBehaviour
             Debug.Log("reading");
             isReading = true;
         }
+    }
+
+    void ShowTooltip()
+    {
+        interactTooltip.text = "Press 'E' to interact.";
+        interactTooltip.gameObject.SetActive(true);
+    }
+
+    void HideTooltip()
+    {
+        interactTooltip.gameObject.SetActive(false);
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class onOffFanSwitch : MonoBehaviour
 {
     bool _isOnFan;
     public GameObject Fan;
     public Animator _anim;
+
+    public TextMeshProUGUI interactTooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +23,7 @@ public class onOffFanSwitch : MonoBehaviour
         
     }
 
-    void onOffFan()
+    void Operate()
     {
         if (!_isOnFan)
         {
@@ -42,6 +45,21 @@ public class onOffFanSwitch : MonoBehaviour
 
             //Off fan here
             _anim.SetBool("onFan", _isOnFan);
+        }
+    }
+
+    public void ShowTooltip()
+    {
+        if (_isOnFan)
+        {
+            interactTooltip.text = "Press 'E' to off the fan.";
+            interactTooltip.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            interactTooltip.text = "Press 'E' to on the fan.";
+            interactTooltip.gameObject.SetActive(true);
         }
     }
 }

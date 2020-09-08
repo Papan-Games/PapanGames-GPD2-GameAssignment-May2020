@@ -46,10 +46,10 @@ public class lineOfSight : MonoBehaviour
                 if (hit.collider.tag == "Interactable")
                 {
 
-                    hit.collider.SendMessage("interact",
+                    hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
 
-                    hit.collider.SendMessage("showInteractWord",
+                    hit.collider.SendMessage("ShowTooltip",
                     SendMessageOptions.DontRequireReceiver);
 
                 }
@@ -73,13 +73,13 @@ public class lineOfSight : MonoBehaviour
                 else if (hit.collider.tag == "bed")
                 {
 
-                    hit.collider.SendMessage("interactBed",
+                    hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
                 }
 
                 else if (hit.collider.tag == "powerSwitch")
                 {
-                    hit.collider.SendMessage("onOffLight",
+                    hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
 
                 }
@@ -87,7 +87,7 @@ public class lineOfSight : MonoBehaviour
                 else if (hit.collider.tag == "cailingFanSwitch")
                 {
                    
-                    hit.collider.SendMessage("onOffFan",
+                    hit.collider.SendMessage("Operate",
                     SendMessageOptions.DontRequireReceiver);
 
                 }

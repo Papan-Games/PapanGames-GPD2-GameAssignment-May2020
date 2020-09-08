@@ -6,10 +6,6 @@ using UnityEditor;
 
 public class smallRoomDoor : MonoBehaviour
 {
-    //public GameObject panel = null;
-    //public string OpenText = "Press 'E' to open it";
-    //public string CloseText = "Press 'E' to close it";
-
     public Animator _anim;
 
     private bool _isOpen = false;
@@ -23,7 +19,7 @@ public class smallRoomDoor : MonoBehaviour
 
     public GameObject keyPreview;
 
-    public TextMeshProUGUI tooltip;
+    public TextMeshProUGUI operateTooltip;
 
 
     /// <summary>
@@ -70,18 +66,18 @@ public class smallRoomDoor : MonoBehaviour
                 _anim.SetBool("open", _isOpen);
                 _isLocked = false;
                 keyPreview.SetActive(false);
-                tooltip.text = "Door is unlocked successfully!";
-                tooltip.gameObject.SetActive(true);
+                operateTooltip.text = "Door is unlocked successfully!";
+                operateTooltip.gameObject.SetActive(true);
                 Debug.Log("unlock");
             }
 
             else
             {
-                tooltip.text = "Cannot open the door.\nPlease try it again when key found";
-                tooltip.gameObject.SetActive(true);
+                operateTooltip.text = "Cannot open the door.\nPlease try it again when key found";
+                operateTooltip.gameObject.SetActive(true);
                 Debug.Log("lock");
             }
-            //tooltip.gameObject.SetActive(false);
+            //operateTooltip.gameObject.SetActive(false);
             StartCoroutine(Wait());
 
         }
@@ -92,6 +88,6 @@ public class smallRoomDoor : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2);
-        tooltip.gameObject.SetActive(false);
+        operateTooltip.gameObject.SetActive(false);
     }
 }

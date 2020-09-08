@@ -6,6 +6,7 @@ using UnityEngine.SocialPlatforms;
 public class Pickup : MonoBehaviour
 {
     private Camera _camera;
+    public float distance;
 
     public bool key_M_get; //Get master room key
     public bool key_S_get; // Get small room key
@@ -26,8 +27,9 @@ public class Pickup : MonoBehaviour
     /// </summary>
     void Update()
     {
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 5f))
+        if (Physics.Raycast(ray, out hit, distance))
         {
 
             if (hit.collider.tag == "smallRoomKey")

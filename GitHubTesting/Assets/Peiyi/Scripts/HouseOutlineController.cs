@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HouseOutlineController : MonoBehaviour
 {
@@ -64,4 +65,6 @@ public class HouseOutlineController : MonoBehaviour
             mat.SetColor("_OutlineColor", Color.black);
         }
     }
+
+    
 }

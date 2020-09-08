@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Bed : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Bed : MonoBehaviour
 
     public Button yes;
     public Button no;
+
+    public TextMeshProUGUI interactTooltip;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,7 @@ public class Bed : MonoBehaviour
         }
     }
 
-    public void interactBed()
+    public void Operate()
     {
         //Ask player whether to sleep or not
         if (isOpen == false)
@@ -64,6 +67,17 @@ public class Bed : MonoBehaviour
             questionPanel.SetActive(false);
             isOpen = false;
         
+    }
+
+    void ShowTooltip()
+    {
+        interactTooltip.text = "Press 'E' to interact.";
+        interactTooltip.gameObject.SetActive(true);
+    }
+
+    void HideTooltip()
+    {
+        interactTooltip.gameObject.SetActive(false);
     }
 
 }

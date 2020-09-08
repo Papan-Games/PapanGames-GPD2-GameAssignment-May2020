@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class onOffWallLightSwitch : MonoBehaviour
 {
     public GameObject wallLight;
     bool _isOnLight;
+
+    public TextMeshProUGUI interactTooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,7 @@ public class onOffWallLightSwitch : MonoBehaviour
         
     }
 
-    void onOffLight()
+    void Operate()
     {
         if(wallLight.gameObject.activeSelf == false)
         {
@@ -52,6 +55,21 @@ public class onOffWallLightSwitch : MonoBehaviour
             //Off Light here
 
             wallLight.gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowTooltip()
+    {
+        if (_isOnLight)
+        {
+            interactTooltip.text = "Press 'E' to off the wall light.";
+            interactTooltip.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            interactTooltip.text = "Press 'E' to on the wall light.";
+            interactTooltip.gameObject.SetActive(true);
         }
     }
 }
