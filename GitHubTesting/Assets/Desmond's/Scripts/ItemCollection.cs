@@ -6,12 +6,8 @@ public class ItemCollection : MonoBehaviour
 {
     public OutlineController outlineRef;
 
-    // public bool Gun;
-    // public bool Keycard;
-    // public bool item3;
-    // public bool item4;
 
-    public enum Items {Flashlight, Gun, Keycard, Item3, Item4}
+    public enum Items {Flashlight, Gun, Keycard, TV, Chair, WashingMachine}
     public Items item;
 
     public KeyPrompt promptScript;
@@ -54,14 +50,25 @@ public class ItemCollection : MonoBehaviour
                         Debug.Log("Store Card");
                         break;
                     }
-                    case Items.Item3:
+                    case Items.TV:
                     {
-                        Debug.Log("Store Shit1");
+                        InventoryManager.instance.GetTV();
+                        this.gameObject.SetActive(false);
+                        Debug.Log("Store TV");
                         break;
                     }
-                    case Items.Item4:
+                    case Items.Chair:
                     {
-                        Debug.Log("Store Shit2");
+                        InventoryManager.instance.GetChair();
+                        this.gameObject.SetActive(false);
+                        Debug.Log("Store Chair");
+                        break;
+                    }
+                    case Items.WashingMachine:
+                    {
+                        InventoryManager.instance.GetWashingMachine();
+                        this.gameObject.SetActive(false);
+                        Debug.Log("Store Washing Machine");
                         break;
                     }
                     default:
