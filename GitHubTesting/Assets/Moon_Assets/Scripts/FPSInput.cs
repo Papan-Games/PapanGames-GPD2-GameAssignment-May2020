@@ -17,6 +17,7 @@ public class FPSInput : MonoBehaviour
 
     private bool nearTreeman;
     private bool finalDialogue;
+    private bool isTalking;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class FPSInput : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         canMove = true;
+        isTalking = false;
         nearTreeman = false;
         finalDialogue = false;
     }
@@ -74,9 +76,10 @@ public class FPSInput : MonoBehaviour
         }
 
         // Interactions
-        if (nearTreeman && Input.GetKeyDown(KeyCode.E))
+        if (nearTreeman && !isTalking && Input.GetKeyDown(KeyCode.E))
         {
             canMove = false;
+            isTalking = true;
             if (!finalDialogue)
             {
                 Messenger.Broadcast(GameEvent.DIALOGUE_START);
@@ -85,6 +88,11 @@ public class FPSInput : MonoBehaviour
             {
                 Messenger.Broadcast(GameEvent.FINAL_DIALOGUE_START);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Messenger.Broadcast(GameEvent.SOUL_COLLECTED_ALL);
         }
     }
 
@@ -101,10 +109,12 @@ public class FPSInput : MonoBehaviour
     private void DialogueEnded()
     {
         canMove = true;
+        isTalking = false;
     }
 
     private void TriggerFinalDialogue()
     {
         finalDialogue = true;
+        isTalking = false;
     }
 }

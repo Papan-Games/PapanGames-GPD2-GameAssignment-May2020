@@ -10,13 +10,43 @@ public class ReactiveTarget : MonoBehaviour
     public float thrust;
 
     Animator anim;
+    private float followDist = 12;
+    private float attackDist = 3;
+    private Transform playerPos;
 
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
         crawler = gameObject.transform.GetChild(0).gameObject;
         soul = gameObject.transform.GetChild(1).gameObject;
         soul.SetActive(false);
+    }
+
+    void Update()
+    {
+        float dist = Vector3.Distance(transform.position, playerPos.position);
+        Debug.Log(dist);
+
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.SphereCast(ray, 5.0f, out hit))
+        {
+            if (dist <= followDist)
+            {
+                anim.SetBool("isFollowing", true);
+            }
+            else
+            {
+                anim.SetBool("isFollowing", false);
+            }
+            
+            if (dist <= attackDist)
+            {
+                anim.SetTrigger("isAttacking");
+            }
+        }
     }
 
     public void ReactToHit()

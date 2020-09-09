@@ -45,11 +45,6 @@ public class PatrolBehaviour : StateMachineBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            animator.SetBool("isFollowing", true);
-        }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

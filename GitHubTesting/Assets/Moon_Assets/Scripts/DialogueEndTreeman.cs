@@ -85,6 +85,6 @@ public class DialogueEndTreeman : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("TemporaryEnd");
+        //SceneManager.LoadScene("TemporaryEnd");
     }
 }
