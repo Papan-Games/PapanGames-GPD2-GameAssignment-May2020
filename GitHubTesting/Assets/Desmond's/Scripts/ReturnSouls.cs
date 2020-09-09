@@ -15,6 +15,11 @@ public class ReturnSouls : MonoBehaviour
     public KeyPrompt promptScript;
 
     public Collider TriggerArea;
+
+    public string curiousText;
+    public string returnText;
+    public ForcePanelText TextGUIScript;
+    public float waitTime;
     private int beforeIntensity = 2;
     private int afterIntensity = 3;
 
@@ -52,7 +57,7 @@ public class ReturnSouls : MonoBehaviour
                 if(SpaceStationScene)
                 {
                     // Show UI for store soul hint
-
+                    StartCoroutine(TextGUIScript.TypeText(curiousText, waitTime));
                 }
                 else
                 {
@@ -61,6 +66,7 @@ public class ReturnSouls : MonoBehaviour
                     Soul2.SetActive(true);
                     ContainerLight.intensity = afterIntensity;
                     TriggerArea.enabled = false;
+                    StartCoroutine(TextGUIScript.TypeText(returnText, waitTime));
                 }
             }
         }
@@ -70,5 +76,7 @@ public class ReturnSouls : MonoBehaviour
     {
         promptScript.ShowPrompt = false;
     }
+
+    
 
 }

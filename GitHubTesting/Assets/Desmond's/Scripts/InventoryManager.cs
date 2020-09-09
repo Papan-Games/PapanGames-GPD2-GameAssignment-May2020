@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour
     public bool washingMachine;
     public int soulsAmt;
 
+    public AudioSource itemPickup;
+    public AudioClip pickupSFX;
+
 
     // [SerializeField] public List<GameObject> itemList = new List<GameObject>();
     // [SerializeField] public List<Image> imageList = new List<Image>();
@@ -112,6 +115,7 @@ public class InventoryManager : MonoBehaviour
         {
             flashlight = true;
             PlayersFlashlight.SetActive(true);
+            itemPickup.PlayOneShot(pickupSFX);
             // PlayerPrefs.SetString("Flashlight", "True");
             // PlayerInventoryList.Add(itemList[0]);   // Add Flashlight Gameobject to Inventory List following index
             // barScriptRef.AddItemToBar(imageList[0]);
@@ -124,6 +128,7 @@ public class InventoryManager : MonoBehaviour
         {
             gun = true;
             PlayersGun.SetActive(true);
+            itemPickup.PlayOneShot(pickupSFX);
             // PlayerPrefs.SetString("Gun", "True");
             // PlayerInventoryList.Add(itemList[1]);   // Add Gun Gameobject to Inventory List
             // barScriptRef.AddItemToBar(imageList[1]);
@@ -135,6 +140,7 @@ public class InventoryManager : MonoBehaviour
         if (!keycard)
         {
             keycard = true;
+            itemPickup.PlayOneShot(pickupSFX);
             // PlayerPrefs.SetString("Keycard", "True");
             // PlayerInventoryList.Add(itemList[2]);   // Add Gun Gameobject to Inventory List
             // barScriptRef.AddItemToBar(imageList[2]);
@@ -146,6 +152,7 @@ public class InventoryManager : MonoBehaviour
         if(!TV)
         {
             TV = true;
+            itemPickup.PlayOneShot(pickupSFX);
         }
     }
     
@@ -154,6 +161,7 @@ public class InventoryManager : MonoBehaviour
         if(!Chair)
         {
             Chair = true;
+            itemPickup.PlayOneShot(pickupSFX);
         }
     }
 
@@ -162,6 +170,7 @@ public class InventoryManager : MonoBehaviour
         if(!washingMachine)
         {
             washingMachine = true;
+            itemPickup.PlayOneShot(pickupSFX);
         }
     }
 
