@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class onOffSwitch : MonoBehaviour
 {
     public bool _isOnLight;
     public GameObject[] lights;
+
+    public TextMeshProUGUI interactTooltip;
 
         // Start is called before the first frame update
     void Start()
@@ -20,7 +23,7 @@ public class onOffSwitch : MonoBehaviour
         
     }
 
-    void onOffLight()
+    void Operate()
     {
         if(this.gameObject.transform.rotation.eulerAngles.z == 180f)
         {
@@ -59,5 +62,25 @@ public class onOffSwitch : MonoBehaviour
         }
     }
 
-    
+    public void ShowTooltip()
+    {
+        if (_isOnLight)
+        {
+            interactTooltip.text = "Press 'E' to off the light.";
+            interactTooltip.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            interactTooltip.text = "Press 'E' to on the light.";
+            interactTooltip.gameObject.SetActive(true);
+        }
+    }
+
+    public void HideTooltip()
+    {
+        interactTooltip.gameObject.SetActive(false);
+    }
+
+
 }

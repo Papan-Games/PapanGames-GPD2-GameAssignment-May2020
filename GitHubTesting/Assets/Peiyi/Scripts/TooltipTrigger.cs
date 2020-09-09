@@ -14,7 +14,7 @@ public class TooltipTrigger : MonoBehaviour
     
     void Start()
     {
-        tooltip.gameObject.SetActive(false);
+        //tooltip.gameObject.SetActive(false);
         canInteract = false;
 
     }

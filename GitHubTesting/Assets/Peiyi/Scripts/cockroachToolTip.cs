@@ -11,7 +11,7 @@ public class cockroachToolTip : MonoBehaviour
     public GameObject newspaperPreview;
     bool _usedNewspaper;
 
-    public TextMeshProUGUI tooltip;
+    public TextMeshProUGUI interactTooltip;
     public string OpenText;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class cockroachToolTip : MonoBehaviour
         //newspaperPreview = GameObject.Find("newspaperPreview");
         _usedNewspaper = false;
 
-        tooltip.gameObject.SetActive(false);
+        interactTooltip.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,24 +41,29 @@ public class cockroachToolTip : MonoBehaviour
         }
     }
 
-    void showTooltipText()
+    void ShowTooltip()
     {
         if (_gotNewspaper == true && _usedNewspaper == true)
         {
-            tooltip.text = "The cockrach is die.\nPress 'E' to pick up your key." + OpenText;
+            interactTooltip.text = "The cockrach is die.\nPress 'E' to pick up your key." + OpenText;
         }
 
         else if (_gotNewspaper == false && _usedNewspaper == false)
         {
-            tooltip.text = "Press 'E' to interact" + OpenText;
+            interactTooltip.text = "Press 'E' to interact" + OpenText;
         }
 
         else if (_gotNewspaper == true && _usedNewspaper == false)
         {
-            tooltip.text = "Press 'E' to use the newspaper to kill the cockroach" + OpenText;
+            interactTooltip.text = "Press 'E' to use the newspaper to kill the cockroach" + OpenText;
         }
 
 
-        tooltip.gameObject.SetActive(true);
+        interactTooltip.gameObject.SetActive(true);
+    }
+
+    void HideTooltip()
+    {
+        interactTooltip.gameObject.SetActive(false);
     }
 }

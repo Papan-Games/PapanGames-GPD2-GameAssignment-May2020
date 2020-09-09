@@ -9,7 +9,7 @@ public class StartingDialogue : MonoBehaviour
     public GameObject startingPanel;
     public GameObject secondPanel;
 
-    private void Start()
+    void Start()
     {
         startingPanel.SetActive(true);
         secondPanel.SetActive(false);

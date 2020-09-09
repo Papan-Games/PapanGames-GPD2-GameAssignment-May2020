@@ -12,6 +12,8 @@ public class Hatchopen : MonoBehaviour
     [SerializeField] private float openSpeed = 1.0f;
     [SerializeField] private AudioSource DoorSFX;
 
+    public KeyPrompt promptScript;
+
     public ForcePlayerBehave scriptRef;
 
     // Start is called before the first frame update
@@ -73,9 +75,9 @@ public class Hatchopen : MonoBehaviour
          if (others.CompareTag("Player"))
         {
             // call UI to show tool tip to press what key
-
             if(!isOpened && !isOpening)
             {
+                promptScript.ShowPrompt = true;
                 if(Input.GetKey(KeyCode.E))
                 {
                     if(scriptRef.runCoroutine())
@@ -86,6 +88,11 @@ public class Hatchopen : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        promptScript.ShowPrompt = false;
     }
 
 }
