@@ -42,7 +42,7 @@ public class Bed : MonoBehaviour
                 soundSource.PlayOneShot(yesSound);
                 questionPanel.SetActive(false);
                 _anim.SetTrigger("Start");
-                StartCoroutine(loadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+                StartCoroutine(loadLevel(2));
             }
 
             else if (Input.GetKeyDown(KeyCode.N))
