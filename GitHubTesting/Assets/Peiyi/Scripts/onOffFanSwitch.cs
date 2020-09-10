@@ -20,6 +20,7 @@ public class onOffFanSwitch : MonoBehaviour
 
     public AudioSource fan;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,16 @@ public class onOffFanSwitch : MonoBehaviour
 
     void Operate()
     {
+        if (this.gameObject.transform.rotation.eulerAngles.z == 180f)
+        {
+            _isOnFan = true;
+        }
+        else if (this.gameObject.transform.rotation.eulerAngles.z == 0f)
+        {
+            _isOnFan = false;
+
+        }
+
         if (!_isOnFan)
         {
             Vector3 temp = this.gameObject.transform.rotation.eulerAngles;

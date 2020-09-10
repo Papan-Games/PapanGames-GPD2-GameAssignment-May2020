@@ -8,10 +8,10 @@ public class smallRoomDoor : MonoBehaviour
 {
     public Animator _anim;
 
-    private bool _isOpen = false;
-    private bool _isLocked = true;
+    public bool _isOpen;
+    public bool _isLocked;
 
-    GameObject key;
+    [SerializeField] GameObject roomKey;
 
     public bool getKey; //Get Small Room Key
 
@@ -36,7 +36,6 @@ public class smallRoomDoor : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        key = GameObject.Find("SmallRoomKey");
         getKey = false;
     }
 
@@ -47,9 +46,12 @@ public class smallRoomDoor : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (key.gameObject.activeSelf == false && getKey != true)
+        if (getKey != true)
         {
-            getKey = true;
+            if (roomKey.activeSelf == false)
+            {
+                getKey = true;
+            }
         }
     }
 

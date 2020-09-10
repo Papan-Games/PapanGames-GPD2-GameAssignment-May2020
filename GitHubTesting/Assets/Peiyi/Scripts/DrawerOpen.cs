@@ -20,7 +20,7 @@ public class DrawerOpen : MonoBehaviour
     /// Variable for checking is it the first time 
     /// to open the third drawer
     /// </summary>
-    bool firstTime;
+    public bool firstTime;
 
     /// <summary>
     /// Variable for the third drawer
@@ -43,7 +43,7 @@ public class DrawerOpen : MonoBehaviour
     void Start()
     {
         _isOpen = false;
-        firstTime = true;
+        //firstTime = true;
         drawer_3 = GameObject.Find("ThirdDrawer");
     }
 

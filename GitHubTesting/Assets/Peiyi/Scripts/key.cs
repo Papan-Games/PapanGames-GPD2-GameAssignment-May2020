@@ -17,13 +17,13 @@ public class key : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        getKey = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        getKey = false;
+        
     }
 
     void Operate()

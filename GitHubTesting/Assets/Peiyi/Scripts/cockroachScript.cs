@@ -61,10 +61,8 @@ public class cockroachScript : MonoBehaviour
     {
         if (_isAlive == true)
         {
-            Debug.Log("Alive ah");
             if (_gotNewspaper == false)
             {
-                Debug.Log("Dont hv");
                 _anim.SetTrigger("move");
                 operateTooltip.gameObject.SetActive(true);
                 operateTooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
@@ -75,7 +73,6 @@ public class cockroachScript : MonoBehaviour
 
             else if(_gotNewspaper == true)
             {
-                Debug.Log("Hv");
                 newspaperRoll.gameObject.SetActive(true);
                 _anim2.SetTrigger("useNewspaper");
                 soundSource.PlayOneShot(newspaperHit);
