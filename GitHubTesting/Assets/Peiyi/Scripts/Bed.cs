@@ -14,6 +14,16 @@ public class Bed : MonoBehaviour
     public Button no;
 
     public TextMeshProUGUI interactTooltip;
+
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip panelSound; //Open or close panel use
+    [SerializeField] private AudioClip yesSound;
+
+    public Animator _anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +38,18 @@ public class Bed : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                SceneManager.LoadScene("SpaceStation");
+                GameObject.Find("Inventory").gameObject.SetActive(false);
+                soundSource.PlayOneShot(yesSound);
+                questionPanel.SetActive(false);
+                _anim.SetTrigger("Start");
+                StartCoroutine(loadLevel(SceneManager.GetActiveScene().buildIndex + 1));
             }
 
             else if (Input.GetKeyDown(KeyCode.N))
             {
                 questionPanel.SetActive(false);
                 isOpen = false;
+                soundSource.PlayOneShot(panelSound);
             }
         }
     }
@@ -46,20 +61,24 @@ public class Bed : MonoBehaviour
         {
             questionPanel.SetActive(true);
             isOpen = true;
+            soundSource.PlayOneShot(panelSound);
         }
     }
 
-    public void yesButton()
-    {
-        
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                SceneManager.LoadScene("SpaceStation");
-            }
+    //public void yesButton()
+    //{
+
+    //    if (Input.GetKeyDown(KeyCode.Y))
+    //    {
+    //        GameObject.Find("Inventory").gameObject.SetActive(false);
+    //        soundSource.PlayOneShot(panelSound);
+
+    //        SceneManager.LoadScene("SpaceStation");
+    //    }
 
             
         
-    }
+    //}
 
     public void noButton()
     {
@@ -73,11 +92,18 @@ public class Bed : MonoBehaviour
     {
         interactTooltip.text = "Press 'E' to interact.";
         interactTooltip.gameObject.SetActive(true);
+
     }
 
     void HideTooltip()
     {
         interactTooltip.gameObject.SetActive(false);
+    }
+
+    IEnumerator loadLevel(int levelIndex)
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(levelIndex);
     }
 
 }

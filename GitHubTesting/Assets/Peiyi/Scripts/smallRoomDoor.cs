@@ -11,37 +11,45 @@ public class smallRoomDoor : MonoBehaviour
     private bool _isOpen = false;
     private bool _isLocked = true;
 
-    [SerializeField] GameObject Key_SmallR;
+    GameObject key;
 
-    public bool gotSKey; //Got Small Room Key
+    public bool getKey; //Get Small Room Key
 
-    Pickup reference;
 
     public GameObject keyPreview;
 
     public TextMeshProUGUI operateTooltip;
 
+    /// <summary>
+    /// Variable for sound source and audioclip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip doorLocked;
+    [SerializeField] private AudioClip unlockDoor;
+    [SerializeField] private AudioClip openDoor;
+    [SerializeField] private AudioClip closeDoor;
+
 
     /// <summary>
-    /// Assigned Key_SmallR object through find the object name in hierachy
+    /// Assigned key object through find the object name in hierachy
     /// 
     /// </summary>
     private void Start()
     {
-        Key_SmallR = GameObject.Find("SmallRoomKey");
-        gotSKey = false;
+        key = GameObject.Find("SmallRoomKey");
+        getKey = false;
     }
 
 
     /// <summary>
     /// Check whether players got the small room key or not
-    /// If yes, gotSKey = true
+    /// If yes, getKey = true
     /// </summary>
     private void Update()
     {
-        if (Key_SmallR == null && gotSKey != true)
+        if (key.gameObject.activeSelf == false && getKey != true)
         {
-            gotSKey = true;
+            getKey = true;
         }
     }
 
@@ -56,11 +64,19 @@ public class smallRoomDoor : MonoBehaviour
         {
             _isOpen = !_isOpen;
             _anim.SetBool("open", _isOpen);
+            if(_isOpen == true)
+            {
+                soundSource.PlayOneShot(openDoor);
+            }
+            else if (_isOpen == false)
+            {
+                soundSource.PlayOneShot(closeDoor);
+            }
         }
 
         else if (_isLocked == true)
         {
-            if (gotSKey == true)
+            if (getKey == true)
             {
                 _isOpen = !_isOpen;
                 _anim.SetBool("open", _isOpen);
@@ -69,6 +85,8 @@ public class smallRoomDoor : MonoBehaviour
                 operateTooltip.text = "Door is unlocked successfully!";
                 operateTooltip.gameObject.SetActive(true);
                 Debug.Log("unlock");
+
+                soundSource.PlayOneShot(unlockDoor);
             }
 
             else
@@ -76,15 +94,16 @@ public class smallRoomDoor : MonoBehaviour
                 operateTooltip.text = "Cannot open the door.\nPlease try it again when key found";
                 operateTooltip.gameObject.SetActive(true);
                 Debug.Log("lock");
+                soundSource.PlayOneShot(doorLocked);
             }
-            //operateTooltip.gameObject.SetActive(false);
             StartCoroutine(Wait());
-
         }
-
-
     }
 
+    /// <summary>
+    /// Wait for 2 seconds for hiding the tooltip
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2);

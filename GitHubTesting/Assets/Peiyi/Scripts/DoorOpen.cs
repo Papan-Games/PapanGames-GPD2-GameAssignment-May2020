@@ -6,12 +6,17 @@ using TMPro;
 
 public class DoorOpen : MonoBehaviour
 {
-    public GameObject panel = null;
-    //private bool _isInsideTrigger = false;
     public Animator _anim;
     private bool _isOpen = false;
 
     public TextMeshProUGUI interactTooltip;
+
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip openDoor;
+    [SerializeField] private AudioClip closeDoor;
 
     /// <summary>
     /// This is a function that play the door close/open animation
@@ -20,7 +25,14 @@ public class DoorOpen : MonoBehaviour
     {
         _isOpen = !_isOpen;
         _anim.SetBool("open", _isOpen);
-
+        if(_isOpen == true)
+        {
+            soundSource.PlayOneShot(openDoor);
+        }
+        else if(_isOpen == false)
+        {
+            soundSource.PlayOneShot(closeDoor);
+        }
     }
 
     void ShowTooltip()

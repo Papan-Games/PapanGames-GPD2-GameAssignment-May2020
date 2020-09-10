@@ -25,13 +25,13 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Key_SmallR == null)
+        if(Key_SmallR.activeSelf == false)
         {
             keyPreview.gameObject.SetActive(true);
         }
 
 
-        if (Newspaper == null)
+        if (Newspaper.activeSelf == false)
         {
             newspaperPreview.gameObject.SetActive(true);
         }

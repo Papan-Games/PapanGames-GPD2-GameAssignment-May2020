@@ -10,7 +10,13 @@ public class onOffSwitch : MonoBehaviour
 
     public TextMeshProUGUI interactTooltip;
 
-        // Start is called before the first frame update
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip onOffLight;
+
+    // Start is called before the first frame update
     void Start()
     {
        
@@ -47,6 +53,8 @@ public class onOffSwitch : MonoBehaviour
             {
                 lights[i].gameObject.SetActive(true);
             }
+
+            soundSource.PlayOneShot(onOffLight);
         }
 
         else if (_isOnLight)
@@ -59,6 +67,7 @@ public class onOffSwitch : MonoBehaviour
             {
                 lights[i].gameObject.SetActive(false);
             }
+            soundSource.PlayOneShot(onOffLight);
         }
     }
 

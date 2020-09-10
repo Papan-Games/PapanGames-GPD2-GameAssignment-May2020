@@ -33,6 +33,13 @@ public class DrawerOpen : MonoBehaviour
     public TextMeshProUGUI operateTooltip;
     public TextMeshProUGUI interactTooltip;
 
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip drawerOpen;
+    [SerializeField] private AudioClip drawerClose;
+
     void Start()
     {
         _isOpen = false;
@@ -50,6 +57,16 @@ public class DrawerOpen : MonoBehaviour
         operateTooltip.gameObject.SetActive(true);
         _isOpen = !_isOpen;
         _anim.SetBool("DrawerOpen", _isOpen);
+        //AudioClip temp;
+        if(_isOpen == true)
+        {
+            soundSource.PlayOneShot(drawerOpen);
+        }
+
+        else if(_isOpen == false)
+        {
+            soundSource.PlayOneShot(drawerClose);
+        }
 
         if (this.gameObject == drawer_3)
         {
@@ -68,6 +85,13 @@ public class DrawerOpen : MonoBehaviour
             }
 
         }
+
+        else
+        {
+            operateTooltip.gameObject.SetActive(false);
+        }
+
+        
 
     }
 

@@ -6,14 +6,23 @@ using TMPro;
 
 public class newspaper : MonoBehaviour
 {
+    public Camera _camera;
+
     public GameObject newspaperPanel;
     public GameObject newspaperAsset;
-    bool isReading;
+    public bool isReading;
 
     public bool livingRoomWithLight;
     public GameObject livingRoomSwitchObject;
 
     public TextMeshProUGUI interactTooltip;
+
+    /// <summary>
+    /// Variable for sound source and audioclip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip reading;
+    [SerializeField] private AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,44 +35,53 @@ public class newspaper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isReading)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Destroy(newspaperAsset.gameObject);
-                newspaperPanel.gameObject.SetActive(false);
-            }
-        }
+        checkingIsLight();
+    }
+
+    void checkingIsLight()
+    {
         Vector3 temp = livingRoomSwitchObject.transform.rotation.eulerAngles;
-        if(temp.z == 180f)
+        if (temp.z == 180f)
         {
             livingRoomWithLight = true;
         }
         else if (temp.z == 0f)
         {
-
             livingRoomWithLight = false;
         }
+        //readingNewspaper.isLight = livingRoomWithLight;
     }
 
     void readNewspaper()
     {
-        if (livingRoomWithLight == true)
+        if (livingRoomWithLight == true && !isReading)
         {
             newspaperPanel.gameObject.SetActive(true);
             Debug.Log("reading");
             isReading = true;
+            soundSource.PlayOneShot(reading);
+        }
+    }
+
+    void stopReadNewspaper()
+    {
+        if (isReading)
+        {
+            newspaperAsset.gameObject.SetActive(false);
+            newspaperPanel.gameObject.SetActive(false);
+            soundSource.PlayOneShot(collectSound);
         }
     }
 
     void ShowTooltip()
     {
-        interactTooltip.text = "Press 'E' to interact.";
-        interactTooltip.gameObject.SetActive(true);
+        if (livingRoomWithLight == true)
+        {
+            interactTooltip.text = "Press 'E' to interact.";
+            interactTooltip.gameObject.SetActive(true);
+        }
     }
 
-    void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    
+
 }

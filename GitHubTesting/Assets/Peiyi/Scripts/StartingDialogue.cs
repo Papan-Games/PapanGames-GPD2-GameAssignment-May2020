@@ -9,6 +9,12 @@ public class StartingDialogue : MonoBehaviour
     public GameObject startingPanel;
     public GameObject secondPanel;
 
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip panelSound;
+
     void Start()
     {
         startingPanel.SetActive(true);
@@ -22,13 +28,15 @@ public class StartingDialogue : MonoBehaviour
             if (startingPanel.activeSelf == true)
             {
                 startingPanel.SetActive(false);
-                secondPanel.SetActive(true);   
+                secondPanel.SetActive(true);
+                soundSource.PlayOneShot(panelSound);
             }
 
             else if (secondPanel.activeSelf == true)
             {
                 secondPanel.SetActive(false);
                 this.gameObject.SetActive(false);
+                soundSource.PlayOneShot(panelSound);
             }
 
         }

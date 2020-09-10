@@ -3,7 +3,13 @@ guid: 70e61d131e039fd43acb7cabba66e507
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - panel: {instanceID: 0}
+  - _anim: {instanceID: 0}
+  - interactTooltip: {instanceID: 0}
+  - soundSource: {instanceID: 0}
+  - openDoor: {fileID: 8300000, guid: 854eb81043c9fb04280951833333fb5e, type: 3}
+  - closeDoor: {fileID: 8300000, guid: 48b164ed825ad83498039f84204f2f71, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -133,7 +133,109 @@
      <None Include="Assets\Peiyi\Asset\LivingRoom\_Television_set\SpecGrayscaleSF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
+<<<<<<< Updated upstream
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+=======
+      <HintPath>D:\Application\Unity\2019.4.4f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\Application\Unity\2019.4.4f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AttackBehaviour.cs" />
+    <Compile Include="Assets\Desmond's\Low Poly Space Station\Components\Scripts\RotationScript.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\ForcePlayerBehave.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\Hatchopen.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\ItemBar.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\ItemCollection.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\KeyPrompt.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\Movement.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\OutlineController.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\OutlineLookAt.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\PortalToForest.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\ReturnSouls.cs" />
+    <Compile Include="Assets\Desmond's\Scripts\Siren.cs" />
+    <Compile Include="Assets\FollowBehaviour.cs" />
+    <Compile Include="Assets\IdleBehaviour.cs" />
+    <Compile Include="Assets\Moon_Assets\Forest\Glowing_Forest\Scripts\WaterGroup.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\BillboardDisplay.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\CharacterAnimation.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\Dialogue.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\DialogueEndTreeman.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\EndUIController.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\FPSInput.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\GameEvent.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\Messenger.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\Patrol.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\PatrolSpots.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\RayShooter.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\ReactiveTarget.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\Soul.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\TreemanTrigger.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\PatrolBehaviour.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\Bed.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\CursorPoint.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\DoorOpen.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\DrawerOpen.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\HouseOutlineController.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\HouseOutlineLookAt.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\LockedRoomTooltip.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\MenuOptions.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\MouseMovement.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\StartingDialogue.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\cockroachScript.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\key.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\newspaper.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\onOffFanSwitch.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\onOffSwitch.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\onOffWallLightSwitch.cs" />
+    <Compile Include="Assets\Peiyi\Scripts\smallRoomDoor.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Desmond's\Glass Stuff\Shader\Glass.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+    <None Include="Assets\Desmond's\Glass Stuff\Shader\Ice(break).shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Moon_Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+    <None Include="Assets\Moon_Assets\Prefabs\Mushroom house\StandardDoubleSided.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+    <None Include="Assets\Peiyi\Asset\FoodAndGrocery\Info.txt" />
+    <None Include="Assets\Moon_Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Moon_Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\Moon_Assets\Prefabs\Procedural fire\Shaders\FireSphere.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Desmond's\OutlineItem.shader" />
+    <None Include="Assets\Desmond's\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Peiyi\Asset\LivingRoom\_Television_set\SpecGrayscaleSF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Application/Unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="UnityEngine.AIModule">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -3,52 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+/// <summary>
+/// This is a sript for showing the tooltip of the cockroach when point to it
+/// The tooltip text will change according to the condition
+/// </summary>
 public class cockroachScript : MonoBehaviour
 {
-    public Animator _anim;
-    [SerializeField] bool _isAlive;
+    public Animator _anim; //Variable to get animator
+    bool _isAlive; //Checking whether cockroach is alive
 
-    [SerializeField]GameObject Newspaper;
-    public bool _gotNewspaper;
+    public GameObject Newspaper; //Newspaper asset 
+    bool _gotNewspaper; //Checking whether the player has read the newspaper or not
 
-    public GameObject newspaperPreview;
-    public bool _usedNewspaper;
+    public GameObject newspaperPreview; //The inventory newspaper slot, use this to check is player get the newspaper
+    bool _usedNewspaper; //Checking whether players have used newspaper to kill cockroach or not
 
-    public TextMeshProUGUI operateTooltip;
-    //public string tooltipText;
-    //public TextMeshProUGUI operateTooltip;
+    public TextMeshProUGUI operateTooltip; //Attached to operate tooltip
+    public TextMeshProUGUI interactTooltip; //Attached to interactable items' tooltip
+
+    public Animator _anim2; //For newspaper roll use
+    public GameObject newspaperRoll;
+
+    //Sound source
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip cockroachMove;
+    [SerializeField] private AudioClip cockroachDie;
+    [SerializeField] private AudioClip newspaperHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        //_anim = GetComponent<Animator>();
         Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
         _gotNewspaper = false;
         _usedNewspaper = false;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Newspaper == null && _gotNewspaper != true)
+
+        if (Newspaper.activeSelf == false)
         {
             _gotNewspaper = true;
         }
-    }
 
-    //public void cockroachDie()
-    //{
-    //    if(_gotNewspaper && _isAlive)
-    //    {
-    //        if(Input.GetKeyDown(KeyCode.E))
-    //        {
-    //            _anim.SetTrigger("die");
-    //            this.GetComponent<BoxCollider>().enabled = false;
-    //        }
-    //    }
-        
-    //}
+    }
 
     /// <summary>
     /// A function for operate the animation of the cockroach
@@ -58,24 +61,37 @@ public class cockroachScript : MonoBehaviour
     {
         if (_isAlive == true)
         {
+            Debug.Log("Alive ah");
             if (_gotNewspaper == false)
             {
+                Debug.Log("Dont hv");
                 _anim.SetTrigger("move");
                 operateTooltip.gameObject.SetActive(true);
                 operateTooltip.text = "There is a cockroach on your key!\nYou should find a way to kill cockroach and get your key.";
                 StartCoroutine(Wait());
+
+                soundSource.PlayOneShot(cockroachMove);
             }
 
             else if(_gotNewspaper == true)
             {
-                //Destroy(this.gameObject);
-                _anim.SetTrigger("die");
-                this.GetComponent<BoxCollider>().enabled = false;
-                newspaperPreview.SetActive(false);
-                _isAlive = false;
-                operateTooltip.text = "Cockroach is killed!\n You can get your key now.";
-                operateTooltip.gameObject.SetActive(true);
-                StartCoroutine(Wait());
+                Debug.Log("Hv");
+                newspaperRoll.gameObject.SetActive(true);
+                _anim2.SetTrigger("useNewspaper");
+                soundSource.PlayOneShot(newspaperHit);
+                StartCoroutine(afterNewspaperHit());
+                ////if ()
+                ////{
+                //    _anim.SetTrigger("die");
+                //    newspaperPreview.SetActive(false);
+                //    _isAlive = false;
+                //    operateTooltip.text = "Cockroach is killed!\n You can get your key now.";
+                //    operateTooltip.gameObject.SetActive(true);
+                //    StartCoroutine(Wait());
+                //    _usedNewspaper = true;
+
+                //    soundSource.PlayOneShot(cockroachDie);
+                ////}
             }
 
         }
@@ -101,17 +117,41 @@ public class cockroachScript : MonoBehaviour
         operateTooltip.gameObject.SetActive(false);
     }
 
-    //void ShowTooltip()
-    //{
-    //    if (_isAlive == true)
-    //    {
-    //        operateTooltip.text = "Press 'E' to interact.";
-    //        operateTooltip.gameObject.SetActive(true);
-    //    }
-    //}
+    IEnumerator afterNewspaperHit()
+    {
+        yield return new WaitForSeconds(2);
+        _anim.SetTrigger("die");
+        newspaperPreview.SetActive(false);
+        _isAlive = false;
+        operateTooltip.text = "Cockroach is killed!\n You can get your key now.";
+        operateTooltip.gameObject.SetActive(true);
+        StartCoroutine(Wait());
+        _usedNewspaper = true;
+        soundSource.PlayOneShot(cockroachDie);
+    }
 
-    //void HideTooltip()
-    //{
-    //    operateTooltip.gameObject.SetActive(false);
-    //}
+    /// <summary>
+    /// Function that changing the tooltip when cursor point to cockroach
+    /// </summary>
+    void ShowTooltip()
+    {
+
+        if (_gotNewspaper == true && _usedNewspaper == true)
+        {
+            interactTooltip.text = "The cockrach is die.";
+        }
+
+        else if (_gotNewspaper == false && _usedNewspaper == false)
+        {
+            interactTooltip.text = "Press 'E' to interact.";
+        }
+
+        else if (_gotNewspaper == true && _usedNewspaper == false)
+        {
+            interactTooltip.text = "Press 'E' to use the newspaper to kill the cockroach.";
+        }
+
+
+        interactTooltip.gameObject.SetActive(true);
+    }
 }

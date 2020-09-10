@@ -5,35 +5,6 @@ using TMPro;
 
 public class HouseOutlineController : MonoBehaviour
 {
-    //private MeshRenderer _meshRenderer;
-
-    //public float maxOutlineWidth;
-
-    //public Color OutlineColor;
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    _meshRenderer = GetComponent<MeshRenderer>();
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
-    //public void ShowOutline()
-    //{
-    //    _meshRenderer.material.SetFloat("_Outline", maxOutlineWidth);
-    //    _meshRenderer.material.SetColor("_OutlineColor", OutlineColor);
-    //}
-
-    //public void HideOutline()
-    //{
-    //    _meshRenderer.material.SetFloat("_Outline", 0f);
-    //}
-
     private MeshRenderer _renderer;
     public bool showingOutline;
     public float maxOutlineWidth;

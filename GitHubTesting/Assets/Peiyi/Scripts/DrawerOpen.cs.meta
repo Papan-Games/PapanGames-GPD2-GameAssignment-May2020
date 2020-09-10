@@ -3,7 +3,13 @@ guid: b3080cb74d41d3347a1ccd6d38a0517f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _anim: {instanceID: 0}
+  - operateTooltip: {instanceID: 0}
+  - interactTooltip: {instanceID: 0}
+  - soundSource: {instanceID: 0}
+  - drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
+  - drawerClose: {fileID: 8300000, guid: 8e8083f986d69a74a9303a38554cf189, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

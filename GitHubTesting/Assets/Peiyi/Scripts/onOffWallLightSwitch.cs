@@ -10,6 +10,12 @@ public class onOffWallLightSwitch : MonoBehaviour
 
     public TextMeshProUGUI interactTooltip;
 
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip onOffWallLight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,9 +46,10 @@ public class onOffWallLightSwitch : MonoBehaviour
             temp.z = 180.0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = true;
+
             //On light here
             wallLight.gameObject.SetActive(true);
-
+            soundSource.PlayOneShot(onOffWallLight);
 
         }
 
@@ -52,9 +59,10 @@ public class onOffWallLightSwitch : MonoBehaviour
             temp.z = 0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
             _isOnLight = false;
-            //Off Light here
 
+            //Off Light here
             wallLight.gameObject.SetActive(false);
+            soundSource.PlayOneShot(onOffWallLight);
         }
     }
 

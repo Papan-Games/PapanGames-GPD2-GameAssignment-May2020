@@ -12,8 +12,6 @@ public class LockedRoomTooltip : MonoBehaviour
     bool _usedKeyOpen;
 
     public TextMeshProUGUI interactTooltip;
-    public bool canInteract;
-    public string OpenText;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +26,12 @@ public class LockedRoomTooltip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (key == null)
+        if (key.gameObject.activeSelf == false)
         {
             _gotKey = true;
         }
 
-        if(keyPreview == null)
+        if(keyPreview.gameObject.activeSelf == false)
         {
             _usedKeyOpen = true;
         }

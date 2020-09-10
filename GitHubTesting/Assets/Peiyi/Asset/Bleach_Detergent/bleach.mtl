@@ -1,0 +1,11 @@
+# Created with Anim8or 0.97d beta
+# Object "bleach":
+
+newmtl ___default___
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1.0
+Ns 752.6
+map_Kd Bleach.jpg
+

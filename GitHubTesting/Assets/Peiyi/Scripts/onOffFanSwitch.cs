@@ -11,6 +11,15 @@ public class onOffFanSwitch : MonoBehaviour
 
     public TextMeshProUGUI interactTooltip;
 
+    /// <summary>
+    /// Variable for sound source and audio clip
+    /// </summary>
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip onOffFan;
+    [SerializeField] private AudioClip fanMoving;
+
+    public AudioSource fan;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +43,8 @@ public class onOffFanSwitch : MonoBehaviour
 
             //On fan here
             _anim.SetBool("onFan", _isOnFan);
+            soundSource.PlayOneShot(onOffFan);
+            fan.Play();
         }
 
         else if (_isOnFan)
@@ -45,6 +56,8 @@ public class onOffFanSwitch : MonoBehaviour
 
             //Off fan here
             _anim.SetBool("onFan", _isOnFan);
+            soundSource.PlayOneShot(onOffFan);
+            fan.Stop();
         }
     }
 
