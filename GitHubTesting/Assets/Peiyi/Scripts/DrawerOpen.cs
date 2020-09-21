@@ -31,19 +31,19 @@ public class DrawerOpen : MonoBehaviour
     /// Variable for attaching the tooltips
     /// </summary>
     public TextMeshProUGUI operateTooltip;
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip drawerOpen;
-    [SerializeField] private AudioClip drawerClose;
+    public AudioSource soundSource;
+    public AudioClip drawerOpen;
+    public AudioClip drawerClose;
 
     void Start()
     {
         _isOpen = false;
-        //firstTime = true;
+        firstTime = true;
         drawer_3 = GameObject.Find("ThirdDrawer");
     }
 
@@ -107,23 +107,23 @@ public class DrawerOpen : MonoBehaviour
         operateTooltip.gameObject.SetActive(false);
     }
 
-    public void ShowTooltip()
-    {
-        if (_isOpen)
-        {
-            interactTooltip.text = "Press 'E' to close.";
-            interactTooltip.gameObject.SetActive(true);
-        }
+    //public void ShowTooltip()
+    //{
+    //    if (_isOpen)
+    //    {
+    //        interactTooltip.text = "Press 'E' to close.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
 
-        else
-        {
-            interactTooltip.text = "Press 'E' to open.";
-            interactTooltip.gameObject.SetActive(true);
-        }
-    }
+    //    else
+    //    {
+    //        interactTooltip.text = "Press 'E' to open.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
+    //}
 
-    public void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //public void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 }

@@ -12,8 +12,11 @@ public class HouseOutlineLookAt : MonoBehaviour
     private HouseOutlineController currentController;
 
 
-    public TextMeshProUGUI tooltip;
+    public GameObject operateTooltip;
     public TextMeshProUGUI interactTooltip;
+
+    public KeyPrompt promptScript;
+    //private bool turnOffprompt;
 
     public GameObject livingRoomLight;
     bool lightOn;
@@ -52,6 +55,18 @@ public class HouseOutlineLookAt : MonoBehaviour
                hit.collider.CompareTag("bed") || hit.collider.CompareTag("powerSwitch") ||
                hit.collider.CompareTag("cailingFanSwitch") /*|| hit.collider.tag == "newspaper"*/)
             {
+                if (operateTooltip.activeSelf == false)
+                {
+                    promptScript.ShowPrompt = true;
+                    //turnOffprompt = true;
+                }
+
+                else
+                {
+                    promptScript.ShowPrompt = false;
+                    //turnOffprompt = false;
+                }
+
                 currentController = hit.collider.GetComponent<HouseOutlineController>();
 
                 if(prevController != currentController)
@@ -69,8 +84,8 @@ public class HouseOutlineLookAt : MonoBehaviour
                     SendMessageOptions.DontRequireReceiver);
                 }
 
-                hit.collider.SendMessage("ShowTooltip",
-                SendMessageOptions.DontRequireReceiver);
+                //hit.collider.SendMessage("ShowTooltip",
+                //SendMessageOptions.DontRequireReceiver);
             }
 
             else if (hit.collider.CompareTag("newspaper"))
@@ -78,6 +93,12 @@ public class HouseOutlineLookAt : MonoBehaviour
 
                 if (lightOn == true)
                 {
+                    //if (operateTooltip.gameObject.activeSelf == false)
+                    //{
+                    //    promptScript.ShowPrompt = true;
+                    //    turnOffprompt = true;
+                    //}
+
                     currentController = hit.collider.GetComponent<HouseOutlineController>();
 
                     if (prevController != currentController)
@@ -90,6 +111,7 @@ public class HouseOutlineLookAt : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        promptScript.ShowPrompt = false;
                         if (lightOn == true && !isReadingNews)
                         {
                             hit.collider.SendMessage("readNewspaper",
@@ -104,8 +126,8 @@ public class HouseOutlineLookAt : MonoBehaviour
                         }
 
                     }
-                    hit.collider.SendMessage("ShowTooltip",
-                    SendMessageOptions.DontRequireReceiver);
+                    //hit.collider.SendMessage("ShowTooltip",
+                    //SendMessageOptions.DontRequireReceiver);
                 }
 
 
@@ -114,20 +136,25 @@ public class HouseOutlineLookAt : MonoBehaviour
             else
             {
                 HideOutline();
-                HideTooltip();
+                //HideTooltip();
+                promptScript.ShowPrompt = false;
+                //turnOffprompt = false;
             }
         }
 
         else
         {
             HideOutline();
-            HideTooltip();
+            // HideTooltip();
+            promptScript.ShowPrompt = false;
+            //turnOffprompt = false;
         }
     }
 
     private void ShowOutline()
     {
-        if(currentController != null)
+        
+        if (currentController != null)
         {
             currentController.ShowOutline();
         }
@@ -135,6 +162,7 @@ public class HouseOutlineLookAt : MonoBehaviour
 
     private void HideOutline()
     {
+        
         if (prevController != null)
         {
             prevController.HideObject();
@@ -142,8 +170,8 @@ public class HouseOutlineLookAt : MonoBehaviour
         }
     }
 
-    public void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //public void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 }

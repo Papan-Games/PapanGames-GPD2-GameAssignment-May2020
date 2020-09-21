@@ -13,14 +13,14 @@ public class Bed : MonoBehaviour
     public Button yes;
     public Button no;
 
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip panelSound; //Open or close panel use
-    [SerializeField] private AudioClip yesSound;
+    public AudioSource soundSource;
+    public AudioClip panelSound; //Open or close panel use
+    public AudioClip yesSound;
 
     public Animator _anim;
 
@@ -65,21 +65,6 @@ public class Bed : MonoBehaviour
         }
     }
 
-    //public void yesButton()
-    //{
-
-    //    if (Input.GetKeyDown(KeyCode.Y))
-    //    {
-    //        GameObject.Find("Inventory").gameObject.SetActive(false);
-    //        soundSource.PlayOneShot(panelSound);
-
-    //        SceneManager.LoadScene("SpaceStation");
-    //    }
-
-            
-        
-    //}
-
     public void noButton()
     {
         
@@ -88,17 +73,17 @@ public class Bed : MonoBehaviour
         
     }
 
-    void ShowTooltip()
-    {
-        interactTooltip.text = "Press 'E' to interact.";
-        interactTooltip.gameObject.SetActive(true);
+    //void ShowTooltip()
+    //{
+    //    interactTooltip.text = "Press 'E' to interact.";
+    //    interactTooltip.gameObject.SetActive(true);
 
-    }
+    //}
 
-    void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 
     IEnumerator loadLevel(int levelIndex)
     {

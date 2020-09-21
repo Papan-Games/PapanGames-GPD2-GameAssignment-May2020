@@ -11,8 +11,8 @@ public class key : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip collectSound;
+    public AudioSource soundSource;
+    public AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()

@@ -8,13 +8,13 @@ public class onOffSwitch : MonoBehaviour
     public bool _isOnLight;
     public GameObject[] lights;
 
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip onOffLight;
+    public AudioSource soundSource;
+    public AudioClip onOffLight;
 
     // Start is called before the first frame update
     void Start()
@@ -71,25 +71,25 @@ public class onOffSwitch : MonoBehaviour
         }
     }
 
-    public void ShowTooltip()
-    {
-        if (_isOnLight)
-        {
-            interactTooltip.text = "Press 'E' to off the light.";
-            interactTooltip.gameObject.SetActive(true);
-        }
+    //public void ShowTooltip()
+    //{
+    //    if (_isOnLight)
+    //    {
+    //        interactTooltip.text = "Press 'E' to off the light.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
 
-        else
-        {
-            interactTooltip.text = "Press 'E' to on the light.";
-            interactTooltip.gameObject.SetActive(true);
-        }
-    }
+    //    else
+    //    {
+    //        interactTooltip.text = "Press 'E' to on the light.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
+    //}
 
-    public void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //public void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 
 
 }

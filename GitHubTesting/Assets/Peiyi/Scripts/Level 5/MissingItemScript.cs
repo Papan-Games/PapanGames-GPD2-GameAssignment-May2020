@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class MissingItemScript : MonoBehaviour
 {
-    [SerializeField] GameObject pillows;
+    public GameObject pillows;
     private HouseOutlineController MissingItemController;
 
     private MeshRenderer _renderer;
 
+    static int itemCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        // itemCount = 0;
         MissingItemController = GetComponent<HouseOutlineController>();
 
         _renderer = gameObject.GetComponent<MeshRenderer>();
@@ -32,5 +35,8 @@ public class MissingItemScript : MonoBehaviour
             pillows.SetActive(true);
         }
         _renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+
+        itemCount++;
+        Debug.Log(itemCount);
     }
 }

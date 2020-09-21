@@ -6,11 +6,11 @@ using TMPro;
 public class StartingText : MonoBehaviour
 {
     public GameObject dialogueText;
-    [SerializeField] TextMeshProUGUI dialogue;
+    public TextMeshProUGUI dialogue;
     public string[] Sentences;
     //public string secondSentence;
-    [SerializeField] float typeInterval;
-    [SerializeField] float TimeWait;
+    public float typeInterval;
+    public float TimeWait;
     bool typing;
     int i;
 

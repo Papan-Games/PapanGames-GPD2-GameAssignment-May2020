@@ -17,19 +17,19 @@ public class cockroachScript : MonoBehaviour
     bool _gotNewspaper; //Checking whether the player has read the newspaper or not
 
     public GameObject newspaperPreview; //The inventory newspaper slot, use this to check is player get the newspaper
-    bool _usedNewspaper; //Checking whether players have used newspaper to kill cockroach or not
+    //bool _usedNewspaper; //Checking whether players have used newspaper to kill cockroach or not
 
     public TextMeshProUGUI operateTooltip; //Attached to operate tooltip
-    public TextMeshProUGUI interactTooltip; //Attached to interactable items' tooltip
+    //public TextMeshProUGUI interactTooltip; //Attached to interactable items' tooltip
 
     public Animator _anim2; //For newspaper roll use
     public GameObject newspaperRoll;
 
     //Sound source
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip cockroachMove;
-    [SerializeField] private AudioClip cockroachDie;
-    [SerializeField] private AudioClip newspaperHit;
+    public AudioSource soundSource;
+    public AudioClip cockroachMove;
+    //[SerializeField] private AudioClip cockroachDie;
+    public AudioClip newspaperHit;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class cockroachScript : MonoBehaviour
         Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
         _gotNewspaper = false;
-        _usedNewspaper = false;
+        //_usedNewspaper = false;
 
 
     }
@@ -123,32 +123,32 @@ public class cockroachScript : MonoBehaviour
         operateTooltip.text = "Cockroach is killed!\n You can get your key now.";
         operateTooltip.gameObject.SetActive(true);
         StartCoroutine(Wait());
-        _usedNewspaper = true;
-        soundSource.PlayOneShot(cockroachDie);
+        //_usedNewspaper = true;
+        //soundSource.PlayOneShot(cockroachDie);
     }
 
-    /// <summary>
-    /// Function that changing the tooltip when cursor point to cockroach
-    /// </summary>
-    void ShowTooltip()
-    {
+    ///// <summary>
+    ///// Function that changing the tooltip when cursor point to cockroach
+    ///// </summary>
+    //void ShowTooltip()
+    //{
 
-        if (_gotNewspaper == true && _usedNewspaper == true)
-        {
-            interactTooltip.text = "The cockrach is die.";
-        }
+    //    if (_gotNewspaper == true && _usedNewspaper == true)
+    //    {
+    //        interactTooltip.text = "The cockrach is die.";
+    //    }
 
-        else if (_gotNewspaper == false && _usedNewspaper == false)
-        {
-            interactTooltip.text = "Press 'E' to interact.";
-        }
+    //    else if (_gotNewspaper == false && _usedNewspaper == false)
+    //    {
+    //        interactTooltip.text = "Press 'E' to interact.";
+    //    }
 
-        else if (_gotNewspaper == true && _usedNewspaper == false)
-        {
-            interactTooltip.text = "Press 'E' to use the newspaper to kill the cockroach.";
-        }
+    //    else if (_gotNewspaper == true && _usedNewspaper == false)
+    //    {
+    //        interactTooltip.text = "Press 'E' to use the newspaper to kill the cockroach.";
+    //    }
 
 
-        interactTooltip.gameObject.SetActive(true);
-    }
+    //    interactTooltip.gameObject.SetActive(true);
+    //}
 }

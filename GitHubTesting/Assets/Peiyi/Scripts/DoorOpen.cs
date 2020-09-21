@@ -9,14 +9,14 @@ public class DoorOpen : MonoBehaviour
     public Animator _anim;
     private bool _isOpen = false;
 
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip openDoor;
-    [SerializeField] private AudioClip closeDoor;
+    public AudioSource soundSource;
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
 
     /// <summary>
     /// This is a function that play the door close/open animation
@@ -35,23 +35,23 @@ public class DoorOpen : MonoBehaviour
         }
     }
 
-    void ShowTooltip()
-    {
-        if (_isOpen)
-        {
-            interactTooltip.text = "Press 'E' to close.";
-            interactTooltip.gameObject.SetActive(true);
-        }
+    //void ShowTooltip()
+    //{
+    //    if (_isOpen)
+    //    {
+    //        interactTooltip.text = "Press 'E' to close.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
 
-        else
-        {
-            interactTooltip.text = "Press 'E' to open.";
-            interactTooltip.gameObject.SetActive(true);
-        }
-    }
+    //    else
+    //    {
+    //        interactTooltip.text = "Press 'E' to open.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
+    //}
 
-    void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 }

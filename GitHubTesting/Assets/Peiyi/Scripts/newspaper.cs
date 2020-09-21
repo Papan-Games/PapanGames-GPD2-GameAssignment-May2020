@@ -15,14 +15,14 @@ public class newspaper : MonoBehaviour
     public bool livingRoomWithLight;
     public GameObject livingRoomSwitchObject;
 
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip reading;
-    [SerializeField] private AudioClip collectSound;
+    public AudioSource soundSource;
+    public AudioClip reading;
+    public AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -73,14 +73,14 @@ public class newspaper : MonoBehaviour
         }
     }
 
-    void ShowTooltip()
-    {
-        if (livingRoomWithLight == true)
-        {
-            interactTooltip.text = "Press 'E' to interact.";
-            interactTooltip.gameObject.SetActive(true);
-        }
-    }
+    //void ShowTooltip()
+    //{
+    //    if (livingRoomWithLight == true)
+    //    {
+    //        interactTooltip.text = "Press 'E' to interact.";
+    //        interactTooltip.gameObject.SetActive(true);
+    //    }
+    //}
 
     
 

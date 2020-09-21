@@ -12,8 +12,8 @@ public class StartingDialogue : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip panelSound;
+    public AudioSource soundSource;
+    public AudioClip panelSound;
 
     void Start()
     {

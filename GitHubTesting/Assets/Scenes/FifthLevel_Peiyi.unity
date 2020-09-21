@@ -605,7 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 1346577594}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 6383e1495e52e854da0d69751f6b7072, type: 3}
   closeDoor: {fileID: 8300000, guid: 50dbdf436f20b6249a27341031d31b76, type: 3}
@@ -3507,8 +3506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 1142183435}
   distance: 5
-  tooltip: {fileID: 534983806}
+  operateTooltip: {fileID: 534983804}
   interactTooltip: {fileID: 1264263497}
+  promptScript: {fileID: 1345509814}
   livingRoomLight: {fileID: 1276215107}
 --- !u!82 &119408389
 AudioSource:
@@ -8014,11 +8014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 1.577907e-19
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 1.5936923e-10
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_Range
@@ -8026,11 +8026,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 3.0262028e+29
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1e-45
+      value: 1.8019267e+31
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BounceIntensity
@@ -8227,15 +8227,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3e-45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1e-45
+      value: 1.04e-43
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 5.9e-44
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.y
@@ -10369,7 +10369,6 @@ MonoBehaviour:
   lights:
   - {fileID: 144295720}
   - {fileID: 1787777562}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &348041097
@@ -11143,7 +11142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380587372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11181,8 +11180,7 @@ MonoBehaviour:
   Sentences:
   - Finally I get back home!
   - I already collected all the missing items.
-  - Now just need to put them back.
-  - I should put them back before they back home.
+  - Now I should put them back to their original place.
   typeInterval: 0.05
   TimeWait: 4
 --- !u!1 &381130057 stripped
@@ -16694,7 +16692,6 @@ MonoBehaviour:
   _isOnLight: 0
   lights:
   - {fileID: 2108239029}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &572522644
@@ -17854,7 +17851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &634211852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17882,7 +17879,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634211851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42d67cafb402f44ea4c4c942c651e48, type: 3}
   m_Name: 
@@ -19124,7 +19121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 95966909380670494}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 854eb81043c9fb04280951833333fb5e, type: 3}
   closeDoor: {fileID: 8300000, guid: 48b164ed825ad83498039f84204f2f71, type: 3}
@@ -21073,7 +21069,6 @@ MonoBehaviour:
   lights:
   - {fileID: 279118315}
   - {fileID: 488341730}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &731857885
@@ -21971,7 +21966,6 @@ MonoBehaviour:
   questionPanel: {fileID: 1545799150}
   yes: {fileID: 0}
   no: {fileID: 0}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   panelSound: {fileID: 8300000, guid: 76e9db5ed76d5784e88c0a30043e4d39, type: 3}
   yesSound: {fileID: 8300000, guid: 983974b4c1cc28a4aa4bef89a672a7b0, type: 3}
@@ -28418,7 +28412,6 @@ MonoBehaviour:
   - {fileID: 1913891651}
   - {fileID: 434629637}
   - {fileID: 1112878578}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &961865012
@@ -29320,7 +29313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 1982536996}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: c2b79d62a8445944c81d18500e6c94c8, type: 3}
   closeDoor: {fileID: 8300000, guid: 1c3c761db1177cd4abc8ccc471b337dd, type: 3}
@@ -29913,19 +29905,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 6.87e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: -0.0000000014253594
+      value: 1.04e-43
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.0000001
+      value: 5.9e-44
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.4033e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_Range
@@ -32667,12 +32659,10 @@ MonoBehaviour:
   Newspaper: {fileID: 0}
   newspaperPreview: {fileID: 274721322}
   operateTooltip: {fileID: 534983806}
-  interactTooltip: {fileID: 1264263497}
   _anim2: {fileID: 1046094341}
   newspaperRoll: {fileID: 1046094339}
   soundSource: {fileID: 119408389}
   cockroachMove: {fileID: 8300000, guid: e374d9ced72807d47bef14943aad4d37, type: 3}
-  cockroachDie: {fileID: 0}
   newspaperHit: {fileID: 8300000, guid: 792fa786458cbe44083cf67af55657e9, type: 3}
 --- !u!1 &1078081982
 GameObject:
@@ -35419,7 +35409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 95966909380670494}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: c2b79d62a8445944c81d18500e6c94c8, type: 3}
   closeDoor: {fileID: 8300000, guid: 1c3c761db1177cd4abc8ccc471b337dd, type: 3}
@@ -35929,7 +35918,6 @@ MonoBehaviour:
   lights:
   - {fileID: 279118315}
   - {fileID: 488341730}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &1180464334
@@ -36897,7 +36885,6 @@ MonoBehaviour:
   - {fileID: 295506865}
   - {fileID: 2113404459}
   - {fileID: 902980351}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &1218086302
@@ -37710,7 +37697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 1050959749}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 6383e1495e52e854da0d69751f6b7072, type: 3}
   closeDoor: {fileID: 8300000, guid: 50dbdf436f20b6249a27341031d31b76, type: 3}
@@ -40354,6 +40340,7 @@ RectTransform:
   - {fileID: 534983805}
   - {fileID: 380587372}
   - {fileID: 634211852}
+  - {fileID: 1345509815}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41102,7 +41089,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 423137170}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 6383e1495e52e854da0d69751f6b7072, type: 3}
   closeDoor: {fileID: 8300000, guid: 50dbdf436f20b6249a27341031d31b76, type: 3}
@@ -41393,7 +41379,6 @@ MonoBehaviour:
   lights:
   - {fileID: 144295720}
   - {fileID: 1787777562}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &1328739289
@@ -42309,6 +42294,59 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: eb73812fabcccdb4baa29397a29bf8bc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab11dbc123197d845af6d1f9fe9784d0, type: 3}
+--- !u!1 &1345509813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345509815}
+  - component: {fileID: 1345509814}
+  m_Layer: 5
+  m_Name: KeyPrompt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345509814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345509813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb0f0909064d4144ac64eba089be52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pressed: {fileID: 1552524941}
+  NotPressed: {fileID: 1915269249}
+  ShowPrompt: 0
+--- !u!224 &1345509815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345509813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.39583308, y: 0.41666758, z: 0.41666758}
+  m_Children:
+  - {fileID: 1552524944}
+  - {fileID: 1915269252}
+  m_Father: {fileID: 1301438836}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000091552734, y: -189.12494}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1345878819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43867,7 +43905,7 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.05
   OutlineColor: {r: 1, g: 0.9843137, b: 0, a: 1}
-  ObjectMainColor: {r: 0.5372549, g: 0.5372549, b: 0.5372549, a: 1}
+  ObjectMainColor: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 1}
   ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1408443230
 MonoBehaviour:
@@ -46011,7 +46049,6 @@ MonoBehaviour:
   _anim: {fileID: 2052276646}
   firstTime: 0
   operateTooltip: {fileID: 534983806}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
   drawerClose: {fileID: 8300000, guid: 8e8083f986d69a74a9303a38554cf189, type: 3}
@@ -47101,7 +47138,6 @@ MonoBehaviour:
   lights:
   - {fileID: 1276215107}
   - {fileID: 1190734445}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &1533558507
@@ -47709,6 +47745,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549161360}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1552524941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552524944}
+  - component: {fileID: 1552524943}
+  - component: {fileID: 1552524942}
+  m_Layer: 5
+  m_Name: Pressed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552524942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552524941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5192387713548727493, guid: 8dbfacb2ff74c804bbebbde420e98573,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1552524943
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552524941}
+  m_CullTransparentMesh: 0
+--- !u!224 &1552524944
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552524941}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1345509815}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000045776367}
+  m_SizeDelta: {x: 104.323364, y: 82}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1553367193
 GameObject:
   m_ObjectHideFlags: 0
@@ -51610,7 +51721,6 @@ MonoBehaviour:
   _anim: {fileID: 1703064609}
   firstTime: 0
   operateTooltip: {fileID: 534983806}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
   drawerClose: {fileID: 8300000, guid: 8e8083f986d69a74a9303a38554cf189, type: 3}
@@ -52016,7 +52126,6 @@ MonoBehaviour:
   _isOnLight: 0
   lights:
   - {fileID: 410964955}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &1706408886
@@ -57217,7 +57326,6 @@ MonoBehaviour:
   _isOnLight: 0
   lights:
   - {fileID: 2108239029}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &1884273929
@@ -57801,6 +57909,81 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1915269249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915269252}
+  - component: {fileID: 1915269251}
+  - component: {fileID: 1915269250}
+  m_Layer: 5
+  m_Name: Not Pressed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1915269250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915269249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -2196767854421149650, guid: c3b1ae89044a1ba4bbcbede0dfeb951d,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1915269251
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915269249}
+  m_CullTransparentMesh: 0
+--- !u!224 &1915269252
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915269249}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0526348, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1345509815}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: 9.899872}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1922841414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 094627802cc8b7849aed1eb1a64bbe75,
@@ -58338,7 +58521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 1750333693}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: c2b79d62a8445944c81d18500e6c94c8, type: 3}
   closeDoor: {fileID: 8300000, guid: 1c3c761db1177cd4abc8ccc471b337dd, type: 3}
@@ -60545,7 +60727,6 @@ MonoBehaviour:
   _isOnLight: 0
   lights:
   - {fileID: 410964955}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &2026831174
@@ -61066,7 +61247,6 @@ MonoBehaviour:
   _anim: {fileID: 346361814}
   firstTime: 0
   operateTooltip: {fileID: 534983806}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
   drawerClose: {fileID: 8300000, guid: 8e8083f986d69a74a9303a38554cf189, type: 3}
@@ -63274,7 +63454,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 144494712}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: c2b79d62a8445944c81d18500e6c94c8, type: 3}
   closeDoor: {fileID: 8300000, guid: 1c3c761db1177cd4abc8ccc471b337dd, type: 3}
@@ -65233,7 +65412,6 @@ MonoBehaviour:
   _isOnLight: 0
   lights:
   - {fileID: 652526298}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &2125181593
@@ -68729,7 +68907,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 368217481363853530}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 67e9e30742dc0b247a35b2d92345d4fe, type: 3}
   closeDoor: {fileID: 8300000, guid: d410f59012eef104e9ed65004e9b8b98, type: 3}
@@ -70755,7 +70932,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 181682396}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 6383e1495e52e854da0d69751f6b7072, type: 3}
   closeDoor: {fileID: 8300000, guid: 50dbdf436f20b6249a27341031d31b76, type: 3}
@@ -72031,7 +72207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 855214401}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   openDoor: {fileID: 8300000, guid: 6383e1495e52e854da0d69751f6b7072, type: 3}
   closeDoor: {fileID: 8300000, guid: 50dbdf436f20b6249a27341031d31b76, type: 3}
