@@ -19,6 +19,8 @@ public class FPSInput : MonoBehaviour
     private bool finalDialogue;
     private bool isTalking;
 
+    public Transform revivePoint;
+
     private void Awake()
     {
         Messenger.AddListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
@@ -26,6 +28,8 @@ public class FPSInput : MonoBehaviour
         Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
         Messenger.AddListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
         Messenger.AddListener(GameEvent.SOUL_COLLECTED_ALL, TriggerFinalDialogue);
+        Messenger.AddListener(GameEvent.PLAYER_DEAD, PlayerDead);
+        Messenger.AddListener(GameEvent.PLAYER_REVIVED, PlayerRevived);
     }
 
     private void OnDestroy()
@@ -35,6 +39,8 @@ public class FPSInput : MonoBehaviour
         Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
         Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
         Messenger.RemoveListener(GameEvent.SOUL_COLLECTED_ALL, TriggerFinalDialogue);
+        Messenger.RemoveListener(GameEvent.PLAYER_DEAD, PlayerDead);
+        Messenger.RemoveListener(GameEvent.PLAYER_REVIVED, PlayerRevived);
     }
 
     void Start()
@@ -116,5 +122,16 @@ public class FPSInput : MonoBehaviour
     {
         finalDialogue = true;
         isTalking = false;
+    }
+
+    private void PlayerDead()
+    {
+        canMove = false;
+        transform.position = revivePoint.transform.position;
+    }
+
+    private void PlayerRevived()
+    {
+        canMove = true;
     }
 }

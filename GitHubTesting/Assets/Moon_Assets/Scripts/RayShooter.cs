@@ -60,7 +60,14 @@ public class RayShooter : MonoBehaviour
     {
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = pos;
-        yield return new WaitForSeconds(0.3f);
+
+        Vector3 scale = new Vector3(0.15f, 0.15f, 0.15f);
+        sphere.transform.localScale = scale;
+
+        MeshRenderer renderer = sphere.GetComponent<MeshRenderer>();
+        renderer.material.color = Color.yellow;
+
+        yield return new WaitForSeconds(0.2f);
         Destroy(sphere);
     }
 

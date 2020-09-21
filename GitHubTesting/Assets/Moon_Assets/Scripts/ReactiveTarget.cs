@@ -8,43 +8,64 @@ public class ReactiveTarget : MonoBehaviour
     private GameObject soul;
     public int health;
     public float thrust;
+    private bool isAlive;
 
     Animator anim;
     private float followDist = 12;
     private float attackDist = 3;
     private Transform playerPos;
+    private float waitTime;
+    private float startWaitTime;
 
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
         crawler = gameObject.transform.GetChild(0).gameObject;
+
         soul = gameObject.transform.GetChild(1).gameObject;
         soul.SetActive(false);
+
+        startWaitTime = 1.5f;
+        waitTime = 0;
+
+        isAlive = true;
     }
 
     void Update()
     {
-        float dist = Vector3.Distance(transform.position, playerPos.position);
-        Debug.Log(dist);
-
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-
-        if (Physics.SphereCast(ray, 5.0f, out hit))
+        if (isAlive)
         {
-            if (dist <= followDist)
+            float dist = Vector3.Distance(transform.position, playerPos.position);
+
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+
+            if (Physics.SphereCast(ray, 5.0f, out hit))
             {
-                anim.SetBool("isFollowing", true);
-            }
-            else
-            {
-                anim.SetBool("isFollowing", false);
-            }
-            
-            if (dist <= attackDist)
-            {
-                anim.SetTrigger("isAttacking");
+                if (dist <= followDist)
+                {
+                    anim.SetBool("isFollowing", true);
+                }
+                else
+                {
+                    anim.SetBool("isFollowing", false);
+                }
+
+                if (dist <= attackDist)
+                {
+                    if (waitTime <= 0)
+                    {
+                        anim.SetTrigger("isAttacking");
+
+                        Messenger.Broadcast(GameEvent.PLAYER_HURT);
+                        waitTime = startWaitTime;
+                    }
+                    else
+                    {
+                        waitTime -= Time.deltaTime;
+                    }
+                }
             }
         }
     }
@@ -63,12 +84,13 @@ public class ReactiveTarget : MonoBehaviour
 
     private void TakeDamage()
     {
-        this.transform.Translate(0, thrust, 0, Space.Self);
+        //play FX
         health--;
     }
 
     IEnumerator Die()
     {
+        isAlive = false;
         anim.SetBool("isDead", true);
         foreach(Collider collider in GetComponents<Collider>())
         {

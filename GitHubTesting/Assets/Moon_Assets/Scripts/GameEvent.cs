@@ -12,4 +12,7 @@ public static class GameEvent
     public const string SOUL_COLLECTED_ALL = "SOUL_COLLECTED_ALL";
     public const string FINAL_DIALOGUE_START = "FINAL_DIALOGUE_START";
     public const string FINAL_DIALOGUE_END = "FINAL_DIALOGUE_END";
+    public const string PLAYER_HURT = "PLAYER_HURT";
+    public const string PLAYER_DEAD = "PLAYER_DEAD";
+    public const string PLAYER_REVIVED = "PLAYER_REVIVED";
 }

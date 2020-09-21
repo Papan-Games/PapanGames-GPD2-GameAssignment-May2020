@@ -5,12 +5,12 @@ using UnityEngine;
 public class PatrolBehaviour : StateMachineBehaviour
 {
     [SerializeField] private PatrolSpots patrol;
-    [SerializeField] private Transform[] movePoints;
+    public Transform[] movePoints;
     public float speed;
     private float waitTime;
     public float startWaitTime;
 
-    private int randomSpot;
+    public int randomSpot;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

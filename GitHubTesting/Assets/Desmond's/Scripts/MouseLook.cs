@@ -31,6 +31,8 @@ public class MouseLook : MonoBehaviour
         Messenger.AddListener(GameEvent.DIALOGUE_END, DialogueEnded);
         Messenger.AddListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
         Messenger.AddListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
+        Messenger.AddListener(GameEvent.PLAYER_DEAD, PlayerDead);
+        Messenger.AddListener(GameEvent.PLAYER_REVIVED, PlayerRevived);
     }
 
     private void OnDestroy()
@@ -39,6 +41,8 @@ public class MouseLook : MonoBehaviour
         Messenger.RemoveListener(GameEvent.DIALOGUE_END, DialogueEnded);
         Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_START, DialogueStarted);
         Messenger.RemoveListener(GameEvent.FINAL_DIALOGUE_END, DialogueEnded);
+        Messenger.RemoveListener(GameEvent.PLAYER_DEAD, PlayerDead);
+        Messenger.RemoveListener(GameEvent.PLAYER_REVIVED, PlayerRevived);
     }
 
     // Start is called before the first frame update
@@ -113,6 +117,16 @@ public class MouseLook : MonoBehaviour
     }
 
     private void DialogueEnded()
+    {
+        canAim = true;
+    }
+
+    private void PlayerDead()
+    {
+        canAim = false;
+    }
+
+    private void PlayerRevived()
     {
         canAim = true;
     }
