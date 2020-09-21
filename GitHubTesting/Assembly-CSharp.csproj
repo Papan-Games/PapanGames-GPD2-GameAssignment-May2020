@@ -92,6 +92,7 @@
     <Compile Include="Assets\Moon_Assets\Scripts\FPSInput.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\Messenger.cs" />
+    <Compile Include="Assets\Moon_Assets\Scripts\OutlineTreeman.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\PatrolSpots.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\RayShooter.cs" />

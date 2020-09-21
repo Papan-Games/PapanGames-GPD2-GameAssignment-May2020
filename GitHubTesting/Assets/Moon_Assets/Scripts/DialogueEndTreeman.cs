@@ -16,6 +16,7 @@ public class DialogueEndTreeman : MonoBehaviour
     public GameObject continueText;
     private bool started;
 
+    public GameObject textBG;
     private void Awake()
     {
         Messenger.AddListener(GameEvent.FINAL_DIALOGUE_START, StartDialogue);
@@ -30,6 +31,7 @@ public class DialogueEndTreeman : MonoBehaviour
     {
         continueText.SetActive(false);
         started = false;
+        textBG.SetActive(false);
     }
 
     void Update()
@@ -47,6 +49,7 @@ public class DialogueEndTreeman : MonoBehaviour
 
     private void StartDialogue()
     {
+        textBG.SetActive(true);
         started = true;
         StartCoroutine(Type());
     }
@@ -77,6 +80,7 @@ public class DialogueEndTreeman : MonoBehaviour
         {
             textDisplay.text = "";
             continueText.SetActive(false);
+            textBG.SetActive(false);
             Messenger.Broadcast(GameEvent.FINAL_DIALOGUE_END);
             StartCoroutine(LoadNextLevel());
         }
@@ -85,6 +89,6 @@ public class DialogueEndTreeman : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(1.0f);
-        //SceneManager.LoadScene("TemporaryEnd");
+        SceneManager.LoadScene("2nd SpaceStation");
     }
 }

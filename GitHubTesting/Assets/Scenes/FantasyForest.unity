@@ -12755,6 +12755,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: treeman
       objectReference: {fileID: 0}
+    - target: {fileID: 6799780747793633427, guid: 65732c7abda01c2498eb8f19593f3338,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59972deab4504524d8b131c2d28a2c5c, type: 2}
+    - target: {fileID: 7805502084566323722, guid: 65732c7abda01c2498eb8f19593f3338,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 024d32164276b734eb6ab84de99c54c8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65732c7abda01c2498eb8f19593f3338, type: 3}
 --- !u!1001 &314793451
@@ -12854,7 +12864,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -18980,6 +18990,80 @@ Transform:
   m_Father: {fileID: 1978298740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 55.4379, y: -8.54697, z: 155.01993}
+--- !u!1 &483639118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483639119}
+  - component: {fileID: 483639121}
+  - component: {fileID: 483639120}
+  m_Layer: 5
+  m_Name: DialogueBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &483639119
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483639118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 537877047}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.010538, y: 76.512}
+  m_SizeDelta: {x: 1920.0209, y: 153.0239}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &483639120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483639118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &483639121
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483639118}
+  m_CullTransparentMesh: 0
 --- !u!1 &487941737
 GameObject:
   m_ObjectHideFlags: 0
@@ -20972,6 +21056,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 483639119}
   - {fileID: 1749408499}
   - {fileID: 1947313235}
   - {fileID: 770139439}
@@ -41994,7 +42079,7 @@ RectTransform:
   m_LocalScale: {x: 0.17063612, y: 0.17063612, z: 0.17063612}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -71872,7 +71957,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -83534,6 +83619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1520909934}
   canTalk: 0
+  outlineTreeman: {fileID: 1583215987}
 --- !u!1 &1394771673
 GameObject:
   m_ObjectHideFlags: 0
@@ -83932,7 +84018,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -95351,6 +95437,27 @@ Transform:
   m_Father: {fileID: 1682954456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -46.246548, y: 25.04228, z: -38.598198}
+--- !u!1 &1583215984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2376217983169128027, guid: 65732c7abda01c2498eb8f19593f3338,
+    type: 3}
+  m_PrefabInstance: {fileID: 313815224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1583215987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583215984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1271433055a02f645960ba4985e330b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showingOutline: 0
+  maxOutlineWidth: 0.1
+  OutlineColor: {r: 1, g: 0.98480475, b: 0, a: 1}
 --- !u!1001 &1586826763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96127,7 +96234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1632729382
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107060,7 +107167,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -107515,7 +107622,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -112602,7 +112709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!143 &1795926818
 CharacterController:
   m_ObjectHideFlags: 0
@@ -112699,7 +112806,7 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   gravity: 20
-  revivePoint: {fileID: 0}
+  revivePoint: {fileID: 884707428}
 --- !u!4 &1795926824
 Transform:
   m_ObjectHideFlags: 0
@@ -118462,6 +118569,27 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1895353123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4244615164572467891, guid: 65732c7abda01c2498eb8f19593f3338,
+    type: 3}
+  m_PrefabInstance: {fileID: 313815224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1895353126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895353123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1271433055a02f645960ba4985e330b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showingOutline: 0
+  maxOutlineWidth: 0
+  OutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1895538459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118842,7 +118970,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -125339,6 +125467,7 @@ MonoBehaviour:
   - Help me exterminate the creatures and I will tell you how to return to your world...
   typingSpeed: 0.02
   continueText: {fileID: 1947313234}
+  textBG: {fileID: 483639118}
 --- !u!4 &2101416369
 Transform:
   m_ObjectHideFlags: 0
@@ -125371,6 +125500,7 @@ MonoBehaviour:
   - Return the souls to its original place so you can escape these dimensions...
   typingSpeed: 0.02
   continueText: {fileID: 1947313234}
+  textBG: {fileID: 483639118}
 --- !u!1001 &2110704067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125572,7 +125702,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537877047}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}

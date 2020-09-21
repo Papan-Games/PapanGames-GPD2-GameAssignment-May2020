@@ -7,6 +7,8 @@ public class TreemanTrigger : MonoBehaviour
     public GameObject canvas;
     public bool canTalk;
 
+    public OutlineTreeman outlineTreeman;
+
     void Start()
     {
         canvas.SetActive(false);
@@ -20,6 +22,7 @@ public class TreemanTrigger : MonoBehaviour
             canvas.SetActive(true);
             canTalk = true;
             Messenger.Broadcast(GameEvent.TREEMAN_IN_RANGE);
+            outlineTreeman.ShowOutline();
         }
     }
 
@@ -30,6 +33,7 @@ public class TreemanTrigger : MonoBehaviour
             canvas.SetActive(false);
             canTalk = false;
             Messenger.Broadcast(GameEvent.TREEMAN_NOT_IN_RANGE);
+            outlineTreeman.HideOutline();
         }
     }
 }

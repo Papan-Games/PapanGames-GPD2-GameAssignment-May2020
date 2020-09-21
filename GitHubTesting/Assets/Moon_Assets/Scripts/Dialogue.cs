@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
     public GameObject continueText;
     private bool started;
 
+    public GameObject textBG;
+
     private void Awake()
     {
         Messenger.AddListener(GameEvent.DIALOGUE_START, StartDialogue);
@@ -29,6 +31,7 @@ public class Dialogue : MonoBehaviour
     {
         continueText.SetActive(false);
         started = false;
+        textBG.SetActive(false);
     }
 
     void Update()
@@ -46,6 +49,7 @@ public class Dialogue : MonoBehaviour
 
     private void StartDialogue()
     {
+        textBG.SetActive(true);
         started = true;
         StartCoroutine(Type());
     }
@@ -76,6 +80,7 @@ public class Dialogue : MonoBehaviour
         {
             textDisplay.text = "";
             continueText.SetActive(false);
+            textBG.SetActive(false);
             Messenger.Broadcast(GameEvent.DIALOGUE_END);
         }
     }
