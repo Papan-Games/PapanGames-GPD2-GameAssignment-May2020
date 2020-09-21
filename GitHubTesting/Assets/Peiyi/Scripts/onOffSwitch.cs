@@ -13,8 +13,8 @@ public class onOffSwitch : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip onOffLight;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip onOffLight;
 
     // Start is called before the first frame update
     void Start()

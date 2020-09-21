@@ -14,9 +14,9 @@ public class onOffFanSwitch : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip onOffFan;
-    public AudioClip fanMoving;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip onOffFan;
+    [SerializeField] AudioClip fanMoving;
 
     public AudioSource fan;
 

@@ -36,9 +36,9 @@ public class DrawerOpen : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip drawerOpen;
-    public AudioClip drawerClose;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip drawerOpen;
+    [SerializeField] AudioClip drawerClose;
 
     void Start()
     {

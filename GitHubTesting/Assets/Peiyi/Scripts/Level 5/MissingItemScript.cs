@@ -9,7 +9,10 @@ public class MissingItemScript : MonoBehaviour
 
     private MeshRenderer _renderer;
 
-    static int itemCount = 0;
+    public static int itemCount = 0;
+
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip putBackSound; 
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +38,7 @@ public class MissingItemScript : MonoBehaviour
             pillows.SetActive(true);
         }
         _renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-
+        soundSource.PlayOneShot(putBackSound);
         itemCount++;
         Debug.Log(itemCount);
     }

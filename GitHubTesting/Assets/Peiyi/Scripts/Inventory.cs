@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject Newspaper;
-    public GameObject Key_SmallR;
+    [SerializeField] GameObject Newspaper;
+    [SerializeField] GameObject Key_SmallR;
 
     public Image newspaperPreview;
     public Image keyPreview;

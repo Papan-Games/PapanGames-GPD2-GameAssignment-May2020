@@ -6,13 +6,13 @@ using TMPro;
 public class key : MonoBehaviour
 {
     public bool getKey; // Get room key
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip collectSound;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +33,11 @@ public class key : MonoBehaviour
         soundSource.PlayOneShot(collectSound);
     }
 
-    void ShowTooltip()
-    {
+    //void ShowTooltip()
+    //{
         
-        interactTooltip.text = "Press 'E' to pick up your key.";
-        interactTooltip.gameObject.SetActive(true);
+    //    interactTooltip.text = "Press 'E' to pick up your key.";
+    //    interactTooltip.gameObject.SetActive(true);
         
-    }
+    //}
 }

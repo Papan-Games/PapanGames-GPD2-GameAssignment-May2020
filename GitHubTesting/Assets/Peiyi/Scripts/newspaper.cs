@@ -20,9 +20,9 @@ public class newspaper : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip reading;
-    public AudioClip collectSound;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip reading;
+    [SerializeField] AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()

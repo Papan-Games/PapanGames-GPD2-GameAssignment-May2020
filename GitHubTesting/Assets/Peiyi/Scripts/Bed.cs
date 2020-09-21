@@ -18,9 +18,9 @@ public class Bed : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip panelSound; //Open or close panel use
-    public AudioClip yesSound;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip panelSound; //Open or close panel use
+    [SerializeField] AudioClip yesSound;
 
     public Animator _anim;
 

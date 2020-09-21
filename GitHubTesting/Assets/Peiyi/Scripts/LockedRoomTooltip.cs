@@ -11,7 +11,7 @@ public class LockedRoomTooltip : MonoBehaviour
     public GameObject keyPreview;
     bool _usedKeyOpen;
 
-    public TextMeshProUGUI interactTooltip;
+    //public TextMeshProUGUI interactTooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class LockedRoomTooltip : MonoBehaviour
 
         _usedKeyOpen = false;
 
-        interactTooltip.gameObject.SetActive(false);
+        //interactTooltip.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,29 +37,29 @@ public class LockedRoomTooltip : MonoBehaviour
         }
     }
 
-    void ShowTooltip()
-    {
+    //void ShowTooltip()
+    //{
        
-        if (_gotKey == true && _usedKeyOpen == false)
-        {
-            interactTooltip.text = "Press 'E' to use the key to unlock the door.";
-        }
+    //    if (_gotKey == true && _usedKeyOpen == false)
+    //    {
+    //        interactTooltip.text = "Press 'E' to use the key to unlock the door.";
+    //    }
 
 
-        else
-        {
-            interactTooltip.text = "Press 'E' to interact.";
-        }
+    //    else
+    //    {
+    //        interactTooltip.text = "Press 'E' to interact.";
+    //    }
 
 
 
-        interactTooltip.gameObject.SetActive(true);
-    }
+    //    interactTooltip.gameObject.SetActive(true);
+    //}
 
-    void HideTooltip()
-    {
-        interactTooltip.gameObject.SetActive(false);
-    }
+    //void HideTooltip()
+    //{
+    //    interactTooltip.gameObject.SetActive(false);
+    //}
 
 
 }

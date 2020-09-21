@@ -53,7 +53,7 @@ public class HouseOutlineLookAt : MonoBehaviour
             if(hit.collider.CompareTag("Doors") || hit.collider.CompareTag("cockroach") ||
                hit.collider.CompareTag("smallRoomKey") || hit.collider.CompareTag("Interactable") ||
                hit.collider.CompareTag("bed") || hit.collider.CompareTag("powerSwitch") ||
-               hit.collider.CompareTag("cailingFanSwitch") /*|| hit.collider.tag == "newspaper"*/)
+               hit.collider.CompareTag("cailingFanSwitch") || hit.collider.tag == "missiingItems")
             {
                 if (operateTooltip.activeSelf == false)
                 {

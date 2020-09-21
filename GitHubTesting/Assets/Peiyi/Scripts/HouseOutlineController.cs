@@ -48,7 +48,14 @@ public class HouseOutlineController : MonoBehaviour
         {
             mat.SetFloat("_Outline", 0f);
             mat.SetColor("_OutlineColor", ObjectOutlineColor);
-            ObjectOutlineColor.a = 0;
+            if (this.gameObject.tag == "missiingItems")
+            {
+                ObjectOutlineColor.a = 0;
+            }
+            else
+            {
+                ObjectOutlineColor.a = 1;
+            }
         }
     }
     

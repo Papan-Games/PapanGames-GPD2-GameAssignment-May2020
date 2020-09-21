@@ -18,6 +18,7 @@ TagManager:
   - closeToolTipUse
   - tooltipTrigger
   - smallRoomDoor
+  - missiingItems
   layers:
   - Default
   - TransparentFX

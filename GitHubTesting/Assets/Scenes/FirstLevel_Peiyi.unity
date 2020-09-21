@@ -514,8 +514,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &18848915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2075,7 +2075,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 1462919949}
   keyPreview: {fileID: 834066234}
-  interactTooltip: {fileID: 1264263497}
 --- !u!114 &65544778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,8 +2114,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &65992867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,7 +5475,6 @@ GameObject:
   - component: {fileID: 183955045}
   - component: {fileID: 183955044}
   - component: {fileID: 183955043}
-  - component: {fileID: 183955046}
   m_Layer: 0
   m_Name: Cube (17)
   m_TagString: Doors
@@ -5558,23 +5556,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183955041}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &183955046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183955041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &204208855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6270,7 +6251,6 @@ GameObject:
   - component: {fileID: 230722148}
   - component: {fileID: 230722147}
   - component: {fileID: 230722146}
-  - component: {fileID: 230722149}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Doors
@@ -6352,23 +6332,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230722144}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &230722149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230722144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &232160564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 13c0f408a54463546a570585a55d00ab,
@@ -7348,8 +7311,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.1
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &273076007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8407,11 +8370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 6.87e-43
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 9.1835e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_Range
@@ -8419,11 +8382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.4033e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: -0.0000000014253594
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BounceIntensity
@@ -8620,19 +8583,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3e-45
+      value: 4.3e-43
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1e-45
+      value: -6.118294
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 0.033333335
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 1.4033e-41
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_Range
@@ -11847,7 +11810,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8732d827d44a82f40911841a5cbe5ca3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12377,23 +12340,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.6409583, y: 4.5, z: 0.32883087}
   m_Center: {x: -0.066743374, y: 0, z: 0.046601012}
---- !u!114 &420316277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420316272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &422860017
 GameObject:
   m_ObjectHideFlags: 0
@@ -13982,8 +13928,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &462001147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15562,8 +15508,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &524816308
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17182,8 +17128,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &572522645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17269,23 +17215,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.640959, y: 4.5, z: 0.32899022}
   m_Center: {x: -0.066743255, y: 0, z: 0.04668068}
---- !u!114 &581244740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581244735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &585111688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 94cd5fa7d84e65045b1ab6e8fc78c044,
@@ -17642,8 +17571,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &598734879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20507,7 +20436,6 @@ GameObject:
   - component: {fileID: 708987907}
   - component: {fileID: 708987906}
   - component: {fileID: 708987905}
-  - component: {fileID: 708987908}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Doors
@@ -20589,23 +20517,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708987903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &708987908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708987903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &712986513
 GameObject:
   m_ObjectHideFlags: 0
@@ -22611,8 +22522,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 20
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &756142903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4885283479298051220, guid: 120c8656d38339f40b93d08052552c2a,
@@ -25203,6 +25114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842976672}
+  - component: {fileID: 842976673}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -25225,6 +25137,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842976673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842976671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b0d85ae6c0a9a44aa8c06b3583619e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 0}
 --- !u!4 &844347211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b2fe2666c5a9e1c44a864460a05a8b6a,
@@ -28413,7 +28338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLight: {fileID: 682292543}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffWallLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &953158260
@@ -28431,8 +28355,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &953158261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28922,8 +28846,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &961865013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29824,8 +29748,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1002815226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30473,19 +30397,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3e-45
+      value: 7.5616965e+23
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1e-45
+      value: 6.3218516e-17
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 2.1596472e+29
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 2.9498472e+29
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_Range
@@ -33123,8 +33047,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 4
   OutlineColor: {r: 1, g: 0.9984293, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.7176471, g: 0.5137255, b: 0.40392157, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1073368894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35885,8 +35809,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 4
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.43529412, g: 0.45490196, b: 0.46666667, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1169787089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36074,23 +35998,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.6409583, y: 4.5, z: 0.32883087}
   m_Center: {x: -0.066743374, y: 0, z: 0.046601012}
---- !u!114 &1173194816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173194811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1173256351
 GameObject:
   m_ObjectHideFlags: 0
@@ -36344,8 +36251,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1180464331
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36877,6 +36784,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: smallRoomKey
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5abfc2d3b5ea5d64ca95d10d1a34b677, type: 3}
+      propertyPath: m_Name
+      value: key
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5abfc2d3b5ea5d64ca95d10d1a34b677, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.012832642
@@ -37232,8 +37143,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1214507909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37247,7 +37158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLight: {fileID: 682292543}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffWallLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &1214507910
@@ -37393,8 +37303,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1218086303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38173,8 +38083,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1235982970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41630,8 +41540,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1323277738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7496953823344893590, guid: 120c8656d38339f40b93d08052552c2a,
@@ -41919,8 +41829,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1328739290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43049,8 +42959,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.5
   OutlineColor: {r: 1, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1349944044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43077,7 +42987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getKey: 0
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   collectSound: {fileID: 8300000, guid: 52a93920b0a215e4c9324397c50957c7, type: 3}
 --- !u!4 &1350529337 stripped
@@ -46607,8 +46516,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1482095863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47332,23 +47241,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0000005, y: 4.5, z: 0.32883087}
   m_Center: {x: -0.00000035762787, y: 0, z: 0.046601012}
---- !u!114 &1508903144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508903139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1509820404
 GameObject:
   m_ObjectHideFlags: 0
@@ -47695,8 +47587,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1533558508
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48944,8 +48836,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1565125866
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49693,23 +49585,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.640959, y: 4.5, z: 0.32899022}
   m_Center: {x: -0.066743255, y: 0, z: 0.04668068}
---- !u!114 &1585971380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585971375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1586299932
 GameObject:
   m_ObjectHideFlags: 0
@@ -51800,23 +51675,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.000001, y: 4.5, z: 0.32899022}
   m_Center: {x: -0.00000011920929, y: 0, z: 0.04668068}
---- !u!114 &1681525722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681525717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 0
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1683922823
 GameObject:
   m_ObjectHideFlags: 0
@@ -52351,8 +52209,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1703064611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52709,8 +52567,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &1706408883
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53586,7 +53444,6 @@ GameObject:
   - component: {fileID: 1748179445}
   - component: {fileID: 1748179444}
   - component: {fileID: 1748179443}
-  - component: {fileID: 1748179446}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Interactable
@@ -53668,23 +53525,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748179441}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1748179446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748179441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1748373536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6251953234419521415, guid: 120c8656d38339f40b93d08052552c2a,
@@ -56176,7 +56016,6 @@ GameObject:
   - component: {fileID: 1815101277}
   - component: {fileID: 1815101276}
   - component: {fileID: 1815101275}
-  - component: {fileID: 1815101278}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Doors
@@ -56258,23 +56097,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815101273}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1815101278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815101273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1815452281
 GameObject:
   m_ObjectHideFlags: 0
@@ -58908,7 +58730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLight: {fileID: 682292543}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffWallLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!65 &1937297374
@@ -59099,8 +58920,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &1943379191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61403,7 +61224,6 @@ GameObject:
   - component: {fileID: 2028508616}
   - component: {fileID: 2028508615}
   - component: {fileID: 2028508614}
-  - component: {fileID: 2028508618}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Interactable
@@ -61485,23 +61305,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028508612}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2028508618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028508612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d3cc80b8da0a74db404182e95bde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showingOutline: 0
-  maxOutlineWidth: 3
-  OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2029695311
 GameObject:
   m_ObjectHideFlags: 0
@@ -61966,8 +61769,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &2037934704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ccdbd1848af3ed74c8a2d04c5911c8f9,
@@ -64028,8 +63831,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!65 &2059480352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65294,7 +65097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLight: {fileID: 682292543}
-  interactTooltip: {fileID: 1264263497}
   soundSource: {fileID: 119408389}
   onOffWallLight: {fileID: 8300000, guid: c4f03771fdfb8b343a98ae3a45dac59e, type: 3}
 --- !u!114 &2098708095
@@ -65312,8 +65114,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &2098708096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66236,8 +66038,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 0.3
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.39215687}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 1, g: 1, b: 1, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!23 &2125181595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69562,8 +69364,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!33 &456295382710179041
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -71587,8 +71389,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!33 &4358185488629044578
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -72948,8 +72750,8 @@ MonoBehaviour:
   showingOutline: 0
   maxOutlineWidth: 10
   OutlineColor: {r: 0.95686275, g: 1, b: 0, a: 0.54901963}
-  ObjectMainColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectMainColor: {r: 0, g: 0, b: 0, a: 1}
+  ObjectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &7272908367151559556
 MonoBehaviour:
   m_ObjectHideFlags: 0

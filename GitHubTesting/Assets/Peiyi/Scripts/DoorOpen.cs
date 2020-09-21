@@ -14,9 +14,9 @@ public class DoorOpen : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    public AudioSource soundSource;
-    public AudioClip openDoor;
-    public AudioClip closeDoor;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioClip openDoor;
+    [SerializeField] AudioClip closeDoor;
 
     /// <summary>
     /// This is a function that play the door close/open animation
