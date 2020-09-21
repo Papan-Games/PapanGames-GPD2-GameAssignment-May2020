@@ -20,8 +20,9 @@ public class ReturnSouls : MonoBehaviour
     public string returnText;
     public ForcePanelText TextGUIScript;
     public float waitTime;
+    public float waitTime2;
     private int beforeIntensity = 2;
-    private int afterIntensity = 3;
+    private int afterIntensity = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,8 @@ public class ReturnSouls : MonoBehaviour
                     Soul2.SetActive(true);
                     ContainerLight.intensity = afterIntensity;
                     TriggerArea.enabled = false;
-                    StartCoroutine(TextGUIScript.TypeText(returnText, waitTime));
+                    promptScript.ShowPrompt = false;
+                    StartCoroutine(TextGUIScript.TypeText(returnText, waitTime2));
                 }
             }
         }

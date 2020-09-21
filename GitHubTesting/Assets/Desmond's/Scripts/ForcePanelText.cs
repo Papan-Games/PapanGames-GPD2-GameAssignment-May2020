@@ -19,7 +19,7 @@ public class ForcePanelText : MonoBehaviour
     void Start()
     {
         typing = false;
-        StartCoroutine(TypeText(startText, 8f));
+        StartCoroutine(TypeText(startText, 10f));
         jokeAudio.PlayOneShot(jokeClip);
     }
 
