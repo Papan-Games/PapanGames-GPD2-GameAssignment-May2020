@@ -58,6 +58,7 @@ public class HouseOutlineLookAt : MonoBehaviour
                 {
                     HideOutline();
                     ShowOutline();
+
                 }
 
                 prevController = currentController;
@@ -136,7 +137,7 @@ public class HouseOutlineLookAt : MonoBehaviour
     {
         if (prevController != null)
         {
-            prevController.HideOutline();
+            prevController.HideObject();
             prevController = null;
         }
     }

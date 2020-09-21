@@ -10,6 +10,10 @@ public class HouseOutlineController : MonoBehaviour
     public float maxOutlineWidth;
     public Color OutlineColor;
 
+    public Color ObjectMainColor;
+    public Color ObjectOutlineColor;
+    bool showedItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +41,26 @@ public class HouseOutlineController : MonoBehaviour
         }
     }
 
+    public void HideObject()
+    {
+        showingOutline = false;
+        foreach (var mat in _renderer.materials)
+        {
+            mat.SetFloat("_Outline", 0f);
+            mat.SetColor("_OutlineColor", ObjectOutlineColor);
+            ObjectOutlineColor.a = 0;
+        }
+    }
     
+    public void ShowObject()
+    {
+        foreach (var mat in _renderer.materials)
+        {
+            //mat.SetFloat("_MainColor", 255f);
+            mat.SetColor("_OutlineColor", ObjectOutlineColor);
+            mat.SetColor("_Color", ObjectMainColor);
+            ObjectMainColor.a = 1;
+            ObjectOutlineColor.a = 1;
+        }
+    }
 }
