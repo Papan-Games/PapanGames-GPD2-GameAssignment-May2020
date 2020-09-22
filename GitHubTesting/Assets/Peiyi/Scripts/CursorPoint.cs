@@ -7,6 +7,8 @@ public class CursorPoint : MonoBehaviour
     private Camera _camera;
     GUIStyle myStyle;
 
+    public GameObject settingPopup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,17 @@ public class CursorPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(settingPopup.activeSelf == true)
+        {
+            Cursor.lockState = CursorLockMode.None; //To lock the cursor in the middle
+            Cursor.visible = true; //Unable to see the mouse cursor
+        }
+
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked; //To lock the cursor in the middle
+            Cursor.visible = false; //Unable to see the mouse cursor
+        }
     }
 
     //private void OnGUI()

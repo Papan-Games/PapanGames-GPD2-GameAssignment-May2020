@@ -66,6 +66,11 @@ public class MouseMovement : MonoBehaviour
             canMove = false;
         }
 
+        else if (settingPanel.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
         else
         {
             canMove = true;

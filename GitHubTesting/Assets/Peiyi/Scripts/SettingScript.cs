@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SettingScript : MonoBehaviour
 {
     public Button muteUnmuteButton;
     //public Sprite muteSprite;
     //public Sprite unmuteSprite;
-    public Text MuteUnmuteText;
+    public TextMeshProUGUI MuteUnmuteText;
 
-    public GameObject OptionMenu;
+    public GameObject SettingPopup;
+    public GameObject confirmPopup;
     //public AudioSource soundSource;
     public Slider volomeSlider;
+
+    bool isPause;
+
+    public static float soundVolume;
 
     // Start is called before the first frame update
     void Start()
     {
+        isPause = false;
         Time.timeScale = 1;
-        OptionMenu.SetActive(false);
+        SettingPopup.SetActive(false);
         //script = GameObject.Find("MenuOptions").GetComponent<MenuButtons>();
         string mute = PlayerPrefs.GetString("Mute", "false");
         if (mute == "true")
@@ -40,8 +47,29 @@ public class SettingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isPause == false)
+            {
+                SettingPopup.SetActive(true);
+                OnClickPause();
+                isPause = true;
+            }
 
+            else
+            {
+                CloseMenu();
+                isPause = false;
+            }
+        }
+
+        
     }
+
+    //public void AdjustVolume()
+    //{
+
+    //}
 
     //Pause the game
     public void OnClickPause()
@@ -49,7 +77,7 @@ public class SettingScript : MonoBehaviour
         if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
-            OptionMenu.SetActive(true);
+            SettingPopup.SetActive(true);
         }
 
     }
@@ -75,10 +103,11 @@ public class SettingScript : MonoBehaviour
     }
 
     //Close the menu panel
-    public void OnClickCloseMenu()
+    public void CloseMenu()
     {
         //MenuOption.gameObject.SetActive(false);
-        OptionMenu.SetActive(false);
+        SettingPopup.SetActive(false);
+        confirmPopup.SetActive(false);
         Time.timeScale = 1;
 
     }
@@ -86,7 +115,7 @@ public class SettingScript : MonoBehaviour
     //On click the main menu button, then return to main menu scene
     public void OnClickMainMenu()
     {
-        SceneManager.LoadScene("0");
+        SceneManager.LoadScene(0);
     }
 
         
