@@ -11,7 +11,7 @@ public class smallRoomDoor : MonoBehaviour
     public bool _isOpen;
     public bool _isLocked;
 
-    [SerializeField] GameObject roomKey;
+    public GameObject roomKey;
 
     public bool getKey; //Get Small Room Key
 
@@ -23,11 +23,11 @@ public class smallRoomDoor : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip doorLocked;
-    [SerializeField] AudioClip unlockDoor;
-    [SerializeField] AudioClip openDoor;
-    [SerializeField] AudioClip closeDoor;
+    public AudioSource soundSource;
+    public AudioClip doorLocked;
+    public AudioClip unlockDoor;
+    public AudioClip openDoor;
+    public AudioClip closeDoor;
 
 
     /// <summary>

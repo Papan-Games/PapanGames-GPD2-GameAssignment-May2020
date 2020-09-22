@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class HouseOutlineLookAt : MonoBehaviour
 {
@@ -13,10 +14,8 @@ public class HouseOutlineLookAt : MonoBehaviour
 
 
     public GameObject operateTooltip;
-    public TextMeshProUGUI interactTooltip;
 
     public KeyPrompt promptScript;
-    //private bool turnOffprompt;
 
     public GameObject livingRoomLight;
     bool lightOn;
@@ -44,71 +43,27 @@ public class HouseOutlineLookAt : MonoBehaviour
 
     private void HandleLookAtRay()
     {
-        
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, distance))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if(hit.collider.CompareTag("Doors") || hit.collider.CompareTag("cockroach") ||
-               hit.collider.CompareTag("smallRoomKey") || hit.collider.CompareTag("Interactable") ||
-               hit.collider.CompareTag("bed") || hit.collider.CompareTag("powerSwitch") ||
-               hit.collider.CompareTag("cailingFanSwitch") || hit.collider.tag == "missiingItems")
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, distance))
             {
-                if (operateTooltip.activeSelf == false)
+                if (hit.collider.CompareTag("Doors") || hit.collider.CompareTag("cockroach") ||
+                   hit.collider.CompareTag("smallRoomKey") || hit.collider.CompareTag("Interactable") ||
+                   hit.collider.CompareTag("bed") || hit.collider.CompareTag("powerSwitch") ||
+                   hit.collider.CompareTag("cailingFanSwitch") || hit.collider.tag == "missiingItems")
                 {
-                    promptScript.ShowPrompt = true;
-                    //turnOffprompt = true;
-                }
-
-                else
-                {
-                    promptScript.ShowPrompt = false;
-                    //turnOffprompt = false;
-                }
-
-                currentController = hit.collider.GetComponent<HouseOutlineController>();
-
-                if(prevController != currentController)
-                {
-                    HideOutline();
-                    ShowOutline();
-
-                }
-
-                prevController = currentController;
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hit.collider.SendMessage("Operate",
-                    SendMessageOptions.DontRequireReceiver);
-                }
-
-                //hit.collider.SendMessage("ShowTooltip",
-                //SendMessageOptions.DontRequireReceiver);
-            }
-
-            else if (hit.collider.CompareTag("newspaper"))
-            {
-
-                if (lightOn == true)
-                {
-                    if (operateTooltip.activeSelf == false && isReadingNews == false)
+                    if (operateTooltip.activeSelf == false)
                     {
                         promptScript.ShowPrompt = true;
-                        //turnOffprompt = true;
                     }
 
                     else
                     {
                         promptScript.ShowPrompt = false;
-                        //turnOffprompt = false;
                     }
-                    //if (operateTooltip.gameObject.activeSelf == false)
-                    //{
-                    //    promptScript.ShowPrompt = true;
-                    //    turnOffprompt = true;
-                    //}
 
                     currentController = hit.collider.GetComponent<HouseOutlineController>();
 
@@ -116,49 +71,79 @@ public class HouseOutlineLookAt : MonoBehaviour
                     {
                         HideOutline();
                         ShowOutline();
+
                     }
 
                     prevController = currentController;
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        
-                        if (lightOn == true && !isReadingNews)
+                        hit.collider.SendMessage("Operate",
+                        SendMessageOptions.DontRequireReceiver);
+                    }
+                }
+
+                else if (hit.collider.CompareTag("newspaper"))
+                {
+
+                    if (lightOn == true)
+                    {
+                        if (operateTooltip.activeSelf == false && isReadingNews == false)
                         {
-                            promptScript.ShowPrompt = false;
-                            hit.collider.SendMessage("readNewspaper",
-                            SendMessageOptions.DontRequireReceiver);
-                            isReadingNews = !isReadingNews;
+                            promptScript.ShowPrompt = true;
                         }
 
-                        else if (isReadingNews)
+                        else
                         {
-                            hit.collider.SendMessage("stopReadNewspaper",
-                           SendMessageOptions.DontRequireReceiver);
+                            promptScript.ShowPrompt = false;
+                        }
+                        
+
+                        currentController = hit.collider.GetComponent<HouseOutlineController>();
+
+                        if (prevController != currentController)
+                        {
+                            HideOutline();
+                            ShowOutline();
+                        }
+
+                        prevController = currentController;
+
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+
+                            if (lightOn == true && !isReadingNews)
+                            {
+                                promptScript.ShowPrompt = false;
+                                hit.collider.SendMessage("readNewspaper",
+                                SendMessageOptions.DontRequireReceiver);
+                                isReadingNews = !isReadingNews;
+                            }
+
+                            else if (isReadingNews)
+                            {
+                                hit.collider.SendMessage("stopReadNewspaper",
+                               SendMessageOptions.DontRequireReceiver);
+                            }
+
                         }
 
                     }
-                    //hit.collider.SendMessage("ShowTooltip",
-                    //SendMessageOptions.DontRequireReceiver);
+
                 }
 
+                else
+                {
+                    HideOutline();
+                    promptScript.ShowPrompt = false;
+                }
             }
 
             else
             {
                 HideOutline();
-                //HideTooltip();
                 promptScript.ShowPrompt = false;
-                //turnOffprompt = false;
             }
-        }
-
-        else
-        {
-            HideOutline();
-            // HideTooltip();
-            promptScript.ShowPrompt = false;
-            //turnOffprompt = false;
         }
     }
 
@@ -180,9 +165,4 @@ public class HouseOutlineLookAt : MonoBehaviour
             prevController = null;
         }
     }
-
-    //public void HideTooltip()
-    //{
-    //    interactTooltip.gameObject.SetActive(false);
-    //}
 }

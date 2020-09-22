@@ -8,68 +8,66 @@ using TMPro;
 public class SettingScript : MonoBehaviour
 {
     public Button muteUnmuteButton;
-    //public Sprite muteSprite;
-    //public Sprite unmuteSprite;
     public TextMeshProUGUI MuteUnmuteText;
 
     public GameObject SettingPopup;
-    public GameObject confirmPopup;
-    //public AudioSource soundSource;
-    public Slider volomeSlider;
+    public Slider volumeSlider;
+    public static bool isMute;
 
-    bool isPause;
+    public float soundVolume;
+    string newVolume = "VOLUME_SLIDER";
 
-    public static float soundVolume;
 
     // Start is called before the first frame update
     void Start()
     {
-        isPause = false;
         Time.timeScale = 1;
         SettingPopup.SetActive(false);
-        //script = GameObject.Find("MenuOptions").GetComponent<MenuButtons>();
         string mute = PlayerPrefs.GetString("Mute", "false");
-        if (mute == "true")
+        volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
+        //soundVolume = volumeSlider.value;
+
+        // Get boolean using PlayerPrefs
+        isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        if (isMute == false)
         {
-            AudioListener.pause = true;
-            //muteUnmuteButton.image.sprite = unmuteSprite;
+            AudioListener.volume = 0;
             MuteUnmuteText.text = "Unmute";
+            PlayerPrefs.SetString("Mute", "true");
+            //Save boolean using PlayerPrefs
+            PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
+            isMute = true;
         }
 
         else
         {
-            AudioListener.pause = false;
-            //muteUnmuteButton.image.sprite = muteSprite;
+            AudioListener.volume = volumeSlider.value;
             MuteUnmuteText.text = "Mute";
+            PlayerPrefs.SetString("Mute", "false");
+            PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
+            isMute = false;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(isMute)
         {
-            if(isPause == false)
-            {
-                SettingPopup.SetActive(true);
-                OnClickPause();
-                isPause = true;
-            }
-
-            else
-            {
-                CloseMenu();
-                isPause = false;
-            }
+            volumeSlider.interactable = false;
         }
-
-        
+        else
+        {
+            volumeSlider.interactable = true;
+        }
     }
 
-    //public void AdjustVolume()
-    //{
-
-    //}
+    public void AdjustVolume(float _volume)
+    {
+        AudioListener.volume = _volume;
+        PlayerPrefs.SetFloat("VOLUME_SLIDER", _volume);
+        //PlayerPrefs.Save();
+    }
 
     //Pause the game
     public void OnClickPause()
@@ -77,7 +75,6 @@ public class SettingScript : MonoBehaviour
         if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
-            SettingPopup.SetActive(true);
         }
 
     }
@@ -85,29 +82,29 @@ public class SettingScript : MonoBehaviour
     //Mute or unmute the game
     public void OnClickMuteUnmute()
     {
-        if (!AudioListener.pause)
+        if (!isMute)
         {
-            AudioListener.pause = true;
-            //muteUnmuteButton.image.sprite = unmuteSprite;
+            AudioListener.volume = 0; ;
             MuteUnmuteText.text = "Unmute";
             PlayerPrefs.SetString("Mute", "true");
+            PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
+            isMute = true;
         }
 
         else
         {
-            AudioListener.pause = false;
-            //muteUnmuteButton.image.sprite = muteSprite;
+            AudioListener.volume = volumeSlider.value;
             MuteUnmuteText.text = "Mute";
             PlayerPrefs.SetString("Mute", "false");
+            PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
+            isMute = false;
         }
     }
 
     //Close the menu panel
     public void CloseMenu()
     {
-        //MenuOption.gameObject.SetActive(false);
         SettingPopup.SetActive(false);
-        confirmPopup.SetActive(false);
         Time.timeScale = 1;
 
     }
@@ -118,5 +115,5 @@ public class SettingScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-        
+
 }

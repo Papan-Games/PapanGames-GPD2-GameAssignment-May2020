@@ -10,19 +10,14 @@ public class Bed : MonoBehaviour
     public GameObject questionPanel;
     bool isOpen;
 
-    public Button yes;
-    public Button no;
-
-    //public TextMeshProUGUI interactTooltip;
-
     public GameObject Inventory, keyPrompt;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip panelSound; //Open or close panel use
-    [SerializeField] AudioClip yesSound;
+    public AudioSource soundSource;
+    public AudioClip panelSound; //Open or close panel use
+    public AudioClip yesSound;
 
     public Animator _anim;
 
@@ -36,25 +31,7 @@ public class Bed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(questionPanel.activeSelf == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                Inventory.SetActive(false);
-                keyPrompt.SetActive(false);
-                soundSource.PlayOneShot(yesSound);
-                questionPanel.SetActive(false);
-                _anim.SetTrigger("Start");
-                StartCoroutine(loadLevel(2));
-            }
-
-            else if (Input.GetKeyDown(KeyCode.N))
-            {
-                questionPanel.SetActive(false);
-                isOpen = false;
-                soundSource.PlayOneShot(panelSound);
-            }
-        }
+       
     }
 
     public void Operate()
@@ -68,25 +45,23 @@ public class Bed : MonoBehaviour
         }
     }
 
-    public void noButton()
+    public void yesButton()
     {
-        
-            questionPanel.SetActive(false);
-            isOpen = false;
-        
+        Inventory.SetActive(false);
+        keyPrompt.SetActive(false);
+        soundSource.PlayOneShot(yesSound);
+        questionPanel.SetActive(false);
+        _anim.SetTrigger("Start");
+        StartCoroutine(loadLevel(2));
+        Debug.Log("Hello");
     }
 
-    //void ShowTooltip()
-    //{
-    //    interactTooltip.text = "Press 'E' to interact.";
-    //    interactTooltip.gameObject.SetActive(true);
-
-    //}
-
-    //void HideTooltip()
-    //{
-    //    interactTooltip.gameObject.SetActive(false);
-    //}
+    public void noButton()
+    {
+        questionPanel.SetActive(false);
+        isOpen = false;
+        soundSource.PlayOneShot(panelSound);
+    }
 
     IEnumerator loadLevel(int levelIndex)
     {

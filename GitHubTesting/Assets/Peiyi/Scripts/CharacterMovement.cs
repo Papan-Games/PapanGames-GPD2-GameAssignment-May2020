@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController charController;
     Vector3 moveDirection = Vector3.zero;
 
+
     public GameObject newspaperPanel;
 
     public GameObject bedQuestion;
@@ -31,22 +32,8 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         //Check if reading newspaper
-        if(newspaperPanel.gameObject.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        else if (bedQuestion.gameObject.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        else if (staringDialogue.gameObject.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        else if (settingPanel.gameObject.activeSelf == true)
+        if(newspaperPanel.gameObject.activeSelf == true || bedQuestion.gameObject.activeSelf == true ||
+           staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
         {
             canMove = false;
         }

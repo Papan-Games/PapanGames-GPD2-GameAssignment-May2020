@@ -49,24 +49,8 @@ public class MouseMovement : MonoBehaviour
     void Update()
     {
         //Checking if player is reading newspaper
-        if(newspaperPanel.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        //Checking if bedQuestion pop up
-        else if (bedQuestion.gameObject.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        //Checking if startingPanel pop up
-        else if (staringDialogue.gameObject.activeSelf == true)
-        {
-            canMove = false;
-        }
-
-        else if (settingPanel.gameObject.activeSelf == true)
+        if(newspaperPanel.activeSelf == true || bedQuestion.gameObject.activeSelf == true
+            || staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
         {
             canMove = false;
         }

@@ -21,6 +21,8 @@ public class FPSInput : MonoBehaviour
 
     public Transform revivePoint;
 
+    public GameObject settingPopup;
+
     private void Awake()
     {
         Messenger.AddListener(GameEvent.TREEMAN_IN_RANGE, TreemanInRange);
@@ -99,6 +101,11 @@ public class FPSInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             Messenger.Broadcast(GameEvent.SOUL_COLLECTED_ALL);
+        }
+
+        if(settingPopup.activeSelf)
+        {
+            canMove = false;
         }
     }
 
