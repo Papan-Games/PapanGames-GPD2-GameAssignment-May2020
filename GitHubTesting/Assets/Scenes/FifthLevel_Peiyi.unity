@@ -46639,7 +46639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muteUnmuteButton: {fileID: 1779294244}
   MuteUnmuteText: {fileID: 569131536}
-  dialogue: {fileID: 0}
   SettingPopup: {fileID: 553094490}
   confirmPopup: {fileID: 945409142}
   volomeSlider: {fileID: 1765954233}
@@ -55148,7 +55147,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -60919,7 +60918,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 0
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0

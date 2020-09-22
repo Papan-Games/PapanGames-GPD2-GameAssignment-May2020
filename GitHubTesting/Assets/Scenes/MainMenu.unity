@@ -1362,6 +1362,7 @@ MonoBehaviour:
   muteUnmuteButton: {fileID: 197489999}
   MuteUnmuteText: {fileID: 110574844}
   SettingPopup: {fileID: 233978842}
+  confirmPopup: {fileID: 0}
   volomeSlider: {fileID: 540898485}
 --- !u!1 &733878585
 GameObject:
@@ -4657,7 +4658,7 @@ RectTransform:
   m_GameObject: {fileID: 2024062968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 1452062167}
   - {fileID: 1715166707}
