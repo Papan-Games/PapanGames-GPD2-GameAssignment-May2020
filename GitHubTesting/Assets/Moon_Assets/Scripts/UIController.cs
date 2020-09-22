@@ -104,13 +104,14 @@ public class UIController : MonoBehaviour
         }
         else
         {
-            blackoutAnim.SetBool("isDead", true);
             StartCoroutine(RevivePlayer());
         }
     }
 
-    IEnumerator RevivePlayer()
+    public IEnumerator RevivePlayer()
     {
+        blackoutAnim.SetBool("isDead", true);
+
         yield return new WaitForSeconds(1.0f);
         Messenger.Broadcast(GameEvent.PLAYER_DEAD);
 
