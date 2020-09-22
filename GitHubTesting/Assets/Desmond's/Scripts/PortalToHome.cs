@@ -32,6 +32,9 @@ public class PortalToHome : MonoBehaviour
         {
             InventoryManager.instance.GetFlashlight();
             InventoryManager.instance.GetGun();
+            InventoryManager.instance.GetTV();
+            InventoryManager.instance.GetChair();
+            InventoryManager.instance.GetWashingMachine();
             iterator2++;
         }
 
