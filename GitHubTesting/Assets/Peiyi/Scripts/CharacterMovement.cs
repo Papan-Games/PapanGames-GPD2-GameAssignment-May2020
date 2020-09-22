@@ -20,6 +20,8 @@ public class CharacterMovement : MonoBehaviour
 
     public GameObject staringDialogue;
 
+    public GameObject settingPanel;
+
     void Start()
     {
         charController = GetComponent<CharacterController>();
@@ -40,6 +42,11 @@ public class CharacterMovement : MonoBehaviour
         }
 
         else if (staringDialogue.gameObject.activeSelf == true)
+        {
+            canMove = false;
+        }
+
+        else if (settingPanel.gameObject.activeSelf == true)
         {
             canMove = false;
         }

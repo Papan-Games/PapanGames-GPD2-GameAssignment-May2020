@@ -29,6 +29,8 @@ public class MouseMovement : MonoBehaviour
 
     public GameObject staringDialogue;
 
+    public GameObject settingPanel;
+
     // Start is called before the first frame update
     void Start()
     {

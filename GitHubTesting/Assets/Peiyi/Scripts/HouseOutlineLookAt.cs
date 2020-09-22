@@ -93,6 +93,17 @@ public class HouseOutlineLookAt : MonoBehaviour
 
                 if (lightOn == true)
                 {
+                    if (operateTooltip.activeSelf == false && isReadingNews == false)
+                    {
+                        promptScript.ShowPrompt = true;
+                        //turnOffprompt = true;
+                    }
+
+                    else
+                    {
+                        promptScript.ShowPrompt = false;
+                        //turnOffprompt = false;
+                    }
                     //if (operateTooltip.gameObject.activeSelf == false)
                     //{
                     //    promptScript.ShowPrompt = true;
@@ -111,9 +122,10 @@ public class HouseOutlineLookAt : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        promptScript.ShowPrompt = false;
+                        
                         if (lightOn == true && !isReadingNews)
                         {
+                            promptScript.ShowPrompt = false;
                             hit.collider.SendMessage("readNewspaper",
                             SendMessageOptions.DontRequireReceiver);
                             isReadingNews = !isReadingNews;
@@ -129,7 +141,6 @@ public class HouseOutlineLookAt : MonoBehaviour
                     //hit.collider.SendMessage("ShowTooltip",
                     //SendMessageOptions.DontRequireReceiver);
                 }
-
 
             }
 
