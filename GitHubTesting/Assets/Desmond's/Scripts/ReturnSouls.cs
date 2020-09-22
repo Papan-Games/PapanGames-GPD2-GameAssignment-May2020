@@ -24,9 +24,12 @@ public class ReturnSouls : MonoBehaviour
     private int beforeIntensity = 2;
     private int afterIntensity = 5;
 
+    private AudioSource ReturnSoulSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        ReturnSoulSFX = GetComponent<AudioSource>();
         Soul1.SetActive(false);
         Soul2.SetActive(false);
         if(SceneManager.GetActiveScene().name == "SpaceStation")
@@ -66,6 +69,7 @@ public class ReturnSouls : MonoBehaviour
                     Soul1.SetActive(true);
                     Soul2.SetActive(true);
                     ContainerLight.intensity = afterIntensity;
+                    ReturnSoulSFX.Play();
                     TriggerArea.enabled = false;
                     promptScript.ShowPrompt = false;
                     StartCoroutine(TextGUIScript.TypeText(returnText, waitTime2));
