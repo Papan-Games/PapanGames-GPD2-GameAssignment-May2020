@@ -15,6 +15,8 @@ public class Bed : MonoBehaviour
 
     //public TextMeshProUGUI interactTooltip;
 
+    public GameObject Inventory, keyPrompt;
+
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
@@ -38,7 +40,8 @@ public class Bed : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                GameObject.Find("Inventory").gameObject.SetActive(false);
+                Inventory.SetActive(false);
+                keyPrompt.SetActive(false);
                 soundSource.PlayOneShot(yesSound);
                 questionPanel.SetActive(false);
                 _anim.SetTrigger("Start");

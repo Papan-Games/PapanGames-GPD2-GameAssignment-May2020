@@ -19,6 +19,10 @@ public class InventoryManager : MonoBehaviour
     public AudioClip pickupSFX;
 
 
+    public GameObject ChairPreview;
+    public GameObject CouchPreview;
+    public GameObject WashingMachinePreview;
+
     // [SerializeField] public List<GameObject> itemList = new List<GameObject>();
     // [SerializeField] public List<Image> imageList = new List<Image>();
     // [SerializeField] public List<GameObject> PlayerInventoryList = new List<GameObject>();
@@ -153,6 +157,7 @@ public class InventoryManager : MonoBehaviour
         {
             TV = true;
             itemPickup.PlayOneShot(pickupSFX);
+            CouchPreview.SetActive(true);
         }
     }
     
@@ -162,6 +167,7 @@ public class InventoryManager : MonoBehaviour
         {
             Chair = true;
             itemPickup.PlayOneShot(pickupSFX);
+            ChairPreview.SetActive(true);
         }
     }
 
@@ -171,6 +177,7 @@ public class InventoryManager : MonoBehaviour
         {
             washingMachine = true;
             itemPickup.PlayOneShot(pickupSFX);
+            WashingMachinePreview.SetActive(true);
         }
     }
 
