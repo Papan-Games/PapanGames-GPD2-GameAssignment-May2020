@@ -8,6 +8,10 @@ public class RayShooter : MonoBehaviour
 
     private Camera mainCamera;
 
+    private AudioSource audioSource;
+    public AudioClip shotCrawler;
+    public AudioClip bulletThud;
+
     private void Awake()
     {
         Messenger.AddListener(GameEvent.DIALOGUE_START, DialogueStarted);
@@ -27,6 +31,7 @@ public class RayShooter : MonoBehaviour
     void Start()
     {
         mainCamera = GetComponent<Camera>();
+        audioSource = GetComponent<AudioSource>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -46,10 +51,12 @@ public class RayShooter : MonoBehaviour
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
                 if (target != null)
                 {
+                    audioSource.PlayOneShot(shotCrawler);
                     target.ReactToHit();
                 }
                 else
                 {
+                    audioSource.PlayOneShot(bulletThud);
                     StartCoroutine(GunBullet(hit.point));
                 }
             }

@@ -17,6 +17,9 @@ public class ReactiveTarget : MonoBehaviour
     private float waitTime;
     private float startWaitTime;
 
+    public AudioSource audioSource;
+    public AudioClip crawlerHurt;
+
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
@@ -84,7 +87,7 @@ public class ReactiveTarget : MonoBehaviour
 
     private void TakeDamage()
     {
-        //play FX
+        audioSource.PlayOneShot(crawlerHurt);
         health--;
     }
 

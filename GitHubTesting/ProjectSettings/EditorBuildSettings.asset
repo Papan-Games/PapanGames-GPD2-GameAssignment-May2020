@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FantasyForest.unity
     guid: 5d3ac0950c1edbb4890df7d2fbd3734b
   - enabled: 1
+    path: Assets/Scenes/2nd SpaceStation.unity
+    guid: 417c7b9df3efc7f459c144c1ce4cdccb
+  - enabled: 1
     path: Assets/Scenes/FifthLevel_Peiyi.unity
     guid: ab7dc44d2a2549e46ae4fd02c313abfe
   - enabled: 1

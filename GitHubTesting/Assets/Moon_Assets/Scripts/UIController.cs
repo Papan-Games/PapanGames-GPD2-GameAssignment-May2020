@@ -16,6 +16,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject blackout;
     private Animator blackoutAnim;
 
+    private AudioSource audioSource;
+    public AudioClip playerHurt;
+
     private void Awake()
     {
         Messenger.AddListener(GameEvent.SOUL_PICKEDUP, AddSoulPoint);
@@ -31,6 +34,8 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         soulCollected = 0;
         soulText.SetText(soulCollected.ToString());
 
@@ -62,6 +67,7 @@ public class UIController : MonoBehaviour
 
     private void PlayerHurt()
     {
+        audioSource.PlayOneShot(playerHurt);
         playerHurtIntensity++;
         DisplayBlood(playerHurtIntensity);
         Debug.Log(playerHurtIntensity);

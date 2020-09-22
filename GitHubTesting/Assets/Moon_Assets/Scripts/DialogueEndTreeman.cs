@@ -88,7 +88,7 @@ public class DialogueEndTreeman : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("2nd SpaceStation");
     }
 }
