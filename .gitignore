@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 GitHubTesting/Assets/Peiyi/Scenes.meta
 GitHubTesting/Assembly-CSharp.csproj
+*.csproj
+GitHubTesting/.vs/GitHubTesting/v16/Server/sqlite3/storage.ide
+GitHubTesting/.vs/GitHubTesting/v16/.suo
