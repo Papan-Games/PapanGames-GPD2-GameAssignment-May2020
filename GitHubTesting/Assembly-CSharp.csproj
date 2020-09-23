@@ -111,7 +111,6 @@
     <Compile Include="Assets\Peiyi\Scripts\DrawerOpen.cs" />
     <Compile Include="Assets\Peiyi\Scripts\HouseOutlineController.cs" />
     <Compile Include="Assets\Peiyi\Scripts\HouseOutlineLookAt.cs" />
-    <Compile Include="Assets\Peiyi\Scripts\InGameInstructionPage.cs" />
     <Compile Include="Assets\Peiyi\Scripts\Inventory.cs" />
     <Compile Include="Assets\Peiyi\Scripts\Level 5\CountDownTimer.cs" />
     <Compile Include="Assets\Peiyi\Scripts\Level 5\EndGame.cs" />

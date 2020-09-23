@@ -4,6 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEditor;
 
+/// <summary>
+/// This is a script for drawers operation.
+/// If the third drawer is first time to open,
+/// will show operate text that remind players that key found
+/// </summary>
 public class DrawerOpen : MonoBehaviour
 {
     /// <summary>
@@ -28,17 +33,16 @@ public class DrawerOpen : MonoBehaviour
     GameObject drawer_3;
 
     /// <summary>
-    /// Variable for attaching the tooltips
+    /// Variable for attaching the operate text
     /// </summary>
     public TextMeshProUGUI operateTooltip;
-    //public TextMeshProUGUI interactTooltip;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip drawerOpen;
-    [SerializeField] AudioClip drawerClose;
+    public AudioSource soundSource;
+    public AudioClip drawerOpen;
+    public AudioClip drawerClose;
 
     void Start()
     {
@@ -57,7 +61,6 @@ public class DrawerOpen : MonoBehaviour
         operateTooltip.gameObject.SetActive(true);
         _isOpen = !_isOpen;
         _anim.SetBool("DrawerOpen", _isOpen);
-        //AudioClip temp;
         if(_isOpen == true)
         {
             soundSource.PlayOneShot(drawerOpen);
@@ -81,18 +84,13 @@ public class DrawerOpen : MonoBehaviour
             else
             {
                 operateTooltip.gameObject.SetActive(false);
-
             }
-
         }
 
         else
         {
             operateTooltip.gameObject.SetActive(false);
         }
-
-        
-
     }
 
     /// <summary>
@@ -106,24 +104,4 @@ public class DrawerOpen : MonoBehaviour
         yield return new WaitForSeconds(2);
         operateTooltip.gameObject.SetActive(false);
     }
-
-    //public void ShowTooltip()
-    //{
-    //    if (_isOpen)
-    //    {
-    //        interactTooltip.text = "Press 'E' to close.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-
-    //    else
-    //    {
-    //        interactTooltip.text = "Press 'E' to open.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-    //}
-
-    //public void HideTooltip()
-    //{
-    //    interactTooltip.gameObject.SetActive(false);
-    //}
 }

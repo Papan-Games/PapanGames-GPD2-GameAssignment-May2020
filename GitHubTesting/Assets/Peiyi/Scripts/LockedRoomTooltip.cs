@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This is a script for the character room door
+/// </summary>
 public class LockedRoomTooltip : MonoBehaviour
 {
     public GameObject key;
@@ -11,16 +14,11 @@ public class LockedRoomTooltip : MonoBehaviour
     public GameObject keyPreview;
     bool _usedKeyOpen;
 
-    //public TextMeshProUGUI interactTooltip;
-
     // Start is called before the first frame update
     void Start()
     {
         _gotKey = false;
-
         _usedKeyOpen = false;
-
-        //interactTooltip.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,30 +34,4 @@ public class LockedRoomTooltip : MonoBehaviour
             _usedKeyOpen = true;
         }
     }
-
-    //void ShowTooltip()
-    //{
-       
-    //    if (_gotKey == true && _usedKeyOpen == false)
-    //    {
-    //        interactTooltip.text = "Press 'E' to use the key to unlock the door.";
-    //    }
-
-
-    //    else
-    //    {
-    //        interactTooltip.text = "Press 'E' to interact.";
-    //    }
-
-
-
-    //    interactTooltip.gameObject.SetActive(true);
-    //}
-
-    //void HideTooltip()
-    //{
-    //    interactTooltip.gameObject.SetActive(false);
-    //}
-
-
 }

@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is a script for player look around or can say mouse movement.
+/// 
+/// </summary>
 public class MouseMovement : MonoBehaviour
 {
-
     public enum RotationAxes
     {
         MouseXAndY = 0,
@@ -41,16 +44,14 @@ public class MouseMovement : MonoBehaviour
         }
 
         canMove = true;
-
-        //newspaperPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Checking if player is reading newspaper
+        //If these gameobkect is active, canMove = false
         if(newspaperPanel.activeSelf == true || bedQuestion.gameObject.activeSelf == true
-            || staringDialogue.gameObject.activeSelf == true /*|| settingPanel.gameObject.activeSelf == true*/)
+            || staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
         {
             canMove = false;
         }

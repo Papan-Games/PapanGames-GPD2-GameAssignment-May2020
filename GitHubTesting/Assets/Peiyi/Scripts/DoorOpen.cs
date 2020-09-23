@@ -4,11 +4,13 @@ using System.Xml.Serialization;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This is a script for all the doors operation except the character's room door
+/// </summary>
 public class DoorOpen : MonoBehaviour
 {
-    public Animator _anim;
-    private bool _isOpen = false;
-
+    public Animator _anim; //Animator for the door itself
+    private bool _isOpen = false; //For checking whether the door is open
 
     /// <summary>
     /// Variable for sound source and audio clip
@@ -18,7 +20,7 @@ public class DoorOpen : MonoBehaviour
     public AudioClip closeDoor;
 
     /// <summary>
-    /// This is a function that play the door close/open animation
+    /// This is a function for door operarion that play the door close/open animation
     /// </summary>
     public void Operate()
     {
