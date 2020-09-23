@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
-    //public GameObject controlIntructionPanel;
+    public GameObject Instruction;
+
     // Start is called before the first frame update
     void Start()
     {
-        //controlIntructionPanel.SetActive(false);
+        Instruction.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -22,7 +23,15 @@ public class MenuOptions : MonoBehaviour
 
     public void onPlayButton()
     {
-        SceneManager.LoadScene("FirstLevel_Peiyi");
+        StartCoroutine(loadLevel(1));
+    }
+
+    IEnumerator loadLevel(int levelIndex)
+    {
+        Instruction.SetActive(true);
+        Instruction.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(levelIndex);
     }
 
     public void onQuitButton()
