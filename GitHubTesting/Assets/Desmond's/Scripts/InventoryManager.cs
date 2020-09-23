@@ -35,9 +35,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake() 
     {
-        // Delete DeleteAll() when testing between scenes
-        PlayerPrefs.DeleteAll();
-
         if (instance == null)
         {
             instance = this;

@@ -24,11 +24,6 @@ public class MenuOptions : MonoBehaviour
         SceneManager.LoadScene("FirstLevel_Peiyi");
     }
 
-    //public void onCtlIntrucBttn()
-    //{
-    //    controlIntructionPanel.SetActive(true);
-    //}
-
     public void onQuitButton()
     {
         Application.Quit();

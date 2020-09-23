@@ -25,7 +25,6 @@ public class SettingScript : MonoBehaviour
         SettingPopup.SetActive(false);
         string mute = PlayerPrefs.GetString("Mute", "false");
         volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
-        //soundVolume = volumeSlider.value;
 
         // Get boolean using PlayerPrefs
         isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;

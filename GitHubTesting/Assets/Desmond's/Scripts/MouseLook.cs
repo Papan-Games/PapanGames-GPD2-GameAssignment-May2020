@@ -56,34 +56,51 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        //if(Input.GetKeyDown(KeyCode.P))
+        //{
+        //    ShowCursor();
+        //}
+
+        if(Time.timeScale == 1 && Cursor.lockState == CursorLockMode.None)
         {
-            ShowCursor();
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
+        else
+        {
+            if (Time.timeScale == 0 && Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
 
-        if (canAim == true)
+
+        if (canAim == true && Time.timeScale != 0)
         {
             Aiming();
         }
+
+        
+            
     }
 
-    void ShowCursor()
-    {
-        if (canAim == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            canAim = false;
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            canAim = true;
-            Time.timeScale = 1;
-        }
-    }
+    //void ShowCursor()
+    //{
+    //    if (canAim == true)
+    //    {
+    //        Cursor.lockState = CursorLockMode.None;
+    //        Cursor.visible = true;
+    //        canAim = false;
+    //        Time.timeScale = 0;
+    //    }
+    //    else
+    //    {
+    //        Cursor.lockState = CursorLockMode.Locked;
+    //        Cursor.visible = false;
+    //        canAim = true;
+    //        Time.timeScale = 1;
+    //    }
+    //}
 
     void Aiming()
     {

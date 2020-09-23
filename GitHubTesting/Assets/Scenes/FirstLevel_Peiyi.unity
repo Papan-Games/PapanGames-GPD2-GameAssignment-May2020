@@ -57811,7 +57811,7 @@ GameObject:
   - component: {fileID: 1813517192}
   - component: {fileID: 1813517191}
   m_Layer: 0
-  m_Name: UIController
+  m_Name: SettingPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57846,7 +57846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingPopup: {fileID: 1421880770}
-  soundSource: {fileID: 119408389}
 --- !u!114 &1813517192
 MonoBehaviour:
   m_ObjectHideFlags: 0

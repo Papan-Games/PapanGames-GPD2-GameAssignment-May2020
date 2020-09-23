@@ -50,7 +50,7 @@ public class MouseMovement : MonoBehaviour
     {
         //Checking if player is reading newspaper
         if(newspaperPanel.activeSelf == true || bedQuestion.gameObject.activeSelf == true
-            || staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
+            || staringDialogue.gameObject.activeSelf == true /*|| settingPanel.gameObject.activeSelf == true*/)
         {
             canMove = false;
         }

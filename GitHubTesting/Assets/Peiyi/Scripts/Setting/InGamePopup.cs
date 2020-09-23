@@ -23,6 +23,7 @@ public class InGamePopup : MonoBehaviour
         {
             if (isPause == false)
             {
+                
                 SettingPopup.SetActive(true);
                 GetComponent<SettingScript>().OnClickPause();
                 isPause = true;
