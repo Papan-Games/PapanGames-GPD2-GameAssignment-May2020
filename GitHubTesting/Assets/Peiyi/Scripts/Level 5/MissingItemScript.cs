@@ -11,13 +11,15 @@ public class MissingItemScript : MonoBehaviour
 
     public static int itemCount = 0;
 
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip putBackSound; 
+    public AudioSource soundSource;
+    public AudioClip putBackSound;
+
+    public GameObject[] missingItems;
+    public GameObject[] inventoryItems;
 
     // Start is called before the first frame update
     void Start()
     {
-        // itemCount = 0;
         MissingItemController = GetComponent<HouseOutlineController>();
 
         _renderer = gameObject.GetComponent<MeshRenderer>();
@@ -31,6 +33,13 @@ public class MissingItemScript : MonoBehaviour
 
     public void Operate()
     {
+        for(int i = 0; i < missingItems.Length; i++)
+        {
+            if(this.gameObject == missingItems[i])
+            {
+                inventoryItems[i].SetActive(false);
+            }
+        }
         MissingItemController.ShowObject();
         this.gameObject.tag = "Untagged";
         if(this.gameObject.name == "LongCouch")

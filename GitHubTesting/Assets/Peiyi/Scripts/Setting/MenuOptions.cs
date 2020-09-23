@@ -11,6 +11,7 @@ public class MenuOptions : MonoBehaviour
     void Start()
     {
         //controlIntructionPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame

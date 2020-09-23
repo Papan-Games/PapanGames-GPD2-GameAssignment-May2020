@@ -9,8 +9,6 @@ public class onOffFanSwitch : MonoBehaviour
     public GameObject Fan;
     public Animator _anim;
 
-    public TextMeshProUGUI interactTooltip;
-
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
@@ -69,21 +67,6 @@ public class onOffFanSwitch : MonoBehaviour
             _anim.SetBool("onFan", _isOnFan);
             soundSource.PlayOneShot(onOffFan);
             fan.Stop();
-        }
-    }
-
-    public void ShowTooltip()
-    {
-        if (_isOnFan)
-        {
-            interactTooltip.text = "Press 'E' to off the fan.";
-            interactTooltip.gameObject.SetActive(true);
-        }
-
-        else
-        {
-            interactTooltip.text = "Press 'E' to on the fan.";
-            interactTooltip.gameObject.SetActive(true);
         }
     }
 }
