@@ -6,19 +6,18 @@ using UnityEditor;
 
 public class smallRoomDoor : MonoBehaviour
 {
-    public Animator _anim;
+    public Animator _anim; //The animator for the door
 
-    public bool _isOpen;
-    public bool _isLocked;
+    public bool _isOpen; //The condition to check is the door is open or close
+    public bool _isLocked; //The condition to check is the door is locked
 
-    public GameObject roomKey;
+    public GameObject roomKey; //The key asset
 
     public bool getKey; //Get Small Room Key
 
+    public GameObject keyPreview; //This is use to checking the inventory key image
 
-    public GameObject keyPreview;
-
-    public TextMeshProUGUI operateTooltip;
+    public TextMeshProUGUI operateTooltip; //For operate text used
 
     /// <summary>
     /// Variable for sound source and audioclip
@@ -86,7 +85,6 @@ public class smallRoomDoor : MonoBehaviour
                 keyPreview.SetActive(false);
                 operateTooltip.text = "Door is unlocked successfully!";
                 operateTooltip.gameObject.SetActive(true);
-                Debug.Log("unlock");
 
                 soundSource.PlayOneShot(unlockDoor);
             }
@@ -95,7 +93,6 @@ public class smallRoomDoor : MonoBehaviour
             {
                 operateTooltip.text = "Cannot open the door.\nPlease try it again when key found";
                 operateTooltip.gameObject.SetActive(true);
-                Debug.Log("lock");
                 soundSource.PlayOneShot(doorLocked);
             }
             StartCoroutine(Wait());

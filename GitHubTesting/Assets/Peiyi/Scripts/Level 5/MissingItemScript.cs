@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A script for missing items used only
+/// </summary>
 public class MissingItemScript : MonoBehaviour
 {
-    public GameObject pillows;
-    private HouseOutlineController MissingItemController;
+    public GameObject pillows; //For long couch asset use only
+    private HouseOutlineController MissingItemController; //For highlight use
 
-    private MeshRenderer _renderer;
+    private MeshRenderer _renderer; //Get the renderer of the missing item
 
-    public static int itemCount = 0;
+    public static int itemCount = 0; //Count the item that already put back
 
+    /// <summary>
+    /// AudioSource and AudioClip
+    /// </summary>
     public AudioSource soundSource;
     public AudioClip putBackSound;
 
-    public GameObject[] missingItems;
+    /// <summary>
+    /// Use these to know which item the player put back
+    /// </summary>
+    public GameObject[] missingItems; 
     public GameObject[] inventoryItems;
 
     // Start is called before the first frame update
@@ -25,12 +34,11 @@ public class MissingItemScript : MonoBehaviour
         _renderer = gameObject.GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// A function to do the operation for the missing item
+    /// If the item is put back, the related inventory will hide.
+    /// And change the tag to Untagged to avoid them be highlight again.
+    /// </summary>
     public void Operate()
     {
         for(int i = 0; i < missingItems.Length; i++)
@@ -49,6 +57,5 @@ public class MissingItemScript : MonoBehaviour
         _renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         soundSource.PlayOneShot(putBackSound);
         itemCount++;
-        Debug.Log(itemCount);
     }
 }

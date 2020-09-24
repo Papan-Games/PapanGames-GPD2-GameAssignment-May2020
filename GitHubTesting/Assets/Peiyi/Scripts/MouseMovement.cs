@@ -4,7 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// This is a script for player look around or can say mouse movement.
-/// 
+/// If the boolean canMove is true, players are allow to look around by moving the mouse.
+/// Else they cannot look around in the game.
 /// </summary>
 public class MouseMovement : MonoBehaviour
 {
@@ -16,22 +17,29 @@ public class MouseMovement : MonoBehaviour
     }
     public RotationAxes axes = RotationAxes.MouseXAndY;
 
+    /// <summary>
+    /// Sensitivity value for the mouse
+    /// </summary>
     public float sensitivityHor = 9.0f;
     public float sensitivityVer = 9.0f;
 
+    /// <summary>
+    /// Min and max vertical angle
+    /// </summary>
     public float minVer = -45.0f;
     public float maxVer = 45.0f;
 
     private float rotationX = 0;
 
-    bool canMove;
+    bool canMove; //A boolean for checking whether the mouse can move or not
 
+    /// <summary>
+    /// These are the variable for attaching the GameObject that when they are active,
+    /// mouse cannot move in thw game
+    /// </summary>
     public GameObject newspaperPanel;
-
     public GameObject bedQuestion;
-
     public GameObject staringDialogue;
-
     public GameObject settingPanel;
 
     // Start is called before the first frame update
@@ -61,7 +69,7 @@ public class MouseMovement : MonoBehaviour
             canMove = true;
         }
 
-        //Look around
+        //If canMove = true, player can look around by moving the mouse
         if (canMove)
         {
             if (axes == RotationAxes.MouseX)
