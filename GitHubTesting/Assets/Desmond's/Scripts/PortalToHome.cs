@@ -48,12 +48,6 @@ public class PortalToHome : MonoBehaviour
         }
     }
 
-    // private IEnumerator typeHomeScript()
-    // {
-    //     StartCoroutine(typewriterScript.ShowText(portalSentence));
-    //     yield return new WaitForSeconds(5.0f);
-    //     typewriterScript.ClearText();
-    // }
     
     private void OnTriggerEnter(Collider other) 
     {
