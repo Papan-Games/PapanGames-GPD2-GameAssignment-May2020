@@ -59,7 +59,8 @@ public class MouseMovement : MonoBehaviour
     {
         //If these gameobkect is active, canMove = false
         if(newspaperPanel.activeSelf == true || bedQuestion.gameObject.activeSelf == true
-            || staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
+            || staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true
+            || MissingItemScript.itemCount == 3)
         {
             canMove = false;
         }

@@ -86,15 +86,12 @@
     <Compile Include="Assets\IdleBehaviour.cs" />
     <Compile Include="Assets\Moon_Assets\Forest\Glowing_Forest\Scripts\WaterGroup.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\BillboardDisplay.cs" />
-    <Compile Include="Assets\Moon_Assets\Scripts\CharacterAnimation.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\DialogueEndTreeman.cs" />
-    <Compile Include="Assets\Moon_Assets\Scripts\EndUIController.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\FPSInput.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\Messenger.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\OutlineTreeman.cs" />
-    <Compile Include="Assets\Moon_Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\PatrolSpots.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\RayShooter.cs" />
     <Compile Include="Assets\Moon_Assets\Scripts\ReactiveTarget.cs" />

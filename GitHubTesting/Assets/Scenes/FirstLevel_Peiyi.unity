@@ -22693,6 +22693,7 @@ MonoBehaviour:
   questionPanel: {fileID: 1617379045}
   Inventory: {fileID: 1097811626}
   keyPrompt: {fileID: 528206139}
+  crosshair: {fileID: 1343734710}
   soundSource: {fileID: 119408389}
   panelSound: {fileID: 8300000, guid: 76e9db5ed76d5784e88c0a30043e4d39, type: 3}
   yesSound: {fileID: 8300000, guid: 983974b4c1cc28a4aa4bef89a672a7b0, type: 3}
@@ -23087,7 +23088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loading...
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
   m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
@@ -23116,7 +23117,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 39.45
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23157,13 +23158,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 763812928}
-    characterCount: 10
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -29239,7 +29240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &964937026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29272,7 +29273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

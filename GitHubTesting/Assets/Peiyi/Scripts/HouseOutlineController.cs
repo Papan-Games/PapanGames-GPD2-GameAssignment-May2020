@@ -37,16 +37,6 @@ public class HouseOutlineController : MonoBehaviour
         }
     }
 
-    //public void HideOutline()
-    //{
-    //    showingOutline = false;
-    //    foreach (var mat in _renderer.materials)
-    //    {
-    //        mat.SetFloat("_Outline", 0f);
-    //        mat.SetColor("_OutlineColor", Color.black);
-    //    }
-    //}
-
     /// <summary>
     /// Use to hide the oobject or hide the outline
     /// If the pointed item is missing item,

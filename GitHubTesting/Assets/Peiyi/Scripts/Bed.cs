@@ -24,7 +24,7 @@ public class Bed : MonoBehaviour
     /// <summary>
     /// Variables for the inventory gameobject and keyprompt gameobject
     /// </summary>
-    public GameObject Inventory, keyPrompt;
+    public GameObject Inventory, keyPrompt, crosshair;
 
     /// <summary>
     /// Variable for sound source and audio clip
@@ -64,6 +64,7 @@ public class Bed : MonoBehaviour
     {
         Inventory.SetActive(false);
         keyPrompt.SetActive(false);
+        crosshair.SetActive(false);
         soundSource.PlayOneShot(yesSound);
         questionPanel.SetActive(false);
         _anim.SetTrigger("Start");

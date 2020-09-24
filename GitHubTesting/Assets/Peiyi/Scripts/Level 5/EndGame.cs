@@ -11,12 +11,17 @@ using TMPro;
 public class EndGame : MonoBehaviour
 {
     public Animator _anim; //The animator to play fade in fade out
+    public GameObject[] hidingUI; //The canvas item
 
     // Update is called once per frame
     void Update()
     {
         if (MissingItemScript.itemCount == 3)
         {
+            for(int i = 0; i < hidingUI.Length; i++)
+            {
+                hidingUI[i].SetActive(false);
+            }
             _anim.SetTrigger("Start");
             StartCoroutine(loadLevel(6));
         }

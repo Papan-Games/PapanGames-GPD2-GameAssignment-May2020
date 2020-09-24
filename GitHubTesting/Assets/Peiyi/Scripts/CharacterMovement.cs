@@ -38,7 +38,8 @@ public class CharacterMovement : MonoBehaviour
         //Checking whether these gameobject is active or not.
         //If active, canMove = false;
         if(newspaperPanel.gameObject.activeSelf == true || bedQuestion.gameObject.activeSelf == true ||
-           staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true)
+           staringDialogue.gameObject.activeSelf == true || settingPanel.gameObject.activeSelf == true
+           || MissingItemScript.itemCount == 3)
         {
             canMove = false;
         }
