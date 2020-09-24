@@ -12989,7 +12989,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1691325211}
   m_HandleRect: {fileID: 1490035222}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -57791,13 +57791,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074649333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 174356648}
-  m_Father: {fileID: 1566425011}
-  m_RootOrder: 1
+  m_Father: {fileID: 1332794501}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1074983500
 PrefabInstance:
@@ -80096,7 +80096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1332794501
 Transform:
   m_ObjectHideFlags: 0
@@ -80110,6 +80110,7 @@ Transform:
   m_Children:
   - {fileID: 881556197}
   - {fileID: 1792802902}
+  - {fileID: 1074649334}
   m_Father: {fileID: 1566425011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91921,8 +91922,8 @@ RectTransform:
   m_Father: {fileID: 312893334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -97620,7 +97621,6 @@ Transform:
   m_LocalScale: {x: 1.1510884, y: 1.1510884, z: 1.1510884}
   m_Children:
   - {fileID: 1332794501}
-  - {fileID: 1074649334}
   m_Father: {fileID: 537877047}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98668,7 +98668,6 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   revivePoint: {fileID: 884707428}
-  settingPopup: {fileID: 0}
 --- !u!4 &1632729388
 Transform:
   m_ObjectHideFlags: 0
@@ -99356,7 +99355,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -115483,7 +115482,6 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   revivePoint: {fileID: 884707428}
-  settingPopup: {fileID: 0}
 --- !u!82 &1795926823
 AudioSource:
   m_ObjectHideFlags: 0
