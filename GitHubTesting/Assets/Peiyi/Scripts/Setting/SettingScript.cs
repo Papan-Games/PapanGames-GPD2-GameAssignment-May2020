@@ -5,6 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+/// <summary>
+/// A script for the setting popup
+/// If the popup is shown, game pause.
+/// Else, game play.
+/// Player can adjust game volume and mute or unmute game.
+/// </summary>
 public class SettingScript : MonoBehaviour
 {
     public Button muteUnmuteButton;
@@ -61,11 +67,11 @@ public class SettingScript : MonoBehaviour
         }
     }
 
+    //Adjust the game volume
     public void AdjustVolume(float _volume)
     {
         AudioListener.volume = _volume;
         PlayerPrefs.SetFloat("VOLUME_SLIDER", _volume);
-        //PlayerPrefs.Save();
     }
 
     //Pause the game

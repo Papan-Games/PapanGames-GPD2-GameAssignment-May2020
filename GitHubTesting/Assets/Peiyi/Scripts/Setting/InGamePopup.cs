@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A script to promt out the in-game setting popup
+/// </summary>
 public class InGamePopup : MonoBehaviour
 {
     public GameObject SettingPopup;
