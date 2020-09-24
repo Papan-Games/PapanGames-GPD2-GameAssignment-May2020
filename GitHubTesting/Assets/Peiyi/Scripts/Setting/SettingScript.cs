@@ -33,7 +33,7 @@ public class SettingScript : MonoBehaviour
         volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
 
         // Get boolean using PlayerPrefs
-        isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
+        isMute = PlayerPrefs.GetInt("isMute") == 0 ? true : false;
         if (isMute == false)
         {
             AudioListener.volume = 0;

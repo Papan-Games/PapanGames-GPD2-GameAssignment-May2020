@@ -3576,8 +3576,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axes: 1
-  sensitivityHor: 9
-  sensitivityVer: 9
+  sensitivityHor: 7
+  sensitivityVer: 7
   minVer: -45
   maxVer: 45
   newspaperPanel: {fileID: 488247131}
@@ -8639,7 +8639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 2.170105e-18
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.w

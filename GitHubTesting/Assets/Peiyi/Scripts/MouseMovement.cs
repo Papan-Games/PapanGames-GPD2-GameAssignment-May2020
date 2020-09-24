@@ -20,8 +20,8 @@ public class MouseMovement : MonoBehaviour
     /// <summary>
     /// Sensitivity value for the mouse
     /// </summary>
-    public float sensitivityHor = 9.0f;
-    public float sensitivityVer = 9.0f;
+    public float sensitivityHor = 7f;
+    public float sensitivityVer = 7f;
 
     /// <summary>
     /// Min and max vertical angle
