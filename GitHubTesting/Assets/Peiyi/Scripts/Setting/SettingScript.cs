@@ -74,7 +74,7 @@ public class SettingScript : MonoBehaviour
         PlayerPrefs.SetFloat("VOLUME_SLIDER", _volume);
     }
 
-    //Pause the game
+    //Pause the game, for InGamePopup script use
     public void OnClickPause()
     {
         if (Time.timeScale != 0)

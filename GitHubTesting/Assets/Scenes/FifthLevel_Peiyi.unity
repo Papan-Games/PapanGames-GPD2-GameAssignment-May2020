@@ -4903,8 +4903,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: yesButton
+      - m_Target: {fileID: 1085801053}
+        m_MethodName: OnClickMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8492,11 +8492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 2.2140657e-10
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.09002504e+27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_Range
@@ -8504,11 +8504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 7.212827e+22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 3.686947e+24
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BounceIntensity
@@ -31085,11 +31085,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 5.9e-43
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.z
@@ -51821,8 +51821,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: noButton
+      - m_Target: {fileID: 1085801053}
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
