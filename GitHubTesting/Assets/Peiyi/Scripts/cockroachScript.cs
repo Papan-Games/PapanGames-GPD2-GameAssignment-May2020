@@ -13,9 +13,6 @@ public class cockroachScript : MonoBehaviour
     public Animator _anim; //Variable to get animator
     bool _isAlive; //Checking whether cockroach is alive
 
-    public GameObject Newspaper; //Newspaper asset 
-    bool _gotNewspaper; //Checking whether the player has read the newspaper or not
-
     public GameObject newspaperPreview; //The inventory newspaper slot, use this to check is player get the newspaper
 
     public TextMeshProUGUI operateTooltip; //Attached to operate tooltip
@@ -31,20 +28,9 @@ public class cockroachScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
-        _gotNewspaper = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //If newspaper asset is not active, _gotNewspaper = true
-        if (Newspaper.activeSelf == false)
-        {
-            _gotNewspaper = true;
-        }
-    }
 
     /// <summary>
     /// A function for operate the animation of the cockroach
@@ -54,7 +40,7 @@ public class cockroachScript : MonoBehaviour
     {
         if (_isAlive == true)
         {
-            if (_gotNewspaper == false)
+            if (newspaper.getNewspaper == false)
             {
                 _anim.SetTrigger("move");
                 operateTooltip.gameObject.SetActive(true);
@@ -64,7 +50,7 @@ public class cockroachScript : MonoBehaviour
                 soundSource.PlayOneShot(cockroachMove);
             }
 
-            else if(_gotNewspaper == true)
+            else if(newspaper.getNewspaper == true)
             {
                 newspaperRoll.gameObject.SetActive(true);
                 _anim2.SetTrigger("useNewspaper");

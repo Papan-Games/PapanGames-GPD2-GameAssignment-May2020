@@ -16,6 +16,7 @@ public class MenuOptions : MonoBehaviour
     {
         Instruction.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     /// <summary>

@@ -29,16 +29,17 @@ public class SettingScript : MonoBehaviour
     {
         Time.timeScale = 1;
         SettingPopup.SetActive(false);
-        string mute = PlayerPrefs.GetString("Mute", "false");
+        string mute = PlayerPrefs.GetString("Mute", "true");
         volumeSlider.value = PlayerPrefs.GetFloat(newVolume, 1);
 
         // Get boolean using PlayerPrefs
-        isMute = PlayerPrefs.GetInt("isMute") == 0 ? true : false;
+        isMute = PlayerPrefs.GetInt("isMute") == 1 ? true : false;
         if (isMute == false)
         {
             AudioListener.volume = 0;
             MuteUnmuteText.text = "Unmute";
             PlayerPrefs.SetString("Mute", "true");
+            
             //Save boolean using PlayerPrefs
             PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
             isMute = true;

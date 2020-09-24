@@ -64,6 +64,7 @@ public class MouseLook : MonoBehaviour
         if(Time.timeScale == 1 && Cursor.lockState == CursorLockMode.None)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         
         else
@@ -71,6 +72,7 @@ public class MouseLook : MonoBehaviour
             if (Time.timeScale == 0 && Cursor.lockState == CursorLockMode.Locked)
             {
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 

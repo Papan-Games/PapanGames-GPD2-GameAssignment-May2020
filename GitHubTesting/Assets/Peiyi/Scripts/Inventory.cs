@@ -9,12 +9,6 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     /// <summary>
-    /// GameObject variable fot Newspaper asset and key asset
-    /// </summary>
-    public GameObject Newspaper;
-    public GameObject Key_SmallR;
-
-    /// <summary>
     /// Use these image to show the inventory item
     /// </summary>
     public Image newspaperPreview;
@@ -31,13 +25,13 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         //If key asset is not active, key preview will be show in inventory
-        if (Key_SmallR.activeSelf == false)
+        if (key.getKey == true)
         {
             keyPreview.gameObject.SetActive(true);
         }
 
         //If newspaper asset is not active, newspaper preview will be show in inventory
-        if (Newspaper.activeSelf == false)
+        if (newspaper.getNewspaper == true)
         {
             newspaperPreview.gameObject.SetActive(true);
         }

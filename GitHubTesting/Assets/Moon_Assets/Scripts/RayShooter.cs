@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RayShooter : MonoBehaviour
 {
@@ -45,24 +46,27 @@ public class RayShooter : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (canShoot && Input.GetMouseButtonDown(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            Vector3 point = new Vector3(mainCamera.pixelWidth / 2, mainCamera.pixelHeight / 2, 0);
-            Ray ray = mainCamera.ScreenPointToRay(point);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (canShoot && Input.GetMouseButtonDown(0))
             {
-                GameObject hitObject = hit.transform.gameObject;
-                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
-                if (target != null)
+                Vector3 point = new Vector3(mainCamera.pixelWidth / 2, mainCamera.pixelHeight / 2, 0);
+                Ray ray = mainCamera.ScreenPointToRay(point);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
                 {
-                    audioSource.PlayOneShot(shotCrawler);
-                    target.ReactToHit();
-                }
-                else
-                {
-                    audioSource.PlayOneShot(bulletThud);
-                    StartCoroutine(GunBullet(hit.point));
+                    GameObject hitObject = hit.transform.gameObject;
+                    ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                    if (target != null)
+                    {
+                        audioSource.PlayOneShot(shotCrawler);
+                        target.ReactToHit();
+                    }
+                    else
+                    {
+                        audioSource.PlayOneShot(bulletThud);
+                        StartCoroutine(GunBullet(hit.point));
+                    }
                 }
             }
         }

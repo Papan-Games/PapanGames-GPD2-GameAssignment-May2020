@@ -9,13 +9,15 @@ using TMPro;
 /// </summary>
 public class key : MonoBehaviour
 {
-    public bool getKey; // Get room key
+    public static bool getKey; // Get room key
 
     /// <summary>
     /// Variable for sound source and audioclip
     /// </summary>
     public AudioSource soundSource;
     public AudioClip collectSound;
+
+    public GameObject keyAsset;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class key : MonoBehaviour
     /// </summary>
     void Operate()
     {
-        GameObject.Find("SmallRoomKey").gameObject.SetActive(false);
+        keyAsset.SetActive(false);
         getKey = true;
         soundSource.PlayOneShot(collectSound);
     }

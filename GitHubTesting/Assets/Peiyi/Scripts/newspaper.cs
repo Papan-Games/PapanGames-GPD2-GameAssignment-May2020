@@ -16,6 +16,7 @@ public class newspaper : MonoBehaviour
     public GameObject newspaperPanel; //Newspaper popup image
     public GameObject newspaperAsset; //Newspaper asset
     public bool isReading; //Use to check if player is reading newspaper when newspaper popup image is active
+    public static bool getNewspaper; //Checking player get newspaper ot not
 
     /// <summary>
     /// These are the variable for checking the living room light on/off condition
@@ -36,6 +37,7 @@ public class newspaper : MonoBehaviour
         newspaperPanel.gameObject.SetActive(false);
         isReading = false;
         livingRoomWithLight = false;
+        getNewspaper = false;
     }
 
     // Update is called once per frame
@@ -84,6 +86,7 @@ public class newspaper : MonoBehaviour
             newspaperAsset.gameObject.SetActive(false);
             newspaperPanel.gameObject.SetActive(false);
             soundSource.PlayOneShot(collectSound);
+            getNewspaper = true;
         }
     }
 }
