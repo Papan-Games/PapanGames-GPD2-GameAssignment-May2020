@@ -23,15 +23,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject CouchPreview;
     public GameObject WashingMachinePreview;
 
-    // [SerializeField] public List<GameObject> itemList = new List<GameObject>();
-    // [SerializeField] public List<Image> imageList = new List<Image>();
-    // [SerializeField] public List<GameObject> PlayerInventoryList = new List<GameObject>();
-
     public GameObject PlayersFlashlight;
     public GameObject PlayersGun;
 
-    // Itembar UI elements
-    // public ItemBar barScriptRef;
 
     private void Awake() 
     {
@@ -57,57 +51,7 @@ public class InventoryManager : MonoBehaviour
         washingMachine = false;
         PlayersFlashlight.SetActive(false);
         PlayersGun.SetActive(false);
-        // if(PlayerPrefs.HasKey("Flashlight"))
-        // {
-        //     flashlight = true;
-        //     PlayersFlashlight.SetActive(true);
-        // }
-        // else 
-        // {
-        //     flashlight = false;
-        //     PlayersFlashlight.SetActive(false);
-        // }
-
-        // if(PlayerPrefs.HasKey("Gun"))
-        // {
-        //     gun = true;
-        //     PlayersGun.SetActive(true);
-        // }
-        // else 
-        // {
-        //     gun = false;
-        //     PlayersGun.SetActive(false);
-        // }
-
-        // if(PlayerPrefs.HasKey("Keycard"))
-        // {
-        //     keycard = true;
-        // }
-        // else
-        // {
-        //     keycard = false;
-        // }
-
-        // if(PlayerPrefs.HasKey("TV"))
-        // {
-        //     TV = true;
-        // }
-        // else
-        // {
-        //     TV = false;
-        // }
-
-        // if(PlayerPrefs.HasKey("item4"))
-        // {
-        //     item4 = true;
-        // }
-        // else
-        // {
-        //     item4 = false;
-        // }
-
-        // soulsAmt = PlayerPrefs.GetInt("soulsAmt", 0);
-
+       
     }
 
     public void GetFlashlight()
@@ -117,9 +61,6 @@ public class InventoryManager : MonoBehaviour
             flashlight = true;
             PlayersFlashlight.SetActive(true);
             itemPickup.PlayOneShot(pickupSFX);
-            // PlayerPrefs.SetString("Flashlight", "True");
-            // PlayerInventoryList.Add(itemList[0]);   // Add Flashlight Gameobject to Inventory List following index
-            // barScriptRef.AddItemToBar(imageList[0]);
         }
     }
 
@@ -130,9 +71,6 @@ public class InventoryManager : MonoBehaviour
             gun = true;
             PlayersGun.SetActive(true);
             itemPickup.PlayOneShot(pickupSFX);
-            // PlayerPrefs.SetString("Gun", "True");
-            // PlayerInventoryList.Add(itemList[1]);   // Add Gun Gameobject to Inventory List
-            // barScriptRef.AddItemToBar(imageList[1]);
         }
     }
 
@@ -142,9 +80,6 @@ public class InventoryManager : MonoBehaviour
         {
             keycard = true;
             itemPickup.PlayOneShot(pickupSFX);
-            // PlayerPrefs.SetString("Keycard", "True");
-            // PlayerInventoryList.Add(itemList[2]);   // Add Gun Gameobject to Inventory List
-            // barScriptRef.AddItemToBar(imageList[2]);
         }
     }
 

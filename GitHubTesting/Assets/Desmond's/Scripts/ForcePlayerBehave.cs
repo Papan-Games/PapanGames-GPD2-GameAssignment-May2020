@@ -53,11 +53,7 @@ public class ForcePlayerBehave : MonoBehaviour
             {
                 result = false;
                 StartCoroutine(TextGUIscript.TypeText(TextGUIscript.missingLevelItem, waitTime));
-                // yield return new WaitForSeconds(waitTime);
-                // TextGUIscript.ClearText();
-                // ForcePanel.SetActive(true);
-                // yield return new WaitForSeconds(5);
-                // ForcePanel.SetActive(false);
+
             }
             else
             {
@@ -74,11 +70,7 @@ public class ForcePlayerBehave : MonoBehaviour
             {
                 result = false;
                 StartCoroutine(TextGUIscript.TypeText(TextGUIscript.missingFurniture, waitTime));
-                // yield return new WaitForSeconds(waitTime);
-                // TextGUIscript.ClearText();
-                // ForcePanel.SetActive(true);
-                // yield return new WaitForSeconds(5);
-                // ForcePanel.SetActive(false);
+
             }
             else
             {
@@ -102,11 +94,6 @@ public class ForcePlayerBehave : MonoBehaviour
                 {
                     StartCoroutine(TextGUIscript.TypeText(TextGUIscript.missingFurniture, waitTime));
                 }
-                // yield return new WaitForSeconds(waitTime);
-                // TextGUIscript.ClearText();
-                // ForcePanel.SetActive(true);
-                // yield return new WaitForSeconds(5);
-                // ForcePanel.SetActive(false);
             }
             else
             {
@@ -123,11 +110,6 @@ public class ForcePlayerBehave : MonoBehaviour
             {
                 result = false;
                 StartCoroutine(TextGUIscript.TypeText(TextGUIscript.missingLevelItem, waitTime));
-                // yield return new WaitForSeconds(waitTime);
-                // TextGUIscript.ClearText();
-                // ForcePanel.SetActive(true);
-                // yield return new WaitForSeconds(5);
-                // ForcePanel.SetActive(false);
             }
             else
             {
@@ -138,73 +120,6 @@ public class ForcePlayerBehave : MonoBehaviour
             yield return result;
         }
 
-        // if (requireFlashlight)
-        // {
-        //     if(!InventoryManager.instance.flashlight)
-        //     {
-        //         result = false;
-        //         ForcePanel.SetActive(true);
-        //         yield return new WaitForSeconds(5);
-        //         ForcePanel.SetActive(false);
-        //     }
-        //     else
-        //     {
-        //         result = true;
-        //     }
-        //     yield return result;
-        // }
-
-        // else if (requireGun)
-        // {
-        //     if(!InventoryManager.instance.gun)
-        //     {
-        //         result = false;
-        //         ForcePanel.SetActive(true);
-        //         yield return new WaitForSeconds(5);
-        //         ForcePanel.SetActive(false);
-        //     }
-        //     else
-        //     {
-        //         result = true;
-        //     }
-        //     yield return result;
-        // }
-
-        // else if (requireTV)
-        // {
-        //     if(!InventoryManager.instance.TV)
-        //     {
-        //         result = false;
-        //         ForcePanel.SetActive(true);
-        //         yield return new WaitForSeconds(5);
-        //         ForcePanel.SetActive(false);
-        //     }
-        //     else
-        //     {
-        //         result = true;
-        //     }
-        //     yield return result;
-        // }
-
-        // else if (requireKeycard)
-        // {
-        //     if(!InventoryManager.instance.keycard)
-        //     {
-        //         result = false;
-        //         ForcePanel.SetActive(true);
-        //         yield return new WaitForSeconds(5);
-        //         ForcePanel.SetActive(false);
-        //     }
-        //     else
-        //     {
-        //         result = true;
-        //     }
-        //     yield return result;
-        // }
-
-        // else
-        // {
-        //     result = true;
-        // }
+        
     }
 }
