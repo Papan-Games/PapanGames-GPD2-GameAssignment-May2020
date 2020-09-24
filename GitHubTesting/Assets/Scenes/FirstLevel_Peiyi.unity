@@ -8428,7 +8428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 11.345454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_Range
@@ -8436,11 +8436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 3.4909089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 5a63a99024feb4777a66aec2ea854100, type: 3}
       propertyPath: m_BounceIntensity
@@ -8637,19 +8637,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 5.89e-43
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 4.9716757e-27
+      value: -0.0000000014371722
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 1.4033e-41
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 60526c59f3733438a9b05ca2a10ad428, type: 3}
       propertyPath: m_Range
@@ -14051,10 +14051,10 @@ Transform:
   - {fileID: 1831731057}
   - {fileID: 903561152}
   - {fileID: 2140979790}
-  - {fileID: 2039978645}
-  - {fileID: 241364893}
   - {fileID: 953158258}
   - {fileID: 1328739287}
+  - {fileID: 2039978645}
+  - {fileID: 241364893}
   - {fileID: 462001144}
   - {fileID: 2121413931}
   m_Father: {fileID: 1775992818}
@@ -28543,7 +28543,7 @@ Transform:
   m_Children:
   - {fileID: 1334095808}
   m_Father: {fileID: 458723014}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &953158259
 MonoBehaviour:
@@ -30691,11 +30691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1.4208e-41
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.9195118e-26
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2ba0857039c814ce4afba1bb2da05187, type: 3}
       propertyPath: m_BoundingSphereOverride.z
@@ -42265,7 +42265,7 @@ Transform:
   m_Children:
   - {fileID: 765318023}
   m_Father: {fileID: 458723014}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328739288
 MonoBehaviour:
@@ -47179,7 +47179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 2052276646}
-  firstTime: 0
+  firstTime: 1
   operateTooltip: {fileID: 414311018}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
@@ -51695,7 +51695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1658169591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52793,7 +52793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 1703064609}
-  firstTime: 0
+  firstTime: 1
   operateTooltip: {fileID: 414311018}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}
@@ -62589,7 +62589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 346361814}
-  firstTime: 0
+  firstTime: 1
   operateTooltip: {fileID: 414311018}
   soundSource: {fileID: 119408389}
   drawerOpen: {fileID: 8300000, guid: f5264b95e15e12c4b8df06543c4a4d24, type: 3}

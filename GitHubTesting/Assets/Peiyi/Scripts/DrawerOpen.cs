@@ -47,7 +47,6 @@ public class DrawerOpen : MonoBehaviour
     void Start()
     {
         _isOpen = false;
-        firstTime = true;
         drawer_3 = GameObject.Find("ThirdDrawer");
     }
 

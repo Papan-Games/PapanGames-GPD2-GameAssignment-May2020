@@ -15,19 +15,13 @@ public class onOffWallLightSwitch : MonoBehaviour
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip onOffWallLight;
+    public AudioSource soundSource;
+    public AudioClip onOffWallLight;
 
     // Start is called before the first frame update
     void Start()
     {
         wallLight.gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>

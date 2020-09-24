@@ -17,7 +17,6 @@ public class cockroachScript : MonoBehaviour
     bool _gotNewspaper; //Checking whether the player has read the newspaper or not
 
     public GameObject newspaperPreview; //The inventory newspaper slot, use this to check is player get the newspaper
-    bool _usedNewspaper; //Checking whether players have used newspaper to kill cockroach or not
 
     public TextMeshProUGUI operateTooltip; //Attached to operate tooltip
 
@@ -35,7 +34,6 @@ public class cockroachScript : MonoBehaviour
         Newspaper = GameObject.Find("Newspaper");
         _isAlive = true;
         _gotNewspaper = false;
-        _usedNewspaper = false;
     }
 
     // Update is called once per frame
@@ -106,6 +104,5 @@ public class cockroachScript : MonoBehaviour
         operateTooltip.text = "Cockroach is killed!\n You can get your key now.";
         operateTooltip.gameObject.SetActive(true);
         StartCoroutine(Wait());
-        _usedNewspaper = true;
     }
 }
