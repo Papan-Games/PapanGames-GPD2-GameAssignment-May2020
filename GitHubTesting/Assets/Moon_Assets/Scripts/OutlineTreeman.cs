@@ -8,8 +8,6 @@ public class OutlineTreeman : MonoBehaviour
     public bool showingOutline;
     public float maxOutlineWidth;
     public Color OutlineColor;
-
-    // Start is called before the first frame update
     void Start()
     {
         showingOutline = false;

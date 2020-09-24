@@ -95,13 +95,11 @@ public class FPSInput : MonoBehaviour
                 Messenger.Broadcast(GameEvent.FINAL_DIALOGUE_START);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            Messenger.Broadcast(GameEvent.SOUL_COLLECTED_ALL);
-        }
     }
 
+    /// <summary>
+    /// Treeman in range or not in range is run upon receiving game event broadcast from trigger collider detection on the player
+    /// </summary>
     private void TreemanInRange()
     {
         nearTreeman = true;
@@ -112,6 +110,9 @@ public class FPSInput : MonoBehaviour
         nearTreeman = false;
     }
 
+    /// <summary>
+    /// First time dialogue and final dialogue updates the player movements to true when the sentences ended
+    /// </summary>
     private void DialogueEnded()
     {
         canMove = true;
@@ -124,12 +125,18 @@ public class FPSInput : MonoBehaviour
         isTalking = false;
     }
 
+    /// <summary>
+    /// Disable player movement and teleport player back to starting spawn position after death
+    /// </summary>
     private void PlayerDead()
     {
         canMove = false;
         transform.position = revivePoint.transform.position;
     }
 
+    /// <summary>
+    /// Enable player movement after completing death sequences
+    /// </summary>
     private void PlayerRevived()
     {
         canMove = true;

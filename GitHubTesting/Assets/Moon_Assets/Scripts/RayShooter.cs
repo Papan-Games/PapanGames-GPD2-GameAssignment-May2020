@@ -38,6 +38,11 @@ public class RayShooter : MonoBehaviour
         canShoot = true;
     }
 
+    /// <summary>
+    /// Shoot bullet upon left mouse click, play specific FX depending on target hit
+    /// Crawler will reach to hit if shot by the bullet
+    /// Gun bullet is drawn if hit anything else except the crawler
+    /// </summary>
     void Update()
     {
         if (canShoot && Input.GetMouseButtonDown(0))
@@ -63,6 +68,10 @@ public class RayShooter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sphere primitive with specific scale and colour is created as the gun bullet on the hit point
+    /// Primitive is destroyed after 0.2f seconds
+    /// </summary>
     IEnumerator GunBullet(Vector3 pos)
     {
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -78,11 +87,17 @@ public class RayShooter : MonoBehaviour
         Destroy(sphere);
     }
 
+    /// <summary>
+    /// Disable player's shooting ability
+    /// </summary>
     private void DialogueStarted()
     {
         canShoot = false;
     }
 
+    /// <summary>
+    /// Enable player's shooting ability
+    /// </summary>
     private void DialogueEnded()
     {
         canShoot = true;

@@ -6,18 +6,9 @@ public class SafetyNet : MonoBehaviour
 {
     public UIController uIController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Player instant die if fall out of the world
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

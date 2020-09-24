@@ -36,17 +36,21 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        // Set active click to continue text when each sentence is finished typing
         if (textDisplay.text == sentences[index])
         {
             continueText.SetActive(true);
         }
-
+        // Next sentence will run if the player click left mouse button with condition of completion of previous sentence
         if (started && !typing && Input.GetKeyDown(KeyCode.Mouse0))
         {
             NextSentence();
         }
     }
 
+    /// <summary>
+    /// Start running the dialogue when receive DIALOGUE_START game event broadcast
+    /// </summary>
     private void StartDialogue()
     {
         textBG.SetActive(true);
@@ -54,6 +58,10 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(Type());
     }
 
+    /// <summary>
+    /// Add a delay in between each letter for typewriter effect
+    /// </summary>
+    /// <returns>Typing speed is the delay in between and the value is specified through inspector</returns>
     IEnumerator Type()
     {
         foreach(char letter in sentences[index].ToCharArray())
@@ -66,6 +74,9 @@ public class Dialogue : MonoBehaviour
         typing = false;
     }
 
+    /// <summary>
+    /// Next sentence will continue displaying until the index runs out
+    /// </summary>
     private void NextSentence()
     {
         continueText.SetActive(false);

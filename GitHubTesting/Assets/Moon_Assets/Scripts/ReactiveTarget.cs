@@ -22,16 +22,20 @@ public class ReactiveTarget : MonoBehaviour
 
     void Start()
     {
+        // Get player's transform position
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+
         anim = GetComponent<Animator>();
         crawler = gameObject.transform.GetChild(0).gameObject;
 
         soul = gameObject.transform.GetChild(1).gameObject;
         soul.SetActive(false);
 
+        // Cooldown between each attack
         startWaitTime = 1.5f;
         waitTime = 0;
 
+        // Crawler alive state
         isAlive = true;
     }
 
@@ -39,6 +43,7 @@ public class ReactiveTarget : MonoBehaviour
     {
         if (isAlive)
         {
+            // Calculate the distance between crawler and player
             float dist = Vector3.Distance(transform.position, playerPos.position);
 
             Ray ray = new Ray(transform.position, transform.forward);
@@ -46,6 +51,7 @@ public class ReactiveTarget : MonoBehaviour
 
             if (Physics.SphereCast(ray, 5.0f, out hit))
             {
+                // Change animator boolean depending on within or outside follow distance
                 if (dist <= followDist)
                 {
                     anim.SetBool("isFollowing", true);
@@ -55,6 +61,7 @@ public class ReactiveTarget : MonoBehaviour
                     anim.SetBool("isFollowing", false);
                 }
 
+                // Trigger animator attack when in attack distance
                 if (dist <= attackDist)
                 {
                     if (waitTime <= 0)
@@ -73,6 +80,9 @@ public class ReactiveTarget : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function to be called when receive gun bullet hit
+    /// </summary>
     public void ReactToHit()
     {
         if (health > 1)
@@ -85,12 +95,20 @@ public class ReactiveTarget : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Crawler health is minus by 1 each time the function is ran
+    /// </summary>
     private void TakeDamage()
     {
         audioSource.PlayOneShot(crawlerHurt);
         health--;
     }
 
+    /// <summary>
+    /// Change crawler alive state to false and set animator isDead boolean to true
+    /// Disable crawler colliders and enable soul collider
+    /// Destroy crawler object after 1 second
+    /// </summary>
     IEnumerator Die()
     {
         isAlive = false;

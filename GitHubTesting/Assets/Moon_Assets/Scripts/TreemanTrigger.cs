@@ -15,6 +15,10 @@ public class TreemanTrigger : MonoBehaviour
         canTalk = false;
     }
 
+    /// <summary>
+    /// Check when player is in trigger box
+    /// Enable world space talk canvas, set true canTalk, show Treeman outline
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -26,6 +30,10 @@ public class TreemanTrigger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Check when player is out of the trigger box
+    /// Disable world space talk canvas, set false canTalk, hide Treeman outline
+    /// </summary>
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

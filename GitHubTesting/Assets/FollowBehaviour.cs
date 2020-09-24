@@ -15,16 +15,6 @@ public class FollowBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.transform.position = Vector3.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
-
-        //if (Input.GetKeyDown(KeyCode.LeftControl))
-        //{
-        //    animator.SetBool("isFollowing", false);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    animator.SetTrigger("isAttacking");
-        //}
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

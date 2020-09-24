@@ -31,14 +31,15 @@ public class UIController : MonoBehaviour
         Messenger.RemoveListener(GameEvent.PLAYER_HURT, PlayerHurt);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
+        // Initialize collected soul
         soulCollected = 0;
         soulText.SetText(soulCollected.ToString());
 
+        // Initialize player hurt intensity
         playerHurtIntensity = 0;
         DisplayBlood(playerHurtIntensity);
 
@@ -46,6 +47,18 @@ public class UIController : MonoBehaviour
         blackoutAnim.SetBool("isDead", false);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            PlayerHurt();
+        }
+    }
+
+    /// <summary>
+    /// Increase collected soul value upon game event of colliding with soul trigger box
+    /// Broadcast soul collection completion when at 5 souls
+    /// </summary>
     private void AddSoulPoint()
     {
         soulCollected++;
@@ -57,14 +70,11 @@ public class UIController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            PlayerHurt();
-        }
-    }
-
+    /// <summary>
+    /// Increase player hurt intensity upon receiving game event of taking damage from crawler
+    /// Player player hurt audio
+    /// Update blood splatter UI
+    /// </summary>
     private void PlayerHurt()
     {
         audioSource.PlayOneShot(playerHurt);
@@ -73,6 +83,9 @@ public class UIController : MonoBehaviour
         Debug.Log(playerHurtIntensity);
     }
 
+    /// <summary>
+    /// Changes blood splatter UI depending on player hurt intensity
+    /// </summary>
     private void DisplayBlood(int intensity)
     {
         if (intensity <= 3)
@@ -104,10 +117,17 @@ public class UIController : MonoBehaviour
         }
         else
         {
+            // Player dies after hurt intensity is more than 3, initiate revival function
             StartCoroutine(RevivePlayer());
         }
     }
 
+    /// <summary>
+    /// Play blackout animation
+    /// Broadcast game event PLAYER_DEAD after 1 second to disable player movement
+    /// Reset player hurt intensity and blood splatter, then play blackout animation backwards
+    /// Broadcast game event PLAYER_REVIVED to enable back player movement
+    /// </summary>
     public IEnumerator RevivePlayer()
     {
         blackoutAnim.SetBool("isDead", true);
