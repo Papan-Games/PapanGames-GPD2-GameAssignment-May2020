@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// A script that attached to the item that can be highighted if player point to it
+/// </summary>
 public class HouseOutlineController : MonoBehaviour
 {
     private MeshRenderer _renderer;
@@ -21,6 +24,9 @@ public class HouseOutlineController : MonoBehaviour
         _renderer = gameObject.GetComponent<MeshRenderer>();
     }
 
+    /// <summary>
+    /// A function to show the outline color if pointed to the item that can interact
+    /// </summary>
     public void ShowOutline()
     {
         showingOutline = true;
@@ -31,16 +37,22 @@ public class HouseOutlineController : MonoBehaviour
         }
     }
 
-    public void HideOutline()
-    {
-        showingOutline = false;
-        foreach (var mat in _renderer.materials)
-        {
-            mat.SetFloat("_Outline", 0f);
-            mat.SetColor("_OutlineColor", Color.black);
-        }
-    }
+    //public void HideOutline()
+    //{
+    //    showingOutline = false;
+    //    foreach (var mat in _renderer.materials)
+    //    {
+    //        mat.SetFloat("_Outline", 0f);
+    //        mat.SetColor("_OutlineColor", Color.black);
+    //    }
+    //}
 
+    /// <summary>
+    /// Use to hide the oobject or hide the outline
+    /// If the pointed item is missing item,
+    /// hide the object with outline alpha = 0,
+    /// to avoid the outline still visible.
+    /// </summary>
     public void HideObject()
     {
         showingOutline = false;
@@ -59,11 +71,14 @@ public class HouseOutlineController : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// This function only worked in Level 5
+    /// Use to show the missing item from transparent
+    /// </summary>
     public void ShowObject()
     {
         foreach (var mat in _renderer.materials)
         {
-            //mat.SetFloat("_MainColor", 255f);
             mat.SetColor("_OutlineColor", ObjectOutlineColor);
             mat.SetColor("_Color", ObjectMainColor);
             ObjectMainColor.a = 1;

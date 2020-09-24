@@ -3,32 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This is a script for checking the light condition and do the light operation
+/// </summary>
 public class onOffSwitch : MonoBehaviour
 {
-    public bool _isOnLight;
-    public GameObject[] lights;
-
-    //public TextMeshProUGUI interactTooltip;
+    public bool _isOnLight; //For checking is on the light
+    public GameObject[] lights; //The light asset that affect by the switch itself
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip onOffLight;
+    public AudioSource soundSource;
+    public AudioClip onOffLight;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
+    /// <summary>
+    /// A function for lights operation.
+    /// When the switch z rotation is 180f, that means the light is on.
+    /// Else if the switch z rotation is 0f, the light is off.
+    /// </summary>
     void Operate()
     {
         if(this.gameObject.transform.rotation.eulerAngles.z == 180f)
@@ -42,8 +36,7 @@ public class onOffSwitch : MonoBehaviour
         }
 
         if (!_isOnLight)
-        {
-            
+        { 
             Vector3 temp = this.gameObject.transform.rotation.eulerAngles;
             temp.z = 180.0f;
             this.gameObject.transform.rotation = Quaternion.Euler(temp);
@@ -70,26 +63,4 @@ public class onOffSwitch : MonoBehaviour
             soundSource.PlayOneShot(onOffLight);
         }
     }
-
-    //public void ShowTooltip()
-    //{
-    //    if (_isOnLight)
-    //    {
-    //        interactTooltip.text = "Press 'E' to off the light.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-
-    //    else
-    //    {
-    //        interactTooltip.text = "Press 'E' to on the light.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-    //}
-
-    //public void HideTooltip()
-    //{
-    //    interactTooltip.gameObject.SetActive(false);
-    //}
-
-
 }

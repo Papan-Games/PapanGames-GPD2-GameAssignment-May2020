@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This is a script for operation of the ceiling fans
+/// When the switch is on, the fan animation will play, 
+/// and the sound will play
+/// </summary>
 public class onOffFanSwitch : MonoBehaviour
 {
     bool _isOnFan;
-    public GameObject Fan;
     public Animator _anim;
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip onOffFan;
-    [SerializeField] AudioClip fanMoving;
-
+    public AudioSource soundSource;
+    public AudioClip onOffFan;
     public AudioSource fan;
 
 
@@ -31,6 +33,11 @@ public class onOffFanSwitch : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// A function to do the fan operation.
+    /// If on fan, fan animation play and fan moving sound play.
+    /// If off, the fan animation will stop and the moving sound stop also.
+    /// </summary>
     void Operate()
     {
         if (this.gameObject.transform.rotation.eulerAngles.z == 180f)

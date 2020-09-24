@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This is a script for checking the light condition and do the light operation
+/// This is only for the light beside the stair case.
+/// </summary>
 public class onOffWallLightSwitch : MonoBehaviour
 {
-    public GameObject wallLight;
-    bool _isOnLight;
-
-    //public TextMeshProUGUI interactTooltip;
+    public GameObject wallLight; //The wall lamp
+    bool _isOnLight; //Use for checking the light condition
 
     /// <summary>
     /// Variable for sound source and audio clip
     /// </summary>
-    [SerializeField] AudioSource soundSource;
-    [SerializeField] AudioClip onOffWallLight;
+    public AudioSource soundSource;
+    public AudioClip onOffWallLight;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,9 @@ public class onOffWallLightSwitch : MonoBehaviour
         wallLight.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// A function for wall lamp operation.
+    /// </summary>
     void Operate()
     {
         if(wallLight.gameObject.activeSelf == false)
@@ -65,19 +64,4 @@ public class onOffWallLightSwitch : MonoBehaviour
             soundSource.PlayOneShot(onOffWallLight);
         }
     }
-
-    //public void ShowTooltip()
-    //{
-    //    if (_isOnLight)
-    //    {
-    //        interactTooltip.text = "Press 'E' to off the wall light.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-
-    //    else
-    //    {
-    //        interactTooltip.text = "Press 'E' to on the wall light.";
-    //        interactTooltip.gameObject.SetActive(true);
-    //    }
-    //}
 }
