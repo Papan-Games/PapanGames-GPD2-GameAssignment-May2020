@@ -438,8 +438,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
+  m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -481,7 +482,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6898,7 +6899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7231,8 +7232,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: No
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
+  m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -79327,15 +79329,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
+  m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -115029,7 +115032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6037736, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -121820,8 +121823,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your current progress will be lost. Do you confirm want to go back to
-    main menu? '
+  m_text: Your current progress will be lost. Are you sure you want to go back to
+    main menu?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
   m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
@@ -121831,8 +121834,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -123157,8 +123160,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
+  m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -123344,8 +123348,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mute
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab74ed6e951e956469bf91ed8323444f, type: 2}
+  m_sharedMaterial: {fileID: 6893216950926244593, guid: ab74ed6e951e956469bf91ed8323444f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -123387,7 +123392,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -129465,7 +129470,6 @@ MonoBehaviour:
   textDisplay: {fileID: 1749408497}
   sentences:
   - Thank you for helping me...
-  - As a gratitude of mine, I shall now tell you how to go back to your world...
   - Return the souls to its original place so you can escape these dimensions...
   typingSpeed: 0.02
   continueText: {fileID: 1947313234}
